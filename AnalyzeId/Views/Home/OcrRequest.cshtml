@@ -1,0 +1,158 @@
+﻿@model OCRFileDTO
+@{
+    ViewData["Title"] = "OcrRequest";
+}
+
+<div class="col text-center" id="scanMenu">
+    <div class="col-12 col-md-4 m-auto text-center">
+        <img class="card-img-top" src="/image/header.jpeg" alt="Card image cap"  style="max-width:400px">
+        <h2 class="mb-2 text-bold-custom ">UPLOAD DRIVER LICENCE</h2>
+        <img class="card-img-top" src="/image/page2.jpeg" alt="Card image cap"  style="max-width:400px">
+        <h2 class="mt-3 text-bold-custom text-decoration-underline">INSTRUCTIONS</h2>
+        <div class="p-2">
+            <h3 class="text-left">- Take the picture in a well-lit place</h3>
+            <h3 class="mt-2   text-left">- Ensure there are no reflections or shadows on the licence</h3>
+            <h3 class="mt-2  text-left">- Maximise the licence size within the guiding rectangle</h3>
+            <h3 class="mt-2  text-left">- The background should be a light colour and monochrome</h3>
+            <h3 class="mt-2   text-left">- Ensure your hand isn`t obscuring any part of the licence</h3>
+        </div>
+    </div>
+    <div class="col-sm-4 col-8 text-center m-auto">
+        <a href="##"  class="btn mt-1 font-size-1 bg-site p-2 waves-effect camera camera-file text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>
+        <a href="##" class="btn mt-1 font-size-1 bg-site p-2 waves-effect CanvasCamera camera-can text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>
+        <button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-file font-size-1 p-2 mt-2 text-light w-100">
+            Skip
+        </button>
+        <button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-can font-size-1 p-2 mt-2 text-light w-100">
+            Skip
+        </button>
+    </div>
+    <div class="col-12 col-md-6 m-auto text-center">
+        <img class="card-img-top mt-3" src="/image/footer.jpeg" alt="Card image cap">
+    </div>
+</div>
+
+
+<form enctype="multipart/form-data" asp-controller="home" asp-action="GetOCRResult" method="post" class="d-none" id="sendData">
+    <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
+    <input type="hidden" class="d-none" id="UrlBack" name="UrlBack" value="@(Model.UrlBack!=null?Model.UrlBack:"")">
+</form>
+
+
+@*
+    <div class="row" id="scanMenu">
+    <div class="card col-sm-6 col-md-4 p-0 m-auto">
+
+    <img class="card-img-top" src="/assets/img/passport.jpg" alt="Card image cap">
+    <div class="card-body">
+    <h3 class="card-title">Passport check</h3>
+    <p class="card-text">
+    Start by clicking the link below:
+    @(Model.UrlFront==null?"Front Image":"Back Image")
+    </p>
+    <div class="row">
+
+    <div class="col-12 p-1">
+    <a href="#" class="btn btn-danger waves-effect camera w-100">
+    <i data-feather='camera'></i> Open
+    Camera
+    </a>
+    </div>
+
+    <div class="col-12">
+    <a href="#" class="btn btn-primary waves-effect CanvasCamera w-100">
+    <i data-feather='camera'></i> Open
+    Canvas
+    </a>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>*@
+
+
+
+<div class="cameraDiv text-center d-none">
+    <div class="col-12 col-md-6 m-auto text-center">
+        <img class="card-img-top" src="/image/header.jpeg" style="max-width:400px" alt="Card image cap">
+    </div>
+    <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#File').click()">Select File</button>
+    <div class="row d-none" id="camraPreview">
+        <div class=" col-sm-6 col-md-4 p-0 m-auto">
+            <h3 class="mt-2 text-bold text-black">@(Model.UrlFront==null?"FRONT IMAGE UPLOAD": "BACK IMAGE UPLOAD")</h3>
+            <div class="">
+                <img class="m-auto card-img-top1  camera-preview-img" src="" alt="">
+            </div>
+
+            <h2 class="mt-3 text-bold text-danger">ENSURE TEXT IS CLEAR</h2>
+            <h3 class="mt-2 text-black text-center">If you are happy with the image, please confirm.</h3>
+            <div class="card-body">
+                @*<h3 class="card-title">Passport check</h3>*@
+                @*<p class="card-text">
+            Start by clicking the link below:
+            </p>*@
+                <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
+                    <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
+                    <input type="file" id="FileFront" name="FrontFile" value="@(Model.FrontFile!=null?Model.FrontFile:"")" />
+                    <input type="file" class="d-none" id="File" name="File" accept="image/*" capture="camera">
+                    @*<input type="text" id="File" name="File" />*@
+
+                </form>
+                <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#resultForm').submit()">
+                    Confirm
+                </button>
+                <button href="#" class="btn bg-site text-light waves-effect retryCamera">
+                    Retry
+                </button>
+
+            </div>
+        </div>
+    </div>
+    @*<div class="align-content-center m-auto">
+        <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site text-light waves-effect">
+            Back to home
+        </a>
+
+    </div>*@
+    <div class="col-12 col-md-6 m-auto text-center">
+        <img class="card-img-top mt-3" src="/image/footer.jpeg" alt="Card image cap">
+    </div>
+    <div class="canvascontainer d-none">
+        <video id="videoplayer" autoplay muted playsinline class="d-none"></video>
+        <div class="position-relative camera-video-div">
+            <canvas id="streamCanvas" class=""></canvas>
+            <button onclick="CaptureAndProccess()" class="btn btn-danger btn-lg capture-btn rounded">
+                Tap to
+                capture
+            </button>
+        </div>
+        <form enctype="multipart/form-data" asp-controller="home" asp-action="CanvasResult" method="post" class="d-none" id="CanvasForm">
+            <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")" />
+            <input type="text" id="File" name="File" />
+            <input type="file" id="FileFront" name="FrontFile" value="@(Model.FrontFile!=null?Model.FrontFile:"")" />
+        </form>
+    </div>
+</div>
+<div class="spin d-none text-center" style="display:none">
+    <div class="spinner-border text-danger"></div>
+</div>
+
+<div class="row d-none error-alert">
+    <div class="col-sm-6 m-auto">
+        <div class="card bg-danger text-white">
+            <div class="card-body">
+                <h4 class="card-title text-white">Error!</h4>
+                <p class="card-text error-message">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="/script/script.js" asp-append-version="true"></script>
+}
+

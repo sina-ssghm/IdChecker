@@ -1,0 +1,60 @@
+E:\New folder\GIC\GIC\GIC.Service\bin\Debug\net5.0\AnalyzeId.Service.deps.json
+E:\New folder\GIC\GIC\GIC.Service\bin\Debug\net5.0\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\GIC.Service\bin\Debug\net5.0\AnalyzeId.Service.pdb
+E:\New folder\GIC\GIC\GIC.Service\bin\Debug\net5.0\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\GIC.Service\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.AssemblyReference.cache
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfoInputs.cache
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfo.cs
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CoreCompileInputs.cache
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CopyComplete
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\refint\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\AnalyzeId.Service.pdb
+E:\New folder\GIC\GIC\GIC.Service\obj\Debug\net5.0\ref\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.deps.json
+E:\New folder\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.pdb
+E:\New folder\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.AssemblyReference.cache
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfoInputs.cache
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfo.cs
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CoreCompileInputs.cache
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CopyComplete
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\refint\AnalyzeId.Service.dll
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.pdb
+E:\New folder\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\ref\AnalyzeId.Service.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.AssemblyReference.cache
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfoInputs.cache
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfo.cs
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CoreCompileInputs.cache
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\ref\AnalyzeId.Service.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.pdb
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.deps.json
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\ref\AnalyzeId.Service.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.pdb
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CopyComplete
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.deps.json
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\ref\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.pdb
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.AssemblyReference.cache
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfoInputs.cache
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfo.cs
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CoreCompileInputs.cache
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CopyComplete
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\ref\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.pdb

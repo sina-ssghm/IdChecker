@@ -1,0 +1,157 @@
+﻿@model OperationResult<FinalResultOCRDTO>
+@{
+    var data = Model?.Data;
+}
+@if (Model.Succeed == false)
+{
+<div class="card bg-danger text-white">
+    <div class="card-body">
+        <h4 class="card-title text-white">Error!</h4>
+        <p class="card-text">
+            @Model.Message
+        </p>
+    </div>
+</div>
+}
+else if (data != null)
+{
+
+
+<div class="row mt-3">
+    <div class="col-sm-8 ">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <span class="font-weight-bold"> Name:</span>
+                        <span>@data.FullName</span>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="font-weight-bold">Birth Date:</span>
+                        <span>@data.Birth_Date</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="font-weight-bold">Address:</span>
+                        <span>@data.Address</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="font-weight-bold">Address Postal Code:</span>
+                        <span>@data.Address_Postal_Code</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="font-weight-bold">Card Number:</span>
+                        <span>@data.Card_Number</span>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="font-weight-bold">Expiry Date:</span>
+                        <span>@data.Expiry_Date</span>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="font-weight-bold">Document Number:</span>
+                        <span>@data.Document_Number</span>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="font-weight-bold">Class Code:</span>
+                        <span>@data.Class_Code</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="font-weight-bold">Licence Type Code:</span>
+                        <span>@data.Licence_Type_Code</span>
+                    </div>
+                    <div class="col-6">
+                        <span class="font-weight-bold">Licence Type Name:</span>
+                        <span>@data.Licence_Type_Name</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class=" col-sm-4">
+        <div class="card">
+
+            <div class="card-body">
+                @if (@Model?.Data?.FrontUrl!=null)
+            {
+                <div class="m-auto" asp-remove="">
+                    <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
+                </div>
+            }
+                @if (@Model?.Data?.BackUrl!=null)
+            {
+                <div class="m-auto" asp-remove="">
+                    <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
+                </div>
+            }
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<div>
+    @*<div class="text-center">
+             <button onclick="showImage($(this))" class="btn mt-1 font-size-1 bg-site p-2 waves-effect text-bold text-light "> Show more</button>
+        </div>*@
+    @*<div class="col-12 row mt-3 text-center " id="images">
+
+        </div>*@
+
+</div>
+
+<div class="align-content-center text-center mt-2 mb-3 m-auto">
+    <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site text-light waves-effect">
+        Back to home
+    </a>
+
+</div>
+}
+else
+{
+<div class="card bg-warning text-white">
+    <div class="card-body">
+        <p class="card-text">
+            Please try again
+        </p>
+    </div>
+</div>
+}
+<script>
+    //function showImage(elem){
+    //    elem.hide(1000);
+    //    $("#images").removeClass("d-none")
+    //}
+</script>
+@functions {
+    IHtmlContent GetValidationIcon(string validationText)
+    {
+
+        if (HasValidationError(validationText) == false)
+        {
+            return Html.Raw("<i class='fas fa-circle text-success'></i>");
+        }
+        else if (HasValidationError(validationText) == true)
+        {
+            return Html.Raw("<i class='fas fa-circle text-danger'></i>");
+        }
+        return Html.Raw("?");
+    }
+    bool? HasValidationError(string validationText)
+    {
+        if (validationText?.ToLower() == "passed")
+        {
+            return false;
+        }
+        else if (validationText?.ToLower() == "failed")
+        {
+            return true;
+        }
+        return null;
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "mobile":{
+    "camera":true,
+    "storage":true
+    },
+    "desktop":{
+    "camera":true,
+    "storage":true
+    }
+
+}

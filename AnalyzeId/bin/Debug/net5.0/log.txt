@@ -1,0 +1,408 @@
+2022-04-12 12:33:28.5656|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 12:33:28.5896|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 12:33:28.5972|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 12:33:28.5972|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 12:33:28.5972|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 12:52:34.1224|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 12:52:34.1413|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 12:52:34.1512|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 12:52:34.1512|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 12:52:34.1512|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 12:54:11.8362|DEBUG|GIC.Service.Utility.OCRService|System.ArgumentException: The path is empty. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 112
+2022-04-12 12:55:08.8654|DEBUG|GIC.Service.Utility.OCRService|System.ArgumentException: The path is empty. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 12:55:54.6302|DEBUG|GIC.Service.Utility.OCRService|System.ArgumentException: The path is empty. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 12:56:03.1718|DEBUG|GIC.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at GIC.Service.Utility.OCRService.UploadImage(IFormFile file)
+2022-04-12 12:59:09.1369|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 12:59:09.1545|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 12:59:09.1545|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 12:59:09.1606|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 12:59:09.1606|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:00:18.8937|DEBUG|GIC.Service.Utility.OCRService|System.ArgumentException: The path is empty. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 112
+2022-04-12 13:00:26.7965|DEBUG|GIC.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at GIC.Service.Utility.OCRService.UploadImage(IFormFile file) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 58
+2022-04-12 13:03:34.7230|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 13:03:34.7403|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 13:03:34.7403|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 13:03:34.7403|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 13:03:34.7403|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:15:07.3345|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 13:15:07.3541|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 13:15:07.3627|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 13:15:07.3627|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 13:15:07.3627|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:36:31.9492|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 13:36:31.9670|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 13:36:31.9775|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 13:36:31.9775|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 13:36:31.9775|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:37:32.3367|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 13:37:32.3578|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 13:37:32.3674|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 13:37:32.3784|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 13:37:32.3784|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:37:47.1550|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 13:38:00.9861|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 13:38:01.0036|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 13:38:01.0036|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 13:38:01.0036|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 13:38:01.0036|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:38:42.7828|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 13:39:45.9536|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 13:39:45.9711|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 13:39:45.9809|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 13:39:45.9809|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 13:39:45.9809|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 13:44:09.1354|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 13:45:44.6060|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 13:45:54.8003|DEBUG|GIC.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at GIC.Service.Utility.OCRService.UploadImage(IFormFile file) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 58
+2022-04-12 13:45:55.6549|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 13:46:22.6794|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 14:00:19.6894|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:00:19.7076|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:00:19.7076|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:00:19.7076|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:00:19.7076|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:00:38.9335|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 14:26:15.0548|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:26:15.0725|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:26:15.0839|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:26:15.0839|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:26:15.0839|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:34:17.8280|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:34:17.8604|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:34:17.8604|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:34:17.8694|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:34:17.8694|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:36:48.5281|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:36:48.5456|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:36:48.5554|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:36:48.5554|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:36:48.5554|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:37:52.0486|DEBUG|GIC.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 110
+2022-04-12 14:38:47.1317|DEBUG|GIC.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 110
+2022-04-12 14:40:11.4365|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:40:11.4579|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:40:11.4579|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:40:11.4579|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:40:11.4579|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:42:13.3929|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:42:13.4093|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:42:13.4149|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:42:13.4149|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:42:13.4149|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:42:28.2429|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:42:28.2709|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:42:28.2709|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:42:28.2709|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:42:28.2709|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\GIC
+2022-04-12 14:43:52.8572|DEBUG|GIC.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'E:\New folder\GIC\GIC\GIC\New folderGICGICGICwwwrootFilesb3a7555-5878-4af1-86f5-d4007cf22bf32.jpg'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 110
+2022-04-12 14:44:47.3972|DEBUG|GIC.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'E:\New folder\GIC\GIC\GIC\New folderGICGICGICwwwrootFilesf88b200-65a6-41c3-8207-3c7264abaa802.jpg'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at GIC.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\GIC.Service\Utility\OCRService.cs:line 110
+2022-04-12 14:57:32.3458|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 14:57:32.3666|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 14:57:32.3666|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 14:57:32.3666|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 14:57:32.3809|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\AnalyzeId
+2022-04-12 14:57:50.7918|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFiles922972-24a4-45a6-8948-c5cbf755cf7e2.jpg'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 110
+2022-04-12 14:58:40.4742|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentException: Illegal characters in path. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in E:\New folder\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 110
+2022-04-12 14:59:45.0206|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentException: Illegal characters in path. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:00:59.9768|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentException: Illegal characters in path. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:02:27.5136|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentException: Illegal characters in path. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:03:36.9076|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFiles3724905-a29a-423c-b1a5-3d6924d095d33.jpg'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:04:44.6403|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFilese27fa6f-bffd-4910-8acc-3aa15a9413b03.jpg'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:05:06.7251|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFiles,4009c3-76ca-4847-89f2-41827b472be53.jpg'.
+File name: 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFiles,4009c3-76ca-4847-89f2-41827b472be53.jpg'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:06:02.9399|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFiles,da4333-3da3-4e2f-a7b2-a4a865afdaeb3.jpg'.
+File name: 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFiles,da4333-3da3-4e2f-a7b2-a4a865afdaeb3.jpg'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:07:05.1185|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFilesce51ecdb-c2aa-4da9-b25a-4a1cd3763ef33.jpg'.
+File name: 'E:\New folder\GIC\GIC\AnalyzeId\New folderGICGICAnalyzeIdwwwrootFilesce51ecdb-c2aa-4da9-b25a-4a1cd3763ef33.jpg'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 15:13:53.0137|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 15:13:53.0373|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 15:13:53.0373|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 15:13:53.0777|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 15:13:53.0843|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\AnalyzeId
+2022-04-12 15:14:24.1217|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 15:14:24.1408|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 15:14:24.1477|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 15:14:24.1477|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 15:14:24.1477|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\AnalyzeId
+2022-04-12 16:43:12.8458|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 16:43:12.8671|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 16:43:12.8823|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 16:43:12.8823|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 16:43:12.8823|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\AnalyzeId
+2022-04-12 17:05:04.7886|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 17:05:04.8179|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 17:05:04.8179|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 17:05:04.8179|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 17:05:04.8179|INFO|Microsoft.Hosting.Lifetime|Content root path: E:\New folder\GIC\GIC\AnalyzeId
+2022-04-12 17:17:53.3330|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 20:03:11.6164|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 20:03:11.8397|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 20:03:11.9160|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 20:03:11.9998|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 20:03:12.0652|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 20:12:22.1683|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 20:12:22.2408|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 20:12:22.3340|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 20:12:22.3340|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 20:12:22.3620|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 20:44:46.9587|DEBUG|AnalyzeId.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file) in C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 58
+2022-04-12 20:44:47.8648|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 21:04:21.8630|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 21:04:21.9272|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 21:04:21.9919|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 21:04:21.9919|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 21:04:22.0279|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 21:13:03.5423|DEBUG|AnalyzeId.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file) in C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 62
+2022-04-12 21:13:05.3378|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 21:20:18.0315|DEBUG|AnalyzeId.Shared.FileUploader|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadBase64Async(String base64) in C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\FileUploader.cs:line 141
+2022-04-12 21:20:19.9380|DEBUG|AnalyzeId.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadBase64Async(String base64) in C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\FileUploader.cs:line 150
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(String file) in C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 34
+2022-04-12 21:20:19.9573|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 21:22:42.5618|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 21:22:42.5832|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 21:22:42.6094|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 21:22:42.6235|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 21:22:42.6497|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 21:28:16.7593|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 118
+2022-04-12 21:30:27.8737|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 21:34:10.2524|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 21:34:10.2730|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 21:34:10.3091|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 21:34:10.3219|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 21:34:10.3219|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 21:34:29.1082|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 21:35:24.9094|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 21:35:24.9337|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 21:35:24.9580|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 21:35:24.9676|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 21:35:24.9676|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 21:42:19.5546|DEBUG|AnalyzeId.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-12 21:42:27.8819|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 21:42:42.7618|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 21:47:22.1390|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 21:47:22.2029|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 21:47:22.2811|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 21:47:22.3276|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 21:47:22.4127|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 21:54:44.4471|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 21:54:44.4791|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 21:54:44.4947|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 21:54:44.4947|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 21:54:44.5152|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 23:01:43.1589|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 23:01:43.1970|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 23:01:43.2334|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 23:01:43.2334|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 23:01:43.2334|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 23:10:25.4558|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 23:17:49.6058|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 23:17:49.6510|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 23:17:49.6894|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 23:17:49.7164|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 23:17:49.7164|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 23:24:19.4471|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 23:24:27.6500|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-12 23:31:40.5103|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 23:31:40.5723|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 23:31:40.5990|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 23:31:40.6261|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 23:31:40.6424|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 23:32:22.5051|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 23:32:22.5286|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 23:32:22.5656|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 23:32:22.5656|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 23:32:22.5805|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-12 23:50:09.9452|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-12 23:50:09.9706|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-12 23:50:09.9989|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-12 23:50:10.0132|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-12 23:50:10.0132|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-13 00:04:36.4081|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 00:04:36.4427|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 00:04:36.4705|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 00:04:36.4705|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 00:04:36.4985|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-13 00:14:03.5159|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 00:14:03.5508|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 00:14:03.5829|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 00:14:03.5829|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 00:14:03.5999|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-13 00:20:10.0720|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 00:20:10.0939|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 00:20:10.1183|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 00:20:10.1183|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 00:20:10.1401|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId
+2022-04-13 00:25:27.7635|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 00:25:27.7825|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 00:25:27.7825|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 00:25:27.7825|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 00:25:27.7825|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 00:28:48.8483|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 00:28:48.8659|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 00:28:48.8779|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 00:28:48.8779|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 00:28:48.8779|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 01:14:17.7309|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 01:14:17.7591|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 01:14:17.7591|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 01:14:17.7591|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 01:14:17.7591|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 01:44:49.6922|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 01:44:49.7297|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 01:44:49.7297|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 01:44:49.7297|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 01:44:49.7326|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 01:49:24.2762|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 01:49:24.2937|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 01:49:24.3058|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 01:49:24.3058|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 01:49:24.3058|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 01:52:09.5772|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 01:52:09.5976|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 01:52:09.6116|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 01:52:09.6116|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 01:52:09.6116|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 01:54:31.4577|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 01:54:31.4755|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 01:54:31.4836|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 01:54:31.4836|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 01:54:31.4836|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:05:41.3655|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:05:41.3843|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:05:41.3982|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:05:41.3982|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:05:41.3982|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:14:44.8229|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:14:44.8428|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:14:44.8591|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:14:44.8591|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:14:44.8591|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:29:38.9603|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:29:38.9785|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:29:38.9935|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:29:38.9935|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:29:38.9935|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:43:51.6163|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:43:51.6349|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:43:51.6349|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:43:51.6349|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:43:51.6349|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:51:00.6513|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:51:00.6708|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:51:00.6897|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:51:00.6897|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:51:00.6897|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:51:44.2144|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 129
+2022-04-13 02:51:44.4478|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 183
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\Utility\OCRService.cs:line 91
+2022-04-13 02:52:45.2182|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:52:45.2402|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:52:45.2495|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:52:45.2495|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:52:45.2495|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId
+2022-04-13 02:59:44.8608|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 02:59:44.8789|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 02:59:44.8921|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 02:59:44.8921|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 02:59:44.8921|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId

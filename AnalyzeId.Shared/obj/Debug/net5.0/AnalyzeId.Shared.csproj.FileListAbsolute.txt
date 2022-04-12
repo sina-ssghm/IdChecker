@@ -1,0 +1,47 @@
+E:\New folder\GIC\GIC\GIC.Shared\bin\Debug\net5.0\AnalyzeId.Shared.deps.json
+E:\New folder\GIC\GIC\GIC.Shared\bin\Debug\net5.0\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\GIC.Shared\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.AssemblyReference.cache
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfoInputs.cache
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfo.cs
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.CoreCompileInputs.cache
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\refint\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\AnalyzeId.Shared.pdb
+E:\New folder\GIC\GIC\GIC.Shared\obj\Debug\net5.0\ref\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.deps.json
+E:\New folder\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.AssemblyReference.cache
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfoInputs.cache
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfo.cs
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.CoreCompileInputs.cache
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\refint\AnalyzeId.Shared.dll
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.pdb
+E:\New folder\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.deps.json
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.AssemblyReference.cache
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfoInputs.cache
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfo.cs
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Desktop\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.deps.json
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfoInputs.cache
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfo.cs
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.CoreCompileInputs.cache
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.pdb
