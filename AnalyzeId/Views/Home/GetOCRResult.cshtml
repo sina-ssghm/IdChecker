@@ -83,23 +83,48 @@ else if (data != null)
 
         </div>
         <div class=" col-sm-4">
-            <div class="card">
+            @if (Model?.Data?.FrontUrl != null || Model?.Data?.BackUrl != null)
+            {
+                <div class="card">
 
-                <div class="card-body">
-                    @if (@Model?.Data?.FrontUrl != null)
-                    {
-                        <div class="m-auto" asp-remove="">
-                            <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
-                        </div>
-                    }
-                    @if (@Model?.Data?.BackUrl != null)
-                    {
-                        <div class="m-auto" asp-remove="">
-                            <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
-                        </div>
-                    }
+                    <div class="card-body">
+                        @if (Model?.Data?.FrontUrl != null)
+                        {
+                            <div class="m-auto" asp-remove="">
+                                <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
+                            </div>
+                        }
+                        @if (Model?.Data?.BackUrl != null)
+                        {
+                            <div class="m-auto" asp-remove="">
+                                <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
+                            </div>
+                        }
+                    </div>
                 </div>
-            </div>
+            }
+
+            @if (Model?.Data?.FaceUrl != null || Model?.Data?.SignatureUrl != null)
+            {
+
+                <div class="card">
+
+                    <div class="card-body">
+                        @if (Model?.Data?.FaceUrl != null)
+                        {
+                            <div class="m-auto" asp-remove="">
+                                <img class="card-img-top" src="@Model.Data.FaceUrl.Remove(0,Model.Data.FaceUrl.IndexOf("Files")-1)" width="50%" alt="">
+                            </div>
+                        }
+                        @if(Model?.Data?.SignatureUrl != null)
+                        {
+                        <div class="m-auto" asp-remove="">
+                            <img class="card-img-top" src="@Model.Data.SignatureUrl.Remove(0,Model.Data.SignatureUrl.IndexOf("Files")-1)" width="50%" alt="">
+                        </div>
+                        }
+                    </div>
+                </div>
+            }
         </div>
 
 

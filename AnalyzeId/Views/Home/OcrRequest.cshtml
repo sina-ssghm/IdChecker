@@ -70,7 +70,7 @@
 
 
 <div class="cameraDiv text-center d-none">
-    <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#File').click()">Select File</button>
+    @*<button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#File').click()">Select File</button>*@
     <div class="row d-none" id="camraPreview">
         <div class=" col-sm-6 col-md-4 p-0 m-auto">
             <h3 class="mt-2 text-bold text-black">@(Model.UrlFront==null?"FRONT IMAGE UPLOAD": "BACK IMAGE UPLOAD")</h3>
@@ -83,21 +83,23 @@
             <div class="card-body">
                 @*<h3 class="card-title">Passport check</h3>*@
                 @*<p class="card-text">
-            Start by clicking the link below:
-            </p>*@
+        Start by clicking the link below:
+        </p>*@
                 <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
                     <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
                     <input type="file" class="d-none" id="File" name="File" accept="image/*" capture="camera">
                     @*<input type="text" id="File" name="File" />*@
 
                 </form>
-                <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#resultForm').submit()">
-                    Confirm
-                </button>
-                <button href="#" class="btn bg-site text-light waves-effect retryCamera">
-                    Retry
-                </button>
-
+                <div class="row text-center">
+                    <button class="btn bg-site m-auto btn-adn block waves-effect text-light" onclick="$('#resultForm').submit()">
+                        Confirm
+                    </button>
+                    <button type="button" class="btn m-auto bg-site btn-adn block waves-effect text-light camera camera-file  retryCamera">
+                        Retry
+                    </button>
+                    <button type="button" class="btn m-auto bg-site btn-adn block waves-effect text-light  camera-can " onclick="window.location.reload()"> Retry </button>
+                </div>
             </div>
         </div>
     </div>

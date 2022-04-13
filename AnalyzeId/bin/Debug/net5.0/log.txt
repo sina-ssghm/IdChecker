@@ -548,3 +548,92 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Fi
 2022-04-13 16:06:45.1983|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2022-04-13 16:06:45.2158|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-13 16:06:45.2158|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-13 18:59:07.7228|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 18:59:07.7510|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 18:59:07.7873|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 18:59:07.8088|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 18:59:07.8270|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:02:37.9870|DEBUG|AnalyzeId.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 65
+2022-04-13 19:02:40.9469|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-13 19:40:01.9888|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 19:40:02.0269|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 19:40:02.0449|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 19:40:02.0633|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 19:40:02.0935|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:44:43.1235|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 19:44:43.1591|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 19:44:43.1988|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 19:44:43.2004|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 19:44:43.2268|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:50:40.4946|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 19:50:40.5168|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 19:50:40.6058|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 19:50:40.6072|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 19:50:40.8028|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:52:39.7247|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: Could not find any recognizable digits.
+   at System.ParseNumbers.StringToLong(ReadOnlySpan`1 s, Int32 radix, Int32 flags, Int32& currPos)
+   at System.Convert.ToUInt64(String value, Int32 fromBase)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 275
+2022-04-13 19:54:11.2571|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 140
+2022-04-13 19:54:11.3684|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 193
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 93
+2022-04-13 19:54:17.4271|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-13 20:01:57.4490|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:02:42.9387|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:06:04.0999|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:09:57.7970|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:13:10.8529|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 20:13:10.8748|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 20:13:10.9063|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 20:13:10.9063|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 20:13:10.9269|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 20:13:59.3730|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: Could not find any recognizable digits.
+   at System.ParseNumbers.StringToLong(ReadOnlySpan`1 s, Int32 radix, Int32 flags, Int32& currPos)
+   at System.Convert.ToInt64(String value, Int32 fromBase)
+   at AnalyzeId.Service.Utility.OCRService.<>c__DisplayClass10_0.<_GetOCRImage>b__0(Int64 x, Int32 idx) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 284
+   at System.Linq.Enumerable.SelectIterator[TSource,TResult](IEnumerable`1 source, Func`3 selector)+MoveNext()
+   at System.Collections.Generic.LargeArrayBuilder`1.AddRange(IEnumerable`1 items)
+   at System.Collections.Generic.EnumerableHelpers.ToArray[T](IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 283
+2022-04-13 20:32:13.4118|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 20:32:13.4333|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 20:32:13.4674|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 20:32:13.4674|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 20:32:13.4674|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 20:33:30.9519|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: Could not find any recognizable digits.
+   at System.ParseNumbers.StringToLong(ReadOnlySpan`1 s, Int32 radix, Int32 flags, Int32& currPos)
+   at System.Convert.ToUInt64(String value, Int32 fromBase)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 276
+2022-04-13 20:44:55.9813|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 20:44:56.0091|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 20:44:56.0477|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 20:44:56.0664|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 20:44:56.0664|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 20:46:49.4583|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The process cannot access the file 'C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\wwwroot\Files\bf540590-ba0e-47b9-980c-74b541652649.jpg' because it is being used by another process.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+2022-04-13 20:47:29.6624|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The process cannot access the file 'C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\wwwroot\Files\53608817-9255-455c-afbc-319192f215d3.jpg' because it is being used by another process.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.Open(String path, FileMode mode)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+2022-04-13 21:11:07.2065|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64_ComputeResultLength(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)

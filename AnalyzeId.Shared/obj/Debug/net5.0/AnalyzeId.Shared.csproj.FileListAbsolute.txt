@@ -57,3 +57,15 @@ C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\refint\AnalyzeId.Shared.dll
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.pdb
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.deps.json
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\bin\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.AssemblyReference.cache
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfoInputs.cache
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.AssemblyInfo.cs
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\ref\AnalyzeId.Shared.dll
+C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Shared\obj\Debug\net5.0\AnalyzeId.Shared.pdb

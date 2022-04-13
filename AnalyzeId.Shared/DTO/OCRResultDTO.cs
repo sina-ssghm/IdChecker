@@ -20,6 +20,8 @@ namespace AnalyzeId.Shared.DTO
 
         public string FrontUrl { get; set; }
         public string BackUrl { get; set; }
+        public string FaceUrl { get; set; }
+        public string SignatureUrl { get; set; }
         public string JsonResultIDv { get; set; }
         public string TransactionId { get; set; }
         public string ImageFrontId { get; set; }
