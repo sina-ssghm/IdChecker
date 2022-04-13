@@ -10,7 +10,6 @@ namespace AnalyzeId.Shared.DTO
     public class OCRFileDTO
     {
         public IFormFile  File{ get; set; }
-        public IFormFile? FrontFile { get; set; }
 
         public string UrlFront { get; set; }
         public string UrlBack { get; set; }

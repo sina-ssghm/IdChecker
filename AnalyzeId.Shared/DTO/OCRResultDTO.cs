@@ -9,22 +9,24 @@ namespace AnalyzeId.Shared.DTO
 
     public class FinalResultOCRDTO
     {
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string Surname{ get; set; }
+        public string FullName{ get; set; }
+        public string DocumentNumber { get; set; }
+        public string BirthDate { get; set; }
+        public string ExpiryDate { get; set; }
         public string Address { get; set; }
-        public string Document_Number { get; set; }
-        public string Address_Postal_Code { get; set; }
-        public string Condition_Code { get; set; }
-        public string Class_Code { get; set; }
-        public string Card_Number { get; set; }
-        public string Unit_Number { get; set; }
-        //public string Middle_Name { get; set; }
-        public string Licence_Type_Code { get; set; }
-        public string Licence_Type_Name { get; set; }
-        public string Template_Name { get; set; }
-        public string Birth_Date { get; set; }
-        public string Expiry_Date { get; set; }
+
         public string FrontUrl { get; set; }
         public string BackUrl { get; set; }
+        public string JsonResultIDv { get; set; }
+        public string TransactionId { get; set; }
+        public string ImageFrontId { get; set; }
+        public string ImageBackId { get; set; }
+        public string ImageFaseId { get; set; }
+        public string ImageSignatureId { get; set; }
+        
 
     }
     public class OCRDTO

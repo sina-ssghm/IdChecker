@@ -4,10 +4,9 @@
 }
 
 <div class="col text-center" id="scanMenu">
-    <div class="col-12 col-md-4 m-auto text-center">
-        <img class="card-img-top" src="/image/header.jpeg" alt="Card image cap"  style="max-width:400px">
+    <div class="col-12 col-sm-12 col-md-6 m-auto text-center">
         <h2 class="mb-2 text-bold-custom ">UPLOAD DRIVER LICENCE</h2>
-        <img class="card-img-top" src="/image/page2.jpeg" alt="Card image cap"  style="max-width:400px">
+        <img class="card-img-top" src="/image/page2.jpeg" alt="Card image cap"  width="100%" style="">
         <h2 class="mt-3 text-bold-custom text-decoration-underline">INSTRUCTIONS</h2>
         <div class="p-2">
             <h3 class="text-left">- Take the picture in a well-lit place</h3>
@@ -26,9 +25,6 @@
         <button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-can font-size-1 p-2 mt-2 text-light w-100">
             Skip
         </button>
-    </div>
-    <div class="col-12 col-md-6 m-auto text-center">
-        <img class="card-img-top mt-3" src="/image/footer.jpeg" alt="Card image cap">
     </div>
 </div>
 
@@ -74,15 +70,12 @@
 
 
 <div class="cameraDiv text-center d-none">
-    <div class="col-12 col-md-6 m-auto text-center">
-        <img class="card-img-top" src="/image/header.jpeg" style="max-width:400px" alt="Card image cap">
-    </div>
     <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#File').click()">Select File</button>
     <div class="row d-none" id="camraPreview">
         <div class=" col-sm-6 col-md-4 p-0 m-auto">
             <h3 class="mt-2 text-bold text-black">@(Model.UrlFront==null?"FRONT IMAGE UPLOAD": "BACK IMAGE UPLOAD")</h3>
             <div class="">
-                <img class="m-auto card-img-top1  camera-preview-img" src="" alt="">
+                <img class="m-auto card-img-top1  camera-preview-img" width="100%" src="" alt="">
             </div>
 
             <h2 class="mt-3 text-bold text-danger">ENSURE TEXT IS CLEAR</h2>
@@ -94,7 +87,6 @@
             </p>*@
                 <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
                     <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
-                    <input type="file" id="FileFront" name="FrontFile" value="@(Model.FrontFile!=null?Model.FrontFile:"")" />
                     <input type="file" class="d-none" id="File" name="File" accept="image/*" capture="camera">
                     @*<input type="text" id="File" name="File" />*@
 
@@ -115,9 +107,6 @@
         </a>
 
     </div>*@
-    <div class="col-12 col-md-6 m-auto text-center">
-        <img class="card-img-top mt-3" src="/image/footer.jpeg" alt="Card image cap">
-    </div>
     <div class="canvascontainer d-none">
         <video id="videoplayer" autoplay muted playsinline class="d-none"></video>
         <div class="position-relative camera-video-div">
@@ -130,7 +119,6 @@
         <form enctype="multipart/form-data" asp-controller="home" asp-action="CanvasResult" method="post" class="d-none" id="CanvasForm">
             <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")" />
             <input type="text" id="File" name="File" />
-            <input type="file" id="FileFront" name="FrontFile" value="@(Model.FrontFile!=null?Model.FrontFile:"")" />
         </form>
     </div>
 </div>

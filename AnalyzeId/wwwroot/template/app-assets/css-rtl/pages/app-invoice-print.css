@@ -59,25 +59,3 @@ html, body {
   border-color : rgba(34, 41, 47, 0.5) !important;
   color : #6E6B7B !important;
 }
-
-@media print {
-  .invoice-print {
-    padding : 0 !important;
-  }
-  .invoice-header {
-    border-bottom : 1px solid #EBE9F1;
-    -webkit-box-orient : horizontal !important;
-    -webkit-box-direction : normal !important;
-    -webkit-flex-direction : row !important;
-        -ms-flex-direction : row !important;
-            flex-direction : row !important;
-    margin-bottom : 3rem;
-    padding-left : 5rem;
-  }
-  .table-responsive {
-    overflow-x : hidden;
-  }
-  hr {
-    display : none;
-  }
-}

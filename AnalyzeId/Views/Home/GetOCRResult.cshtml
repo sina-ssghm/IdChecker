@@ -1,126 +1,139 @@
 ﻿@model OperationResult<FinalResultOCRDTO>
 @{
+     ViewData["Title"] = "Result";
     var data = Model?.Data;
+    var jsonRtesult = Model?.Data?.JsonResultIDv;
 }
+<link href="~/lib/jquery.json-viewer/json-viewer/jquery.json-viewer.css" rel="stylesheet" />
+<link href="~/lib/jquery-focuspoint/css/focuspoint.css" rel="stylesheet" />
 @if (Model.Succeed == false)
 {
-<div class="card bg-danger text-white">
-    <div class="card-body">
-        <h4 class="card-title text-white">Error!</h4>
-        <p class="card-text">
-            @Model.Message
-        </p>
+    <div class="card bg-danger text-white">
+        <div class="card-body">
+            <h4 class="card-title text-white">Error!</h4>
+            <p class="card-text">
+                @Model.Message
+            </p>
+        </div>
     </div>
-</div>
 }
 else if (data != null)
 {
 
 
-<div class="row mt-3">
-    <div class="col-sm-8 ">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <span class="font-weight-bold"> Name:</span>
-                        <span>@data.FullName</span>
+    <div class="row mt-3">
+        <div class="col-sm-8 ">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold"> First Name:</label>
+                            <input type="text" value="@data.FirstName" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Middle Name:</label>
+                            <input type="text" value="@data.MiddleName" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Surname:</label>
+                            <input type="text" value="@data.Surname" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Full Name:</label>
+                            <input type="text" value="@data.FullName" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Document Number:</label>
+                            <input type="text" value="@data.DocumentNumber" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Birt hDate:</label>
+                            <input type="text" value="@data.BirthDate" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Expiry Date:</label>
+                            <input type="text" value="@data.ExpiryDate" class="form-control" />
+                        </div>
+                        <div class="col-6 mt-1">
+                            <label class="font-weight-bold">Address:</label>
+                            <input type="text" value="@data.Address" class="form-control" />
+                        </div>
                     </div>
-
-                    <div class="col-6">
-                        <span class="font-weight-bold">Birth Date:</span>
-                        <span>@data.Birth_Date</span>
-                    </div>
-                    <div class="col-6">
-                        <span class="font-weight-bold">Address:</span>
-                        <span>@data.Address</span>
-                    </div>
-                    <div class="col-6">
-                        <span class="font-weight-bold">Address Postal Code:</span>
-                        <span>@data.Address_Postal_Code</span>
-                    </div>
-                    <div class="col-6">
-                        <span class="font-weight-bold">Card Number:</span>
-                        <span>@data.Card_Number</span>
-                    </div>
-
-                    <div class="col-6">
-                        <span class="font-weight-bold">Expiry Date:</span>
-                        <span>@data.Expiry_Date</span>
-                    </div>
-
-                    <div class="col-6">
-                        <span class="font-weight-bold">Document Number:</span>
-                        <span>@data.Document_Number</span>
-                    </div>
-
-                    <div class="col-6">
-                        <span class="font-weight-bold">Class Code:</span>
-                        <span>@data.Class_Code</span>
-                    </div>
-                    <div class="col-6">
-                        <span class="font-weight-bold">Licence Type Code:</span>
-                        <span>@data.Licence_Type_Code</span>
-                    </div>
-                    <div class="col-6">
-                        <span class="font-weight-bold">Licence Type Name:</span>
-                        <span>@data.Licence_Type_Name</span>
-                    </div>
-
                 </div>
-
             </div>
-        </div>
-    </div>
-    <div class=" col-sm-4">
-        <div class="card">
-
-            <div class="card-body">
-                @if (@Model?.Data?.FrontUrl!=null)
+            @if (jsonRtesult != null)
             {
-                <div class="m-auto" asp-remove="">
-                    <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
+                <div class="card mt-2">
+                    <div class="collapse-default p-1">
+                        <div class="card">
+                            <div id="headingCollapse1" class="card-header" data-toggle="collapse" role="button" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                <span class="lead collapse-title text-primary">  Result (Json)  </span>
+                            </div>
+                            <div id="collapse1" role="tabpanel" aria-labelledby="headingCollapse1" class="collapse">
+                                <div class="card-body">
+                                    <pre id="json-renderer">
+                                        @(Html.Raw(jsonRtesult))
+                                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             }
-                @if (@Model?.Data?.BackUrl!=null)
-            {
-                <div class="m-auto" asp-remove="">
-                    <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
+
+        </div>
+        <div class=" col-sm-4">
+            <div class="card">
+
+                <div class="card-body">
+                    @if (@Model?.Data?.FrontUrl != null)
+                    {
+                        <div class="m-auto" asp-remove="">
+                            <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
+                        </div>
+                    }
+                    @if (@Model?.Data?.BackUrl != null)
+                    {
+                        <div class="m-auto" asp-remove="">
+                            <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
+                        </div>
+                    }
                 </div>
-            }
             </div>
         </div>
+
+
+
+    </div>
+    <div>
+        @*<div class="text-center">
+            <button onclick="showImage($(this))" class="btn mt-1 font-size-1 bg-site p-2 waves-effect text-bold text-light "> Show more</button>
+            </div>*@
+        @*<div class="col-12 row mt-3 text-center " id="images">
+
+            </div>*@
+
     </div>
 
+    <div class="align-content-center text-center mt-2 mb-3 m-auto">
+          <a asp-action="ConfirmResult" asp-controller="Home" class="btn bg-site text-light waves-effect">
+           Confirm
+        </a>
+        <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site text-light waves-effect">
+            Back to home
+        </a>
 
-
-</div>
-<div>
-    @*<div class="text-center">
-             <button onclick="showImage($(this))" class="btn mt-1 font-size-1 bg-site p-2 waves-effect text-bold text-light "> Show more</button>
-        </div>*@
-    @*<div class="col-12 row mt-3 text-center " id="images">
-
-        </div>*@
-
-</div>
-
-<div class="align-content-center text-center mt-2 mb-3 m-auto">
-    <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site text-light waves-effect">
-        Back to home
-    </a>
-
-</div>
+    </div>
 }
 else
 {
-<div class="card bg-warning text-white">
-    <div class="card-body">
-        <p class="card-text">
-            Please try again
-        </p>
+    <div class="card bg-warning text-white">
+        <div class="card-body">
+            <p class="card-text">
+                Please try again
+            </p>
+        </div>
     </div>
-</div>
 }
 <script>
     //function showImage(elem){
@@ -128,6 +141,7 @@ else
     //    $("#images").removeClass("d-none")
     //}
 </script>
+
 @functions {
     IHtmlContent GetValidationIcon(string validationText)
     {
@@ -154,4 +168,12 @@ else
         }
         return null;
     }
+}
+
+@section Scripts{
+<script src="~/lib/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
+<script src="~/lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
+<script>
+    $('#json-renderer').jsonViewer(JSON.parse(`@(Html.Raw(jsonRtesult.Replace("'"," ").Replace("\"{","{").Replace("}\"", "}").Replace("\\\"","\"").Replace("\\n", "").Replace("\r", "")))`), { collapsed: true, rootCollapsable :false });
+</script>
 }

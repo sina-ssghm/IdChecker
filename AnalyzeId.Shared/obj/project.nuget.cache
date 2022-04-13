@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VLcrsYJd3Tmc2FRi+2H/Ku2ERcWcXd6lNXDLBaOVvLyYZ/kXiHml+Qi81NcKLfbdLo2ts/StxNs01NnZ+VkiIg==",
+  "dgSpecHash": "jXdUfqF52kfyzev+UKrjHuKEDTlf4U57tivdGv75Ot+2N4svy088y79u1ciClp11bRLzDW9/ybmFh4cFHRKvnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bralik 36287951\\Source\\Repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
+  "projectFilePath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\awssdk.core\\3.7.10.6\\awssdk.core.3.7.10.6.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.2\\awssdk.extensions.netcore.setup.3.7.2.nupkg.sha512",

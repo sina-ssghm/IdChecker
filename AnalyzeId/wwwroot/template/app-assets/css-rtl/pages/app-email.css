@@ -61,7 +61,7 @@
 }
 
 .email-application .content-area-wrapper .content-right .app-fixed-search {
-  padding : 0.4215rem 0.5rem;
+  padding : 0.35rem 0.5rem;
   border-bottom : 1px solid #EBE9F1;
   background-color : #FFFFFF;
   border-top-left-radius : 0.357rem;
@@ -25111,11 +25111,11 @@
   background : #FFFFFF;
 }
 
-.email-application .content-area-wrapper .email-user-list .email-media-list li.user-mail {
+.email-application .content-area-wrapper .email-user-list .email-media-list li.media {
   padding : 1.5rem;
 }
 
-.email-application .content-area-wrapper .email-user-list .email-media-list li.user-mail:hover {
+.email-application .content-area-wrapper .email-user-list .email-media-list li.media:hover {
   -webkit-transform : translateY(-2px);
       -ms-transform : translateY(-2px);
           transform : translateY(-2px);
@@ -25125,7 +25125,7 @@
   z-index : 1;
 }
 
-.email-application .content-area-wrapper .email-user-list .email-media-list li.user-mail .mail-left {
+.email-application .content-area-wrapper .email-user-list .email-media-list li.media .media-left {
   display : -webkit-box;
   display : -webkit-flex;
   display : -ms-flexbox;
@@ -25137,9 +25137,8 @@
           flex-direction : column;
 }
 
-.email-application .content-area-wrapper .email-user-list .email-media-list li.user-mail .mail-body {
+.email-application .content-area-wrapper .email-user-list .email-media-list li.media .media-body {
   overflow : hidden;
-  width : 100%;
 }
 
 .email-application .content-area-wrapper .email-user-list .email-media-list li .avatar {
@@ -25382,23 +25381,12 @@
 }
 
 .email-application #compose-mail .compose-mail-form-field label {
+  margin-bottom : 0;
   font-size : 1rem;
 }
 
-.email-application #compose-mail .modal-fullscreen .compose-form {
-  height : 100%;
-}
-
-.email-application #compose-mail .modal-fullscreen #message-editor {
-  height : calc(100% - 240px);
-}
-
-.email-application #compose-mail .modal-fullscreen .editor {
-  height : calc(100% - 3rem);
-}
-
-.email-application #compose-mail .editor {
-  height : 250px;
+.email-application #compose-mail .ql-editor {
+  min-height : 250px;
 }
 
 .email-application #compose-mail .ql-container, .email-application #compose-mail .ql-toolbar {

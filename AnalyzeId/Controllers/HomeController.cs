@@ -43,7 +43,6 @@ namespace AnalyzeId.Controllers
                 UrlFront = result?.Data?.FullPath,
                 //UrlBack=,
                 Succeed = result.Succeed,
-
             });
         }
 
@@ -52,7 +51,6 @@ namespace AnalyzeId.Controllers
             var result = await oCRService.UploadImage(fileDTO.File);
             if ((fileDTO.File == null && fileDTO.UrlFront != null) || (fileDTO.File != null && fileDTO.UrlFront != null))
             {
-                fileDTO.FrontFile = fileDTO.FrontFile == null ? null : fileDTO.FrontFile;
                 fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
                 fileDTO.UrlBack = fileDTO.UrlFront == null ? null : result?.Data?.FullPath;
                 fileDTO.Succeed = true;
@@ -60,7 +58,6 @@ namespace AnalyzeId.Controllers
                 return View(fileDTO);
             }
             fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
-            fileDTO.FrontFile = fileDTO.File;
             return View(nameof(OcrRequest), fileDTO);
         }
 
@@ -70,6 +67,25 @@ namespace AnalyzeId.Controllers
             return View(result);
         }
 
+        public async Task<IActionResult> ConfirmResult()
+        {
+            return RedirectToAction(nameof(Signature));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Signature()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> Signature(int c)
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ThankYou()
+        {
+            return View();
+        }
     }
 }
