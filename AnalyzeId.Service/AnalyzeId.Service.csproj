@@ -9,6 +9,7 @@
     <PackageReference Include="AWSSDK.S3" Version="3.7.8.18" />
     <PackageReference Include="AWSSDK.Textract" Version="3.7.4.18" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.11" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="4.7.12" />
     <PackageReference Include="RestSharp" Version="106.13.0" />
   </ItemGroup>

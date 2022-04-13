@@ -184,6 +184,7 @@
 .chat-application .sidebar-content .chat-user-list-wrapper li.active {
   background-image : -webkit-linear-gradient(170deg, #7367F0, #9E95F5);
   background-image :         linear-gradient(-80deg, #7367F0, #9E95F5);
+  background-repeat : repeat-x;
 }
 
 .chat-application .sidebar-content .chat-user-list-wrapper li.active h1, .chat-application .sidebar-content .chat-user-list-wrapper li.active h2, .chat-application .sidebar-content .chat-user-list-wrapper li.active h3, .chat-application .sidebar-content .chat-user-list-wrapper li.active h4, .chat-application .sidebar-content .chat-user-list-wrapper li.active h5, .chat-application .sidebar-content .chat-user-list-wrapper li.active h6, .chat-application .sidebar-content .chat-user-list-wrapper li.active .card-text, .chat-application .sidebar-content .chat-user-list-wrapper li.active .chat-time {

@@ -37,7 +37,7 @@ namespace AnalyzeId.Shared
                 foreach (var file in files)
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
-                    
+
                     fileName = fileName.Contains("\\")
                         ? fileName.Trim('"').Substring(fileName.LastIndexOf("\\", StringComparison.Ordinal) + 1)
                         : fileName.Trim('"');
@@ -53,34 +53,42 @@ namespace AnalyzeId.Shared
                         continue;
                     }
 
-                    //using (var stream = new FileStream(fullFilePath, FileMode.Create))
-                    //{
-                    //    await file.CopyToAsync(stream);
-                    //    names.Add("\\Files\\" + fileName);
-                    //}
-                    using (var memory = new MemoryStream())
+
+                    int oneMeg = 1020 * 1024;
+                    if (file != null && file.Length > oneMeg * 5)
                     {
-                        await file.CopyToAsync(memory);
-                        using (var Image = new MagickImage(memory.ToArray()))
+                        using (var memory = new MemoryStream())
                         {
-                            int maxWidth = 2000;
-                            if (Image.Width > maxWidth)
+                            await file.CopyToAsync(memory);
+                            using (var Image = new MagickImage(memory.ToArray()))
                             {
-                                var average = Image.Width / maxWidth;
-                                Image.Resize(maxWidth, (Image.Height / average));
+                                int maxWidth = 2000;
+                                if (Image.Width > maxWidth)
+                                {
+                                    var average = Image.Width / maxWidth;
+                                    Image.Resize(maxWidth, (Image.Height / average));
+                                }
+
+                                Image.Quality = 90;
+                                //Image.Resize(1500, 1200);
+
+                                Image.Write(fullFilePath);
                             }
-
-                            Image.Quality = 90;
-                            //Image.Resize(1500, 1200);
-
-                            Image.Write(fullFilePath);
+                            ImageCompers(fullFilePath);
 
                         }
-                        ImageCompers(fullFilePath);
-
+                        names.Add("\\Files\\" + fileName);
                     }
-                    names.Add("\\Files\\" + fileName);
-                    ImageCompers(fullFilePath);
+                    else
+                    {
+                        using (var stream = new FileStream(fullFilePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                            names.Add("\\Files\\" + fileName);
+                        }
+                    }
+                   
+                  
                 }
                 return names;
             }
@@ -120,7 +128,7 @@ namespace AnalyzeId.Shared
             {
                 var fileName = Guid.NewGuid().ToString() + ".png";
                 var fullFilePath = Path.Combine(FilesPath, fileName);
-                
+
                 File.WriteAllBytes(fullFilePath, Convert.FromBase64String(base64));
 
 

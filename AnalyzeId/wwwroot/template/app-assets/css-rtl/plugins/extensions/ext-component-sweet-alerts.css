@@ -25,7 +25,7 @@
 .swal2-container .swal2-popup input.swal2-input {
   height : 2.714rem;
   font-size : 1rem;
-  padding : 0.571rem 1rem;
+  padding : 0.438rem 1rem;
   color : #6E6B7B;
   border-color : #D8D6DE;
   border-radius : 0.357rem;
@@ -42,7 +42,7 @@
 }
 
 .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line, .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
-  background-color : #887EF2;
+  background-color : #B3ADF7;
 }
 
 .swal2-container .swal2-popup .swal2-progress-steps .swal2-progress-step-line {

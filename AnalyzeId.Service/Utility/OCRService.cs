@@ -6,12 +6,14 @@ using AnalyzeId.Shared;
 using AnalyzeId.Shared.DTO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using NLog;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -91,17 +93,27 @@ namespace AnalyzeId.Service.Utility
                 await Task.WhenAll(IDVTask, awsTask);
                 awsTask.Result.FrontUrl = fileFrontPath;
                 awsTask.Result.BackUrl = fileBackPath;
-
                 IDVTask.Result.Data.FrontUrl = fileFrontPath;
                 IDVTask.Result.Data.BackUrl = fileBackPath;
 
+                //if (IDVTask.Result.Data.ImageFaseId!=null)
+                //{
+                //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                //}
+                IDVTask.Result.Data.FaceUrl = await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                IDVTask.Result.Data.SignatureUrl = await _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
 
-                if (IDVTask.Result.Succeed == true || (IDVTask.Result.Data.FullName.HasValue()   && IDVTask.Result.Data.Birth_Date.HasValue()))
-                {
-                    return new OperationResult<FinalResultOCRDTO> { Data = IDVTask.Result.Data, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
-                }
-                return new OperationResult<FinalResultOCRDTO> { Data = awsTask.Result, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
-                
+                IDVTask.Result.Data.BackUrl = fileBackPath;
+                IDVTask.Result.Data.BackUrl = fileBackPath;
+
+                return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
+
+                //if (IDVTask.Result.Succeed == true || (IDVTask.Result.Data.FullName.HasValue() && IDVTask.Result.Data.BirthDate.HasValue()))
+                //{
+                //    return new OperationResult<FinalResultOCRDTO> { Data = IDVTask.Result.Data, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
+                //}
+                //return new OperationResult<FinalResultOCRDTO> { Data = awsTask.Result, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
+
             }
             catch (Exception ex)
             {
@@ -142,21 +154,20 @@ namespace AnalyzeId.Service.Utility
                         Succeed = true,
                         Data = new FinalResultOCRDTO
                         {
-                            FullName = result?.Result?.Data?.Full_Name,
-                            //Middle_Name = result?.Result?.Data?.Middle_Name,
-                            Card_Number = result?.Result?.Data?.Card_Number,
-                            Class_Code = result?.Result?.Data?.Class_Code,
-                            Licence_Type_Name = result?.Result?.Data?.Licence_Type_Name,
-                            Condition_Code = result?.Result?.Data?.Condition_Code,
-                            Address_Postal_Code = result?.Result?.Data?.Address_Postal_Code,
-                            Address =  result?.Result?.Data?.Address,
-                            Document_Number = result?.Result?.Data?.Document_Number,
-                            Licence_Type_Code = result?.Result?.Data?.Licence_Type_Code,
-                            Template_Name = result?.Result?.Data?.Template_Name,
-                            Unit_Number = result?.Result?.Data?.Unit_Number,
-                            Birth_Date = result?.Result?.Data?.Birth_Date,
-                            Expiry_Date = result?.Result?.Data?.Expiry_Date,
-
+                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Surname + " " + result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            MiddleName = result?.Result?.Data?.Middle_Name,
+                            FirstName = result?.Result?.Data?.First_Name,
+                            Surname = result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            DocumentNumber = result?.Result?.Data?.Document_Number,
+                            BirthDate = result?.Result?.Data?.Birth_Date,
+                            ExpiryDate = result?.Result?.Data?.Expiry_Date,
+                            Address = result?.Result?.Data?.Address,
+                            ImageBackId = result?.Result?.Files?.Processed?.Back_image,
+                            ImageFrontId = result?.Result?.Files?.Processed?.Front_image,
+                            ImageSignatureId = result?.Result?.Files?.Processed?.Signature,
+                            ImageFaseId = result?.Result?.Files?.Processed?.Face,
+                            TransactionId = result?.Result?.Transaction?.ID,
+                            JsonResultIDv = response.Content,
 
                         },
 
@@ -207,28 +218,87 @@ namespace AnalyzeId.Service.Utility
                         var x = res.IdentityDocuments.FirstOrDefault().IdentityDocumentFields.Select(s => new { key = s.Type.Text, value = s.ValueDetection.Text }).ToList();
                         return new FinalResultOCRDTO
                         {
-                            FullName = x[1].value + " " + x[2].value+ " " + x[3].value,
-                            //Middle_Name = x[2].value,
-                            Card_Number = x[8].value,
-                            Class_Code = x[16].value,
-                            Licence_Type_Name = x[12].value,
-                            //Condition_Code =  ,
-                            Address_Postal_Code = x[5].value,
-                            Address =   x[17].value +" "+x[4].value+" "+x[5].value,
-                            Document_Number = x[8].value,
-                            //Licence_Type_Code = oCRDTO?.Result?.Data?.Licence_Type_Code,
-                            //Template_Name = oCRDTO?.Result?.Data?.Template_Name,
-                            //Unit_Number = oCRDTO?.Result?.Data?.Unit_Number,
-                            Birth_Date = x[10].value,
-                            Expiry_Date = x[9].value,
-
-
+                            FullName = x[0].value + " " + x[2].value + " " + x[1].value,
+                            MiddleName = x[2].value,
+                            Surname = x[2].value + " " + x[1].value,
+                            FirstName = x[0].value,
+                            Address = x[17].value,
+                            DocumentNumber = x[8].value,
+                            BirthDate = x[10].value,
+                            ExpiryDate = x[9].value,
                         };
                     }
                 }
 
             }
             return null;
+        }
+
+        public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
+        {
+            return new FinalResultOCRDTO
+            {
+                FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName,
+                MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName,
+                Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname,
+                FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName,
+                Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address,
+                BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate,
+                ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate,
+                DocumentNumber = !finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv?.DocumentNumber,
+                BackUrl = finalResultIdv.BackUrl,
+                FrontUrl = finalResultIdv.FrontUrl,
+                FaceUrl = finalResultIdv.FaceUrl,
+                SignatureUrl = finalResultIdv.SignatureUrl,
+                JsonResultIDv = finalResultIdv?.JsonResultIDv,
+            };
+        }
+
+
+        private async Task<string> _GetOCRImage(string imageId, string transactionId)
+        {
+            try
+            {
+                if (imageId == null || transactionId == null)
+                {
+                    return null;
+                }
+                var client = new RestClient("https://services.idvpacific.com.au/api/Result/RetrieveFile");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("API-Username", "hamid");
+                request.AddHeader("API-Password", "5150Murphy.mo71*");
+                request.AddParameter("Transaction_ID", transactionId);
+                request.AddParameter("Image_ID", imageId);
+                request.AddParameter("Username", "hamid");
+
+
+                IRestResponse response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    var result = response.Content;
+
+                    var paths = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\"+Guid.NewGuid().ToString()+".bin";
+
+                    string fileName = paths;
+                    using (BinaryWriter binWriter =
+                        new BinaryWriter(File.Open(fileName, FileMode.Create)))
+                    {
+                        binWriter.Write(result);
+                    }
+
+                    
+                    return paths;
+                }
+                return null;
+
+
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return null;
+            }
         }
 
     }
