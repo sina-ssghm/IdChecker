@@ -637,3 +637,8 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Fi
    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
    at System.Convert.FromBase64String(String s)
    at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+2022-04-14 12:04:34.3849|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 12:04:34.4049|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 12:04:34.4429|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 12:04:34.4429|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 12:04:34.4546|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
