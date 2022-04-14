@@ -70,9 +70,10 @@ function PrepareHome() {
     if (isMobile) {
         var cameraUse = config.mobile.camera;
         var storageUse = config.mobile.storage;
-        if (config.mobile.camera == false) {
+        if (cameraUse == false) {
             document.querySelector('.camera').classList.add('d-none');
         }
+
         // if (config.mobile.storage == false) {
         //     document.querySelector('.storage').classList.add('d-none');
         // }
@@ -280,25 +281,46 @@ function initCanvas() {
 //     PrepareHome();
 // });
 
+document.querySelector('.storage-btn').addEventListener('click', function () {
+    $('#File').removeAttr('capture');
+    $('#File').click()
+
+});
+
+document.querySelector('.open-camera-btn').addEventListener('click', function () {
+    $('#File').attr('capture','camera');
+    $('#File').click()
+});
+
 document.querySelector('.camera').addEventListener('click', function () {
+    var isMobile = mobileCheck();
     spin();
     document.querySelector('.cameraDiv').classList.remove('d-none');
-    document.querySelector('.canvascontainer').classList.add('d-none');
-    $('#File').click();
+    //document.querySelector('.canvascontainer').classList.add('d-none');
+    if (isMobile) {
+        document.querySelector('.storage-btn').classList.remove('d-none');
+        document.querySelector('.open-camera-btn').classList.remove('d-none');
+
+    }
+    else {
+        $('#File').click();
+        document.querySelector('.storage-btn').classList.remove('d-none');
+
+    }
     document.querySelector('#scanMenu').classList.add('d-none');
     //getDevice(userConfig.primaryConstraints, ErrorCallback);
 });
 
 
-document.querySelector('.CanvasCamera').addEventListener('click', function () {
-    spin();
-    document.querySelector('.cameraDiv').classList.remove('d-none');
-    //$('#File').click();
-    document.querySelector('.canvascontainer').classList.remove('d-none');
+//document.querySelector('.CanvasCamera').addEventListener('click', function () {
+//    spin();
+//    document.querySelector('.cameraDiv').classList.remove('d-none');
+//    //$('#File').click();
+//    document.querySelector('.canvascontainer').classList.remove('d-none');
 
-    document.querySelector('#scanMenu').classList.add('d-none');
-    getDevice(userConfig.primaryConstraints, ErrorCallback);
-});
+//    document.querySelector('#scanMenu').classList.add('d-none');
+//    getDevice(userConfig.primaryConstraints, ErrorCallback);
+//});
 
 
 

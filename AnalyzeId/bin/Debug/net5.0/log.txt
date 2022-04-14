@@ -637,3 +637,44 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Fi
    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
    at System.Convert.FromBase64String(String s)
    at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+2022-04-14 00:37:24.1777|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 00:37:24.2129|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 00:37:24.2281|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 00:37:24.2281|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 00:37:24.2295|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 00:41:45.6735|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Files\e2f0c220-af47-4d4c-8df5-79d24307a0d92.png'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Files\e2f0c220-af47-4d4c-8df5-79d24307a0d92.png'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 144
+2022-04-14 00:43:00.1548|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 00:43:00.1732|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 00:43:00.1904|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 00:43:00.1904|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 00:43:00.1904|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 00:51:17.3068|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 01:23:38.1201|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 01:26:25.6516|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 01:26:25.6704|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 01:26:25.6840|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 01:26:25.6840|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 01:26:25.6840|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 11:39:15.3558|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 11:53:25.2618|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-14 12:00:56.7793|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 12:00:56.7994|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 12:00:56.8077|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 12:00:56.8077|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 12:00:56.8077|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId

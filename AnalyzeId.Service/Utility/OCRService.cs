@@ -278,16 +278,22 @@ namespace AnalyzeId.Service.Utility
                 {
                     var result = response.Content;
 
-                    var paths = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\"+Guid.NewGuid().ToString()+".bin";
+                    var paths = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + ".jpg";
+                    File.WriteAllText(paths, result);
 
-                    string fileName = paths;
-                    using (BinaryWriter binWriter =
-                        new BinaryWriter(File.Open(fileName, FileMode.Create)))
-                    {
-                        binWriter.Write(result);
-                    }
+                    System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+                    var bytes= encoding.GetBytes(result);
+                    File.WriteAllBytes(paths, bytes);
+                    //string fileName = paths;
+                    //using (BinaryWriter binWriter =
+                    //    new BinaryWriter(File.Open(fileName, FileMode.Create)))
+                    //{
+                    //    binWriter.Write(result);
+                    //}
 
-                    
+
+                    //File.WriteAllBytes(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\"  + "x.jpg", File.ReadAllBytes(paths));
+
                     return paths;
                 }
                 return null;

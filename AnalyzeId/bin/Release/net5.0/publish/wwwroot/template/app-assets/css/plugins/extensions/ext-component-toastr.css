@@ -97,8 +97,7 @@
 
 .toast-top-center,
 .toast-top-full-width {
-  top: 1.3rem;
-  width: 100% !important; }
+  top: 1.3rem; }
 
 .toast-bottom-left {
   bottom: 1.3rem;
@@ -110,8 +109,7 @@
 
 .toast-bottom-center,
 .toast-bottom-full-width {
-  bottom: 1.3rem;
-  width: 100% !important; }
+  bottom: 1.3rem; }
 
 @media (max-width: 480px) and (min-width: 241px) {
   #toast-container > .toast:after {
@@ -119,10 +117,10 @@
   #toast-container > .toast .toast-close-button {
     top: 0;
     right: -1px; }
-  #toast-container > div {
+  #toast-container:not(.toast-top-full-width):not(.toast-bottom-full-width) > div {
     width: 20rem; }
   .toast-top-left {
-    left: 1rem; }
+    left: 0; }
   #toast-container.toast-top-center, #toast-container.toast-bottom-center {
     right: 1rem; }
   #toast-container.toast-top-center > div, #toast-container.toast-bottom-center > div {
@@ -136,7 +134,7 @@
   .toast-bottom-full-width > div {
     width: 100%; }
   .toast-bottom-left {
-    left: 1rem;
+    left: 0.25rem;
     bottom: 0.75rem; }
   .toast-bottom-right {
     right: 2.25rem;

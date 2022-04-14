@@ -22,7 +22,7 @@ $(function () {
     icons.map(function (icon) {
       if (iconsContainer.length) {
         iconsContainer.append(
-          '<div class="card icon-card cursor-pointer text-center mb-2 mx-50" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="top" title="' +
+          '<div class="card icon-card cursor-pointer text-center mb-2 mx-50" data-toggle="tooltip" data-placement="top" title="' +
             icon +
             '" data-icon="<i data-feather=\'' +
             icon +

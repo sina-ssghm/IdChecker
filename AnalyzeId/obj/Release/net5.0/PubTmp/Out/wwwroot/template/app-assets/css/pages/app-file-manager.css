@@ -86,7 +86,7 @@
   height: inherit; }
 
 .file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-header {
-  padding: 0.47rem 1rem;
+  padding: 0.4rem 1rem;
   border-bottom: 1px solid #ebe9f1;
   background-color: #fff;
   border-top-right-radius: 0.357rem; }
@@ -123,7 +123,7 @@
   padding: 1rem;
   padding-bottom: 0.5rem; }
 
-.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container .file-manager-item .form-check-input:not(:checked) {
+.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container .file-manager-item .custom-control-input:not(:checked) ~ .custom-control-label:before {
   background-color: transparent; }
 
 .file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container .file-manager-item .file-logo-wrapper {
@@ -211,7 +211,7 @@
   position: absolute;
   right: 1rem; }
 
-.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container.list-view .file-manager-item .form-check {
+.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container.list-view .file-manager-item .custom-checkbox {
   margin: 0 0.4rem 0 1.75rem; }
 
 .file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container.list-view .file-manager-item .file-accessed {
@@ -238,7 +238,7 @@
   color: #b9b9c3;
   font-size: 85%; }
 
-.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container:not(.list-view) .file-manager-item:not(.selected):not(:hover) .form-check,
+.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container:not(.list-view) .file-manager-item:not(.selected):not(:hover) .custom-checkbox,
 .file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container:not(.list-view) .file-manager-item:not(.selected):not(:hover) .toggle-dropdown {
   opacity: 0; }
 
@@ -249,7 +249,7 @@
 .file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container:not(.list-view) .file-manager-item.folder.level-up {
   display: none !important; }
 
-.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container:not(.list-view) .file-manager-item .form-check {
+.file-manager-application .content-area-wrapper .file-manager-main-content .file-manager-content-body .view-container:not(.list-view) .file-manager-item .custom-checkbox {
   position: absolute;
   top: 1rem;
   left: 1rem; }
@@ -286,6 +286,10 @@
   .file-manager-application .content-area-wrapper .view-container.list-view .file-size,
   .file-manager-application .content-area-wrapper .view-container.list-view .file-item-size {
     display: none !important; } }
+
+.file-manager-application .view-container .file-manager-item {
+  flex: 0 0 47%;
+  max-width: 50%; }
 
 @media (min-width: 576px) {
   .file-manager-application .view-container .file-manager-item {

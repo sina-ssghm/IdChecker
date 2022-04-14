@@ -151,15 +151,15 @@
     markup +=
       "<div class='select2-result-repository__statistics'>" +
       "<div class='select2-result-repository__forks'>" +
-      feather.icons['share-2'].toSvg({ class: 'me-50' }) +
+      feather.icons['share-2'].toSvg({ class: 'mr-50' }) +
       repo.forks_count +
       ' Forks</div>' +
       "<div class='select2-result-repository__stargazers'>" +
-      feather.icons['star'].toSvg({ class: 'me-50' }) +
+      feather.icons['star'].toSvg({ class: 'mr-50' }) +
       repo.stargazers_count +
       ' Stars</div>' +
       "<div class='select2-result-repository__watchers'>" +
-      feather.icons['eye'].toSvg({ class: 'me-50' }) +
+      feather.icons['eye'].toSvg({ class: 'mr-50' }) +
       repo.watchers_count +
       ' Watchers</div>' +
       '</div>' +

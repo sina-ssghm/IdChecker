@@ -29,14 +29,14 @@ $(function () {
 
   // Select File
   if (fileManagerItem.length) {
-    fileManagerItem.find('.form-check-input').on('change', function () {
+    fileManagerItem.find('.custom-control-input').on('change', function () {
       var $this = $(this);
       if ($this.is(':checked')) {
         $this.closest('.file, .folder').addClass('selected');
       } else {
         $this.closest('.file, .folder').removeClass('selected');
       }
-      if (fileManagerItem.find('.form-check-input:checked').length) {
+      if (fileManagerItem.find('.custom-control-input:checked').length) {
         fileActions.addClass('show');
       } else {
         fileActions.removeClass('show');

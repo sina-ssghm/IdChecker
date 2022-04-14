@@ -13,6 +13,7 @@ $(function () {
   // RTL Support
   var direction = 'ltr',
     isRTL = false;
+
   if ($('html').data('textdirection') == 'rtl') {
     direction = 'rtl';
   }
@@ -20,6 +21,8 @@ $(function () {
   if (direction === 'rtl') {
     isRTL = true;
   }
+
+
   var sidebarShop = $('.sidebar-shop'),
     btnCart = $('.btn-cart'),
     overlay = $('.body-content-overlay'),
