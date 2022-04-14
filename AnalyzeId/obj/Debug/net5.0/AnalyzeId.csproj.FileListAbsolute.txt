@@ -1712,7 +1712,6 @@ C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId\obj\Debug\net5.0\Anal
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\appsettings.json
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\nlog.config
-C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.StaticWebAssets.xml
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.exe
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.deps.json
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.runtimeconfig.json
@@ -2135,7 +2134,6 @@ C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\Analy
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.Views.pdb
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.csproj.CopyComplete
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.dll
-C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\refint\AnalyzeId.dll
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.pdb
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.genruntimeconfig.cache
 C:\Users\bralik 36287951\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\ref\AnalyzeId.dll
@@ -2573,3 +2571,5 @@ C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.dll
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\ref\AnalyzeId.dll
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.pdb
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.genruntimeconfig.cache
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\ref\AnalyzeId.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Debug\net5.0\staticwebassets\AnalyzeId.StaticWebAssets.xml

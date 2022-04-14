@@ -34,7 +34,7 @@ window.colors = {
   var $html = $('html');
   var $body = $('body');
   var $textcolor = '#4e5154';
-  var assetPath = '../../../app-assets/';
+  var assetPath = '/template/app-assets/';
 
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
@@ -44,7 +44,7 @@ window.colors = {
   if ($.fn.dataTable) {
     $.extend($.fn.dataTable.ext.classes, {
       sFilterInput: 'form-control',
-      sLengthSelect: 'form-select'
+      sLengthSelect: 'custom-select form-control'
     });
   }
 
@@ -52,7 +52,9 @@ window.colors = {
     var rtl;
     var compactMenu = false;
 
-    if ($body.hasClass('menu-collapsed') || localStorage.getItem('menuCollapsed') === 'true') {
+    if ($body.hasClass('menu-collapsed')) {
+      // ? replace above if condition with below one for menu collapsed localstorage
+      // if ($body.hasClass('menu-collapsed') || localStorage.getItem('menuCollapsed') === 'true') {
       compactMenu = true;
     }
 
@@ -79,12 +81,8 @@ window.colors = {
     });
 
     // Tooltip Initialization
-    // $('[data-bs-toggle="tooltip"]').tooltip({
-    //   container: 'body'
-    // });
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
+    $('[data-toggle="tooltip"]').tooltip({
+      container: 'body'
     });
 
     // Collapsible Card
@@ -200,6 +198,11 @@ window.colors = {
         }
       }
     }
+
+    //Custom File Input
+    $('.custom-file-input').on('change', function (e) {
+      $(this).siblings('.custom-file-label').html(e.target.files[0].name);
+    });
 
     /* Text Area Counter Set Start */
 
@@ -369,21 +372,27 @@ window.colors = {
       }, 50);
     }
 
+    // ? uncomment below code for menu collapsed localstorage
     // Save menu collapsed status in localstorage
-    if ($body.hasClass('menu-expanded') || $body.hasClass('menu-open')) {
-      localStorage.setItem('menuCollapsed', false);
-    } else {
-      localStorage.setItem('menuCollapsed', true);
-    }
+    // if ($body.hasClass('menu-expanded') || $body.hasClass('menu-open')) {
+    //   localStorage.setItem('menuCollapsed', false);
+    // } else {
+    //   localStorage.setItem('menuCollapsed', true);
+    // }
 
     // Hides dropdown on click of menu toggle
-    // $('[data-bs-toggle="dropdown"]').dropdown('hide');
+    // $('[data-toggle="dropdown"]').dropdown('hide');
 
     return false;
   });
 
   // Add Children Class
   $('.navigation').find('li').has('ul').addClass('has-sub');
+
+  $('.carousel').carousel({
+    interval: 2000
+  });
+
   // Update manual scroller when window is resized
   $(window).resize(function () {
     $.app.menu.manualScroller.updateHeight();
@@ -509,12 +518,12 @@ window.colors = {
         arrList[i].firstChild.href +
         '>' +
         '<div class="d-flex justify-content-start align-items-center">' +
-        feather.icons[iconName].toSvg({ class: 'me-75 ' + className }) +
+        feather.icons[iconName].toSvg({ class: 'mr-75 ' + className }) +
         '<span>' +
-        arrList[i].firstChild.dataset.bsOriginalTitle +
+        arrList[i].firstChild.dataset.originalTitle +
         '</span>' +
         '</div>' +
-        feather.icons['star'].toSvg({ class: 'text-warning bookmark-icon float-end' }) +
+        feather.icons['star'].toSvg({ class: 'text-warning bookmark-icon float-right' }) +
         '</a>' +
         '</li>';
     }
@@ -609,7 +618,7 @@ window.colors = {
           $bookmarkhtmlList = '',
           $pageList =
             '<li class="d-flex align-items-center">' +
-            '<a href="#">' +
+            '<a href="javascript:void(0)">' +
             '<h6 class="section-label mt-75 mb-0">Pages</h6>' +
             '</a>' +
             '</li>',
@@ -633,7 +642,7 @@ window.colors = {
                 $arrList = '';
               // Loop to check if current seach value match with the bookmarks already there in navbar
               for (var j = 0; j < arrList.length; j++) {
-                if (data.listItems[i].name === arrList[j].firstChild.dataset.bsOriginalTitle) {
+                if (data.listItems[i].name === arrList[j].firstChild.dataset.originalTitle) {
                   activeClass = ' text-warning';
                   break;
                 } else {
@@ -641,7 +650,7 @@ window.colors = {
                 }
               }
 
-              $bookmarkIcon = feather.icons['star'].toSvg({ class: 'bookmark-icon float-end' + activeClass });
+              $bookmarkIcon = feather.icons['star'].toSvg({ class: 'bookmark-icon float-right' + activeClass });
             }
             // Search list item start with entered letters and create list
             if (data.listItems[i].name.toLowerCase().indexOf(value) == 0 && a < 5) {
@@ -658,7 +667,7 @@ window.colors = {
                 data.listItems[i].url +
                 '>' +
                 '<div class="d-flex justify-content-start align-items-center">' +
-                feather.icons[data.listItems[i].icon].toSvg({ class: 'me-75 ' }) +
+                feather.icons[data.listItems[i].icon].toSvg({ class: 'mr-75 ' }) +
                 '<span>' +
                 data.listItems[i].name +
                 '</span>' +
@@ -676,14 +685,14 @@ window.colors = {
                 $arrList = '';
               // Loop to check if current search value match with the bookmarks already there in navbar
               for (var j = 0; j < arrList.length; j++) {
-                if (data.listItems[i].name === arrList[j].firstChild.dataset.bsOriginalTitle) {
+                if (data.listItems[i].name === arrList[j].firstChild.dataset.originalTitle) {
                   activeClass = ' text-warning';
                 } else {
                   activeClass = '';
                 }
               }
 
-              $bookmarkIcon = feather.icons['star'].toSvg({ class: 'bookmark-icon float-end' + activeClass });
+              $bookmarkIcon = feather.icons['star'].toSvg({ class: 'bookmark-icon float-right' + activeClass });
             }
             // Search list item not start with letters and create list
             if (
@@ -704,7 +713,7 @@ window.colors = {
                 data.listItems[i].url +
                 '>' +
                 '<div class="d-flex justify-content-start align-items-center">' +
-                feather.icons[data.listItems[i].icon].toSvg({ class: 'me-75 ' }) +
+                feather.icons[data.listItems[i].icon].toSvg({ class: 'mr-75 ' }) +
                 '<span>' +
                 data.listItems[i].name +
                 '</span>' +
@@ -754,12 +763,12 @@ window.colors = {
               arrList[i].firstChild.href +
               '>' +
               '<div class="d-flex justify-content-start align-items-center">' +
-              feather.icons[iconName].toSvg({ class: 'me-75 ' }) +
+              feather.icons[iconName].toSvg({ class: 'mr-75 ' }) +
               '<span>' +
-              arrList[i].firstChild.dataset.bsOriginalTitle +
+              arrList[i].firstChild.dataset.originalTitle +
               '</span>' +
               '</div>' +
-              feather.icons['star'].toSvg({ class: 'text-warning bookmark-icon float-end' }) +
+              feather.icons['star'].toSvg({ class: 'text-warning bookmark-icon float-right' }) +
               '</a>' +
               '</li>';
           }
@@ -816,7 +825,7 @@ window.colors = {
       $(this).removeClass('text-warning');
       var arrList = $('ul.nav.navbar-nav.bookmark-icons li');
       for (var i = 0; i < arrList.length; i++) {
-        if (arrList[i].firstChild.dataset.bsOriginalTitle == $(this).parent()[0].innerText) {
+        if (arrList[i].firstChild.dataset.originalTitle == $(this).parent()[0].innerText) {
           arrList[i].remove();
         }
       }
@@ -838,14 +847,14 @@ window.colors = {
         '<li class="nav-item d-none d-lg-block">' +
         '<a class="nav-link" href="' +
         $url +
-        '" data-bs-toggle="tooltip" data-bs-placement="bottom" title="' +
+        '" data-toggle="tooltip" data-placement="top" title="" data-original-title="' +
         $name +
         '">' +
         feather.icons[iconName].toSvg({ class: 'ficon' }) +
         '</a>' +
         '</li>';
       $('ul.nav.bookmark-icons').append($listItem);
-      $('[data-bs-toggle="tooltip"]').tooltip();
+      $('[data-toggle="tooltip"]').tooltip();
     }
   });
 
@@ -940,7 +949,7 @@ window.colors = {
 
   // Click event to scroll to top
   $('.scroll-top').on('click', function () {
-    $('html, body').animate({ scrollTop: 0 }, 75);
+    $('html, body').animate({ scrollTop: 0 }, 1000);
   });
 
   function getCurrentLayout() {
@@ -972,7 +981,6 @@ window.colors = {
       switchToLayout = 'dark-layout';
     } else {
       // Switch to light
-      // switchToLayout = prevLayout ? prevLayout : 'light-layout';
       if (currentLayout === prevLayout) {
         switchToLayout = 'light-layout';
       } else {
@@ -1062,7 +1070,7 @@ if (typeof jQuery.validator === 'function') {
         element.attr('type') === 'checkbox'
       ) {
         error.insertAfter(element.parent());
-      } else if (element.hasClass('form-check-input')) {
+      } else if (element.hasClass('custom-control-input')) {
         error.insertAfter(element.parent().siblings(':last'));
       } else {
         error.insertAfter(element);

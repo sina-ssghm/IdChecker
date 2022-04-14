@@ -519,6 +519,10 @@
   font-weight : 600;
 }
 
+.ecommerce-application .checkout-options .coupons .input-group-append {
+  margin : 0;
+}
+
 .ecommerce-application .checkout-options .coupons .input-group-text {
   height : auto;
   font-weight : 600;

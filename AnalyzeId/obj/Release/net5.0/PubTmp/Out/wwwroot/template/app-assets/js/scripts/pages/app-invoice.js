@@ -118,8 +118,8 @@ $(function () {
         $(document)
           .find('.select2-results__options')
           .before(
-            '<div class="add-new-customer btn btn-flat-success cursor-pointer rounded-0 text-start mb-50 p-50 w-100" data-bs-toggle="modal" data-bs-target="#add-new-customer-sidebar">' +
-              feather.icons['plus'].toSvg({ class: 'font-medium-1 me-50' }) +
+            '<div class="add-new-customer btn btn-flat-success cursor-pointer rounded-0 text-left mb-50 p-50 w-100" data-toggle="modal" data-target="#add-new-customer-sidebar">' +
+              feather.icons['plus'].toSvg({ class: 'font-medium-1 mr-50' }) +
               '<span class="align-middle">Add New Customer</span></div>'
           );
       }
@@ -146,7 +146,7 @@ $(function () {
     e.stopPropagation();
   });
 
-  // On tax change update it's value
+  // On tax change update it's value value
   function updateValue(listener, el) {
     listener.closest('.repeater-wrapper').find(el).text(listener.val());
   }
@@ -196,10 +196,6 @@ $(function () {
         // featherSVG();
         feather.replace({ width: 14, height: 14 });
       }
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-      });
     });
   }
 });

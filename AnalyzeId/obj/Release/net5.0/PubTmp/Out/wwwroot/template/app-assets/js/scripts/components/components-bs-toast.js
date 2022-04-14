@@ -1,40 +1,21 @@
-(function (window, document, jQuery) {
-  'use strict';
+'use strict';
 
-  // Basic Toast
-  var basicToast = document.querySelector('.basic-toast');
-  var basicToastBtn = document.querySelector('.toast-basic-toggler');
-  var showBasicToast = new bootstrap.Toast(basicToast);
+// Basic toast
+$('.toast-basic-toggler').on('click', function () {
+  $('.toast-basic').toast('show');
+});
 
-  basicToastBtn.addEventListener('click', function () {
-    showBasicToast.show();
-  });
+// Auto Hide Off toast
+$('.toast-autohide-toggler').on('click', function () {
+  $('.toast-autohide').toast('show');
+});
 
-  // Required to hide translucent toast
-  var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+// Auto Hide Off toast
+$('.toast-stacked-toggler').on('click', function () {
+  $('.toast-stacked').toast('show');
+});
 
-  var toastList = toastElList.map(function (toastEl) {
-    return new bootstrap.Toast(toastEl);
-  });
-
-  // Auto Hide Toast
-  var autoHideToast = document.querySelector('.toast-autohide');
-  var autoHideToastBtn = document.querySelector('.toast-autohide-toggler');
-
-  var showAutoHideToast = new bootstrap.Toast(autoHideToast, {
-    autohide: false
-  });
-
-  autoHideToastBtn.addEventListener('click', function () {
-    showAutoHideToast.show();
-  });
-
-  // Stacked Toast
-  var stackedToast = document.querySelector('.toast-stacked');
-  var stackedToastBtn = document.querySelector('.toast-stacked-toggler');
-  var showStackedToast = new bootstrap.Toast(stackedToast);
-
-  stackedToastBtn.addEventListener('click', function () {
-    showStackedToast.show();
-  });
-})(window, document, jQuery);
+// Placement toast
+$('.placement').on('click', function () {
+  $('.toast-placement .toast').toast('show');
+});

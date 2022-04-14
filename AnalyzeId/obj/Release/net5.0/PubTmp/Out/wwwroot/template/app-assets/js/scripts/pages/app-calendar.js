@@ -12,7 +12,7 @@
 
 // RTL Support
 var direction = 'ltr',
-  assetPath = '../../../app-assets/';
+  assetPath = '/template/app-assets/';
 if ($('html').data('textdirection') == 'rtl') {
   direction = 'rtl';
 }
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var $bullet =
         "<span class='bullet bullet-" +
         $(option.element).data('label') +
-        " bullet-sm me-50'> " +
+        " bullet-sm mr-50'> " +
         '</span>' +
         option.text;
 
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var $avatar =
         "<div class='d-flex flex-wrap align-items-center'>" +
-        "<div class='avatar avatar-sm my-0 me-50'>" +
+        "<div class='avatar avatar-sm my-0 mr-50'>" +
         "<span class='avatar-content'>" +
         "<img src='" +
         assetPath +
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch Events from API endpoint reference
     /* $.ajax(
       {
-        url: '../../../app-assets/data/app-calendar-events.js',
+        url: '/template/app-assets/data/app-calendar-events.js',
         type: 'GET',
         success: function (result) {
           // Get requested calendars as Array
@@ -320,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'start-date': { required: 'Start Date is required' },
         'end-date': { required: 'End Date is required' }
       }
+
     });
   }
 

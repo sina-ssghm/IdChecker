@@ -67,7 +67,7 @@
 }
 
 .todo-application .content-area-wrapper .content-right .app-fixed-search {
-  padding : 0.4215rem 0.5rem;
+  padding : 0.35rem 0.5rem;
   border-bottom : 1px solid #EBE9F1;
   background-color : #FFFFFF;
   border-top-left-radius : 0.357rem;
@@ -187,6 +187,17 @@
 
 .todo-application .content-area-wrapper .content-right .todo-task-list-wrapper .no-results.show {
   display : block;
+}
+
+.todo-application .todo-item-action .close {
+  background : transparent !important;
+  box-shadow : none !important;
+  position : unset !important;
+  -webkit-transform : none !important;
+      -ms-transform : none !important;
+          transform : none !important;
+  -webkit-transition : none !important;
+          transition : none !important;
 }
 
 .todo-application .todo-item .drag-icon {

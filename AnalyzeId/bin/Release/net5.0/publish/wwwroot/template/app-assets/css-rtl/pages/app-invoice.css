@@ -132,7 +132,7 @@
 
 .invoice-edit .invoice-preview-card .col-title, .invoice-add .invoice-preview-card .col-title {
   position : absolute;
-  top : -1.75rem;
+  top : -3.2rem;
 }
 
 .invoice-edit .invoice-preview-card .item-options-menu, .invoice-add .invoice-preview-card .item-options-menu {
@@ -159,7 +159,13 @@
 
 @media (max-width: 992px) {
   .invoice-edit .col-title, .invoice-add .col-title {
-    position : unset !important;
     top : -1.5rem !important;
+  }
+}
+
+@media print {
+  .invoice-edit hr, .invoice-add hr {
+    margin-top : 1rem !important;
+    margin-bottom : 1rem !important;
   }
 }
