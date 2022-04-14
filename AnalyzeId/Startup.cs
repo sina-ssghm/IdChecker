@@ -27,6 +27,8 @@ namespace AnalyzeId
         {
             services.AddScoped<IOCRService, OCRService>();
             services.AddSingleton<IFileUploader, FileUploader>();
+            services.AddSingleton<IOCRRepository,OCRRepository>();
+            services.AddSingleton<IOCRFilesRepository, OCRFilesRepository>();
 
             services.AddRazorPages();
             services.AddMvc();

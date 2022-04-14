@@ -1,0 +1,12 @@
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.AssemblyInfoInputs.cache
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.AssemblyInfo.cs
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ahmad\source\repos\IdChecker\Domain\bin\Debug\net5.0\AnalyzeId.Domain.deps.json
+C:\Users\Ahmad\source\repos\IdChecker\Domain\bin\Debug\net5.0\AnalyzeId.Domain.dll
+C:\Users\Ahmad\source\repos\IdChecker\Domain\bin\Debug\net5.0\ref\AnalyzeId.Domain.dll
+C:\Users\Ahmad\source\repos\IdChecker\Domain\bin\Debug\net5.0\AnalyzeId.Domain.pdb
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.dll
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\ref\AnalyzeId.Domain.dll
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.pdb
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.csproj.AssemblyReference.cache

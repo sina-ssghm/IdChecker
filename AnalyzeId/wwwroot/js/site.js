@@ -8,26 +8,56 @@
         validation.innerHTML = `<p class='mb-0 p-1'>Please Sign the pad.</p>`;
     }
     else {
-        //var img = signaturePad.toDataURL().split(',')[1];
-        //var blob = b64toBlob(img);
+        var img = signaturePad.toDataURL().split(',')[1];
+        var blob = b64toBlob(img);
+        debugger;
+
+        $("#procces").removeClass("d-none")
+        $("#sigshow").addClass("d-none")
+            var trId = $("#transactionId").val()
+            var type = blob.type
+            $.post("/Home/Signature", { file: img, type: type, transactionId: trId }, function (res) {
+                debugger
+                if (res == "true") {
+                    window.location.replace('/Home/ThankYou');
+                } else {
+                    var validation = document.getElementsByClassName('validation')[0];
+                    validation.classList.remove('d-none');
+                    validation.innerHTML = `<p class='mb-0 p-1'>${res}.</p>`;
+                }
+                $("#procces").addClass("d-none")
+                $("#sigshow").removeClass("d-none")
+            })
+      
+
+        //$("#signature-file").attr("value", new File([blob], "img.png"))
         //UploadFile(blob).then(function (response) {
         //    if (response.data.Message.Error == false) {
         //        console.log(response.data);
         //        ExecuteApplication(true).then(function (response) {
         //            console.log(response.data);
         //            window.location.replace('/Home/ThankYou');
-
         //        });
         //    }
         //    else {
         //        console.log(response.data);
         //        document.getElementById('submit-form-btn').classList.remove('disabled')
-
         //    }
         //});
-        window.location.replace('/Home/ThankYou');
+        //window.location.replace('/Home/ThankYou');
     }
 }
+
+function UploadFileInDvice(file) {
+    return new Promise((resolve) => {
+        $("#signature-file").attr("value", new File([file], "img.png"))
+        var senddata = $.get("/Home/Signature", { file: file }, function (res) {
+            debugger;
+        })
+        resolve(senddata);
+    })
+}
+
 function UploadFile(file) {
     return new Promise((resolve) => {
 

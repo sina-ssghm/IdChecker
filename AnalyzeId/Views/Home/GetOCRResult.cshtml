@@ -25,40 +25,7 @@ else if (data != null)
         <div class="col-sm-8 ">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold"> First Name:</label>
-                            <input type="text" value="@data.FirstName" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">Middle Name:</label>
-                            <input type="text" value="@data.MiddleName" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">Surname:</label>
-                            <input type="text" value="@data.Surname" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">Full Name:</label>
-                            <input type="text" value="@data.FullName" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">Document Number:</label>
-                            <input type="text" value="@data.DocumentNumber" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">BirthDate:</label>
-                            <input type="text" value="@data.BirthDate" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">Expiry Date:</label>
-                            <input type="text" value="@data.ExpiryDate" class="form-control" />
-                        </div>
-                        <div class="col-6 mt-1">
-                            <label class="font-weight-bold">Address:</label>
-                            <input type="text" value="@data.Address" class="form-control" />
-                        </div>
-                    </div>
+              <partial name="_Result" model="@Model.Data"></partial>
                 </div>
             </div>
             @if (jsonRtesult != null)
@@ -141,9 +108,9 @@ else if (data != null)
     </div>
 
     <div class="align-content-center text-center mt-2 mb-3 m-auto">
-          <a asp-action="ConfirmResult" asp-controller="Home" class="btn bg-site text-light waves-effect">
+          <button type="button" onclick="$('#myform').submit()" class="btn bg-site text-light waves-effect">
            Confirm
-        </a>
+        </button>
         <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site text-light waves-effect">
             Back to home
         </a>

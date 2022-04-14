@@ -2,8 +2,8 @@
 using Amazon.S3.Transfer;
 using Amazon.Textract;
 using Amazon.Textract.Model;
+using AnalyzeId.Domain.Model;
 using AnalyzeId.Shared;
-using AnalyzeId.Shared.DTO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -236,22 +236,32 @@ namespace AnalyzeId.Service.Utility
 
         public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
         {
-            return new FinalResultOCRDTO
-            {
-                FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName,
-                MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName,
-                Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname,
-                FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName,
-                Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address,
-                BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate,
-                ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate,
-                DocumentNumber = !finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv?.DocumentNumber,
-                BackUrl = finalResultIdv.BackUrl,
-                FrontUrl = finalResultIdv.FrontUrl,
-                FaceUrl = finalResultIdv.FaceUrl,
-                SignatureUrl = finalResultIdv.SignatureUrl,
-                JsonResultIDv = finalResultIdv?.JsonResultIDv,
-            };
+
+            finalResultIdv.FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName;
+            finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
+            finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;
+            finalResultIdv.FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName;
+            finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
+            finalResultIdv.BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate;
+            finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate;
+            finalResultIdv.DocumentNumber = !finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv?.DocumentNumber;
+
+            //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;
+            //finalResultIdv.ImageBackId = finalResultIdv?.ImageBackId;
+
+            //finalResultIdv.FrontUrl = finalResultIdv?.FrontUrl;
+            //finalResultIdv.ImageFrontId = finalResultIdv?.ImageFrontId;
+
+            //finalResultIdv.FaceUrl = finalResultIdv?.FaceUrl;
+            //finalResultIdv.ImageFaseId = finalResultIdv?.ImageFaseId;
+
+            //finalResultIdv.SignatureUrl = finalResultIdv?.SignatureUrl;
+            //finalResultIdv.ImageSignatureId = finalResultIdv?.ImageSignatureId;
+
+            //finalResultIdv.JsonResultIDv = finalResultIdv?.JsonResultIDv;
+            //finalResultIdv.TransactionId = finalResultIdv?.TransactionId;
+
+            return finalResultIdv;
         }
 
 
@@ -272,8 +282,8 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Image_ID", imageId);
                 request.AddParameter("Username", "hamid");
 
-
                 IRestResponse response = client.Execute(request);
+
                 if (response.IsSuccessful)
                 {
                     var result = response.Content;
@@ -282,7 +292,7 @@ namespace AnalyzeId.Service.Utility
                     File.WriteAllText(paths, result);
 
                     System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
-                    var bytes= encoding.GetBytes(result);
+                    var bytes = encoding.GetBytes(result);
                     File.WriteAllBytes(paths, bytes);
                     //string fileName = paths;
                     //using (BinaryWriter binWriter =
@@ -306,6 +316,19 @@ namespace AnalyzeId.Service.Utility
                 return null;
             }
         }
-
+        public string SaveImageBase64(string base64, string type)
+        {
+            try
+            {
+                var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + "."+ type.Remove(0, type.IndexOf("/") + 1));
+                System.IO.File.WriteAllBytes(fullPath, Convert.FromBase64String(base64));
+                return fullPath;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw;
+            }
+        }
     }
 }
