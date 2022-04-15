@@ -33,8 +33,17 @@ namespace AnalyzeId.Service.Utility
                 ExpiryDate = final?.ExpiryDate,
                 FullName = final?.FullName,
                 MiddleName = final?.MiddleName,
+                TransactionId=final?.TransactionId,
             });
         }
+
+
+        public List<OCR> Get(string transactionId)
+        {
+          var result=  collection.Find(s=>s.TransactionId==transactionId).ToList();
+            return result;
+        }
+       
 
     }
 }

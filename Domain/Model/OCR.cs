@@ -1,4 +1,5 @@
 ﻿
+using AnalyzeId.Domain.ViewModel;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,8 @@ namespace AnalyzeId.Domain.Model
         public string BirthDate { get; set; }
         public string ExpiryDate { get; set; }
         public string Address { get; set; }
+        public string TransactionId { get; set; }
 
-
+        public OCRFileViewModel  OCRFile{ get; set; }
     }
 }

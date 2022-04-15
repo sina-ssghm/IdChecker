@@ -32,7 +32,7 @@ namespace AnalyzeId.Service.Utility
                 TransactionId = model.TransactionId,
                 UniqueId = model.UniqueId
             });
-        }  
+        }
         public void Add(FinalResultOCRDTO model)
         {
             if (model.FrontUrl != null)
@@ -78,6 +78,22 @@ namespace AnalyzeId.Service.Utility
                 });
             }
         }
+        public List<OCRFileViewModel> GetAll(string transactionId)
+        {
+            var result = collection.Find(s => s.TransactionId == transactionId).ToList().Select(p => new
+            OCRFileViewModel
+            {
+                Id = p.Id.ToString(),
+                TransactionId = p.TransactionId,
+                FileType=p.FileType
+            }).ToList();
+            return result;
+        }
 
+        public string GetImage(string transactionId,Guid imageId)
+        {
+            var result = collection.Find(s => s.TransactionId == transactionId && s.Id == imageId).FirstOrDefault()?.File;
+            return result;
+        }
     }
 }
