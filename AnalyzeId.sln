@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32210.238
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyzeId", "AnalyzeId\AnalyzeId.csproj", "{36DF57D0-9AAD-4B2D-BEB0-50D0D7209D75}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyzeId.Service", "AnalyzeId.Service\AnalyzeId.Service.csproj", "{80B31034-02D1-4849-9E74-785A904D8E53}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyzeId.Shared", "AnalyzeId.Shared\AnalyzeId.Shared.csproj", "{1D130132-3EC0-474E-83D0-DD448F12D02E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyzeId.Domain", "Domain\AnalyzeId.Domain.csproj", "{063F6CE3-E9A6-4BA7-8AD2-1D9ADAAC0812}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1D130132-3EC0-474E-83D0-DD448F12D02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D130132-3EC0-474E-83D0-DD448F12D02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D130132-3EC0-474E-83D0-DD448F12D02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{063F6CE3-E9A6-4BA7-8AD2-1D9ADAAC0812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063F6CE3-E9A6-4BA7-8AD2-1D9ADAAC0812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063F6CE3-E9A6-4BA7-8AD2-1D9ADAAC0812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063F6CE3-E9A6-4BA7-8AD2-1D9ADAAC0812}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
