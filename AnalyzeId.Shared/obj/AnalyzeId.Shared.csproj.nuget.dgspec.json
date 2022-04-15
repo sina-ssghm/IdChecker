@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {}
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
         "projectName": "AnalyzeId.Shared",
-        "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
-        "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\obj\\",
+        "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
+        "packagesPath": "C:\\Users\\bralik 36287951\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bralik 36287951\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

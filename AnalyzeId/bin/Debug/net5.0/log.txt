@@ -686,3 +686,8 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Fi
 2022-04-14 12:04:34.4429|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-14 12:04:34.4546|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
 >>>>>>> aa7fcadf5ff30ea33d5686691baf37bb4428f2fd
+2022-04-15 10:26:08.0655|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:26:08.0834|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:26:08.0974|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:26:08.0974|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:26:08.0974|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
