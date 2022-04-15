@@ -9,6 +9,7 @@ namespace AnalyzeId.Service.Utility
     {
         Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string fileFrontPath, string fileBackPath);
         string SaveImageBase64(string base64, string type);
+        void SendRequestToWebhook(string transactionId);
         Task<OperationResult<FileUploadPathDTO>> UploadImage(string file);
         Task<OperationResult<FileUploadPathDTO>> UploadImage(IFormFile file);
     }

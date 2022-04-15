@@ -5,6 +5,7 @@ using AnalyzeId.Shared;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,10 +91,16 @@ namespace AnalyzeId.Service.Utility
             return result;
         }
 
-        public string GetImage(string transactionId,Guid imageId)
+        public Byte[] GetImage(string transactionId,Guid imageId)
         {
             var result = collection.Find(s => s.TransactionId == transactionId && s.Id == imageId).FirstOrDefault()?.File;
-            return result;
+            if (result!=null)
+            {
+                var path = Directory.GetCurrentDirectory() + "\\wwwroot" + result;
+                Byte[] bytes = File.ReadAllBytes(path);
+                return bytes;
+            }
+            return null ;
         }
     }
 }

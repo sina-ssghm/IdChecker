@@ -9,7 +9,7 @@ namespace AnalyzeId.Service.Utility
     {
         void Add(FinalResultOCRDTO model);
         List<OCRFileViewModel> GetAll(string transactionId);
-        string GetImage(string transactionId, Guid imageId);
+        Byte[] GetImage(string transactionId, Guid imageId);
         void _Add(OCRFileViewModel model);
     }
 }

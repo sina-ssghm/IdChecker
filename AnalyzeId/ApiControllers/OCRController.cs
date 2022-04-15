@@ -1,5 +1,7 @@
 ﻿using AnalyzeId.Domain.ViewModel;
+using AnalyzeId.Service;
 using AnalyzeId.Service.Utility;
+using AnalyzeId.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -15,57 +17,70 @@ namespace AnalyzeId.ApiControllers
     public class OCRController : ControllerBase
     {
         private readonly IOCRFilesRepository oCRFilesRepository;
+        private readonly AccountService accountService;
 
         public IOCRRepository OCRRepository { get; }
 
-        public OCRController(IOCRRepository oCRRepository,IOCRFilesRepository oCRFilesRepository)
+        public OCRController(IOCRRepository oCRRepository, IOCRFilesRepository oCRFilesRepository, AccountService accountService)
         {
             OCRRepository = oCRRepository;
             this.oCRFilesRepository = oCRFilesRepository;
+            this.accountService = accountService;
         }
-
-        // GET: api/<OCRController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
 
         // GET api/<OCRController>/5
         [HttpGet("{id}")]
-        public string Get(string id)
+        public string Get(string transactionId, [FromHeader(Name = "API-UserName")] string username, [FromHeader(Name = "API-Password")] string pass)
         {
+            var operation = new OperationResult<object> { Succeed = true, Message = "Done Successfully" };
+
+            if (transactionId==null)
+            {
+                operation.Message = "Transaction-ID not valid";
+                operation.Succeed = false;
+                return JsonConvert.SerializeObject(operation);
+            }
+            var res = accountService.IsValidUser(username, pass).GetAwaiter().GetResult();
+         
+            if (!res)
+            {
+                operation.Message = "User is not valid";
+                operation.Succeed = false;
+                return JsonConvert.SerializeObject(operation);
+            }
             var data = new ResultOCRAndFilesViewModel
             {
-                OCRs = OCRRepository.Get(id),
-                OCRFiles = oCRFilesRepository.GetAll(id)
+                OCRs = OCRRepository.Get(transactionId),
+                OCRFiles = oCRFilesRepository.GetAll(transactionId)
             };
-            return JsonConvert.SerializeObject(data);
+            operation.Data = data;
+            return JsonConvert.SerializeObject(operation);
         }
 
-        [HttpGet("{id}/{imgId}")]
-        public string GetFile(string id, Guid imgId)
+        [HttpGet]
+        [Route("/Api/GetFile")]
+        public string GetFile(string transactionId, Guid imageId, [FromHeader(Name = "API-UserName")] string username, [FromHeader(Name = "API-Password")] string pass)
         {
-            var result = oCRFilesRepository.GetImage(id,imgId);
-            return JsonConvert.SerializeObject(result);
+
+            var operation = new OperationResult<object> { Succeed = true, Message = "Done Successfully" };
+            if (transactionId == null)
+            {
+                operation.Message = "Transaction-ID not valid";
+                operation.Succeed = false;
+                return JsonConvert.SerializeObject(operation);
+            }
+            var res = accountService.IsValidUser(username, pass).GetAwaiter().GetResult();
+            if (!res)
+            {
+                operation.Message = "User is not valid";
+            }
+            var result = oCRFilesRepository.GetImage(transactionId, imageId);
+            operation.Data = result;
+            return JsonConvert.SerializeObject(operation);
         }
 
-        // POST api/<OCRController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+    
 
-        // PUT api/<OCRController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE api/<OCRController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
