@@ -98,7 +98,12 @@ namespace AnalyzeId.Controllers
                         UniqueId = null,
                     });
                 }
+                if (transactionId!=null)
+                {
+                    oCRService.SendRequestToWebhook(transactionId);
+                }
                 return Json("true");
+                
             }
             catch (Exception ex)
             {

@@ -5,6 +5,7 @@ using AnalyzeId.Shared;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace AnalyzeId.Service.Utility
                 TransactionId = model.TransactionId,
                 UniqueId = model.UniqueId
             });
-        }  
+        }
         public void Add(FinalResultOCRDTO model)
         {
             if (model.FrontUrl != null)
@@ -78,6 +79,28 @@ namespace AnalyzeId.Service.Utility
                 });
             }
         }
+        public List<OCRFileViewModel> GetAll(string transactionId)
+        {
+            var result = collection.Find(s => s.TransactionId == transactionId).ToList().Select(p => new
+            OCRFileViewModel
+            {
+                Id = p.Id.ToString(),
+                TransactionId = p.TransactionId,
+                FileType=p.FileType
+            }).ToList();
+            return result;
+        }
 
+        public Byte[] GetImage(string transactionId,Guid imageId)
+        {
+            var result = collection.Find(s => s.TransactionId == transactionId && s.Id == imageId).FirstOrDefault()?.File;
+            if (result!=null)
+            {
+                var path = Directory.GetCurrentDirectory() + "\\wwwroot" + result;
+                Byte[] bytes = File.ReadAllBytes(path);
+                return bytes;
+            }
+            return null ;
+        }
     }
 }

@@ -6,6 +6,7 @@ using AnalyzeId.Domain.Model;
 using AnalyzeId.Shared;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using NLog;
 using RestSharp;
@@ -23,11 +24,13 @@ namespace AnalyzeId.Service.Utility
     {
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IConfiguration configuration;
         private ILogger logger = LogManager.GetCurrentClassLogger();
-        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment)
+        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment,IConfiguration configuration)
         {
             this.fileUploader = fileUploader;
             this.hostingEnvironment = hostingEnvironment;
+            this.configuration = configuration;
         }
         public async Task<OperationResult<FileUploadPathDTO>> UploadImage(string file)
         {
@@ -302,6 +305,23 @@ namespace AnalyzeId.Service.Utility
                 logger.Debug(ex);
                 return null;
             }
+        } 
+        public void SendRequestToWebhook(string transactionId)
+        {
+            try
+            {
+               
+                var webhook=  configuration.GetSection("Webhook").Value;
+                var client = new RestClient(webhook);
+                client.Timeout = -1;
+                var request = new RestRequest(Method.GET);
+                request.AddParameter("Transaction_ID", JsonConvert.SerializeObject(transactionId));
+                IRestResponse response = client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+            }
         }
         public string SaveImageBase64(string base64, string type)
         {
@@ -317,5 +337,6 @@ namespace AnalyzeId.Service.Utility
                 throw;
             }
         }
+     
     }
 }
