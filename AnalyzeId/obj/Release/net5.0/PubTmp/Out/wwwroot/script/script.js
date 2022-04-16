@@ -554,8 +554,20 @@ function CaptureAndProccess() {
         let container = new DataTransfer();
         container.items.add(file);
         document.querySelector('#resultForm #File').files = container.files;
-        $('#resultForm').submit();
+        //$('#resultForm').submit();
+      
+        var reader = new FileReader();
+        var imgtag = document.querySelector(".camera-preview-img");
+        reader.onload = function (event) {
+            imgtag.src = event.target.result;
+            document.querySelector('.canvascontainer').classList.add('d-none');
+            $('#camraPreview').removeClass('d-none');
+            $('.cameraDiv').removeClass('d-none');
+            $('.camera-preview-img').removeClass('d-none');
+        };
 
+        unspin();
+        reader.readAsDataURL(file);
     });
 
     //Capture().then(function (img) {

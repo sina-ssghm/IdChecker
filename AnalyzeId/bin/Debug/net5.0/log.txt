@@ -548,3 +548,362 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Fi
 2022-04-13 16:06:45.1983|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2022-04-13 16:06:45.2158|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-13 16:06:45.2158|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-13 18:59:07.7228|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 18:59:07.7510|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 18:59:07.7873|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 18:59:07.8088|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 18:59:07.8270|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:02:37.9870|DEBUG|AnalyzeId.Service.Utility.OCRService|System.NullReferenceException: Object reference not set to an instance of an object.
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 65
+2022-04-13 19:02:40.9469|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-13 19:40:01.9888|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 19:40:02.0269|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 19:40:02.0449|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 19:40:02.0633|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 19:40:02.0935|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:44:43.1235|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 19:44:43.1591|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 19:44:43.1988|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 19:44:43.2004|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 19:44:43.2268|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:50:40.4946|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 19:50:40.5168|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 19:50:40.6058|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 19:50:40.6072|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 19:50:40.8028|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 19:52:39.7247|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: Could not find any recognizable digits.
+   at System.ParseNumbers.StringToLong(ReadOnlySpan`1 s, Int32 radix, Int32 flags, Int32& currPos)
+   at System.Convert.ToUInt64(String value, Int32 fromBase)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 275
+2022-04-13 19:54:11.2571|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 140
+2022-04-13 19:54:11.3684|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 193
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 93
+2022-04-13 19:54:17.4271|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-13 20:01:57.4490|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:02:42.9387|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:06:04.0999|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:09:57.7970|DEBUG|AnalyzeId.Service.Utility.OCRService|{0}
+2022-04-13 20:13:10.8529|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 20:13:10.8748|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 20:13:10.9063|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 20:13:10.9063|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 20:13:10.9269|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 20:13:59.3730|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: Could not find any recognizable digits.
+   at System.ParseNumbers.StringToLong(ReadOnlySpan`1 s, Int32 radix, Int32 flags, Int32& currPos)
+   at System.Convert.ToInt64(String value, Int32 fromBase)
+   at AnalyzeId.Service.Utility.OCRService.<>c__DisplayClass10_0.<_GetOCRImage>b__0(Int64 x, Int32 idx) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 284
+   at System.Linq.Enumerable.SelectIterator[TSource,TResult](IEnumerable`1 source, Func`3 selector)+MoveNext()
+   at System.Collections.Generic.LargeArrayBuilder`1.AddRange(IEnumerable`1 items)
+   at System.Collections.Generic.EnumerableHelpers.ToArray[T](IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 283
+2022-04-13 20:32:13.4118|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 20:32:13.4333|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 20:32:13.4674|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 20:32:13.4674|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 20:32:13.4674|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 20:33:30.9519|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: Could not find any recognizable digits.
+   at System.ParseNumbers.StringToLong(ReadOnlySpan`1 s, Int32 radix, Int32 flags, Int32& currPos)
+   at System.Convert.ToUInt64(String value, Int32 fromBase)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId) in C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 276
+2022-04-13 20:44:55.9813|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-13 20:44:56.0091|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-13 20:44:56.0477|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-13 20:44:56.0664|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-13 20:44:56.0664|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId
+2022-04-13 20:46:49.4583|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The process cannot access the file 'C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\wwwroot\Files\bf540590-ba0e-47b9-980c-74b541652649.jpg' because it is being used by another process.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+2022-04-13 20:47:29.6624|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The process cannot access the file 'C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\wwwroot\Files\53608817-9255-455c-afbc-319192f215d3.jpg' because it is being used by another process.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.Open(String path, FileMode mode)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+2022-04-13 21:11:07.2065|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64_ComputeResultLength(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRImage(String imageId, String transactionId)
+<<<<<<< HEAD
+2022-04-14 00:37:24.1777|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 00:37:24.2129|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 00:37:24.2281|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 00:37:24.2281|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 00:37:24.2295|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 00:41:45.6735|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Files\e2f0c220-af47-4d4c-8df5-79d24307a0d92.png'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Files\e2f0c220-af47-4d4c-8df5-79d24307a0d92.png'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 144
+2022-04-14 00:43:00.1548|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 00:43:00.1732|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 00:43:00.1904|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 00:43:00.1904|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 00:43:00.1904|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 00:51:17.3068|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 00:51:17.3255|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 01:23:38.1201|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 01:23:38.1558|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 01:26:25.6516|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 01:26:25.6704|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 01:26:25.6840|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 01:26:25.6840|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 01:26:25.6840|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 11:39:15.3558|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 11:39:15.3738|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-14 11:53:25.2618|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-14 12:00:56.7793|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 12:00:56.7994|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 12:00:56.8077|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 12:00:56.8077|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 12:00:56.8077|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+=======
+2022-04-14 12:04:34.3849|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 12:04:34.4049|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 12:04:34.4429|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 12:04:34.4429|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 12:04:34.4546|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+>>>>>>> aa7fcadf5ff30ea33d5686691baf37bb4428f2fd
+<<<<<<< HEAD
+2022-04-15 10:26:08.0655|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:26:08.0834|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:26:08.0974|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:26:08.0974|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:26:08.0974|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+=======
+2022-04-14 14:41:30.2087|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 14:41:30.2334|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 14:41:30.2787|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 14:41:30.2787|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 14:41:30.2946|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 15:04:00.7511|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 15:04:00.7730|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 15:04:00.7956|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 15:04:00.8104|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 15:04:00.8259|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 16:57:40.7163|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 16:57:40.7435|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 16:57:40.7872|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 16:57:40.7872|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 16:57:40.8034|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 17:32:15.2620|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 17:32:15.3349|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 17:32:15.3930|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 17:32:15.3930|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 17:32:15.4288|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 17:49:35.6503|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 17:49:35.6895|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 17:49:35.7113|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 17:49:35.7373|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 17:49:35.7538|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 17:52:25.4348|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 17:52:25.4562|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 17:52:25.4816|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 17:52:25.4816|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 17:52:25.4816|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 18:03:20.7066|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 18:03:20.7279|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 18:03:20.7490|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 18:03:20.7643|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 18:03:20.7786|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 18:08:26.1971|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 18:08:26.2203|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 18:08:26.2464|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 18:08:26.2472|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 18:08:26.2627|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 18:25:38.0981|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 18:25:38.1187|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 18:25:38.1446|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 18:25:38.1446|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 18:25:38.1566|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 19:36:28.7417|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 19:36:28.7627|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 19:36:28.7947|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 19:36:28.8165|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 19:36:28.8165|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 19:46:03.1502|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-14 19:47:02.1764|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-14 19:47:40.9244|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-14 19:48:33.5723|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-14 20:21:11.4349|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 20:21:11.4553|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 20:21:11.4812|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 20:21:11.4971|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 20:21:11.5185|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-14 20:50:15.9496|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-14 20:50:15.9731|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-14 20:50:16.0084|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-14 20:50:16.0084|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-14 20:50:16.0353|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+<<<<<<< HEAD
+2022-04-15 10:16:57.7733|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:16:57.7947|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:16:57.8246|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:16:57.8246|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:16:57.8362|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:18:39.9808|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 10:18:56.8836|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 10:19:32.3372|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:19:32.3689|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:19:32.4091|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:19:32.4091|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:19:32.4755|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:22:55.3715|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 10:24:46.8754|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:24:46.9029|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:24:46.9271|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:24:46.9271|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:24:46.9473|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:31:24.3977|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:31:24.4182|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:31:24.4606|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:31:24.4617|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:31:24.4817|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:33:37.7699|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:33:37.7909|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:33:37.8198|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:33:37.8198|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:33:37.8198|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:38:08.2643|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:38:08.3098|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:38:08.3579|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:38:08.3579|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:38:08.3791|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:40:52.4174|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:40:52.4379|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:40:52.4577|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:40:52.4817|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:40:52.4817|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 10:43:39.3133|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 10:43:39.3523|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 10:43:39.4053|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 10:43:39.4053|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 10:43:39.4309|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+=======
+>>>>>>> c52b45ee14c0668539703464e73c9d04f2a5e430
+>>>>>>> 219f481c48d80283ad7b83e0cce77dd811a9ccae
+2022-04-15 11:11:54.1128|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 11:11:54.1726|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 11:11:54.1966|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 11:11:54.1966|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 11:11:54.2295|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 11:36:58.6916|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 11:36:58.7249|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 11:36:58.7418|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 11:36:58.7418|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 11:36:58.7628|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 12:51:10.6617|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 12:51:10.6932|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 12:51:10.7168|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 12:51:10.7438|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 12:51:10.7583|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 13:41:07.1555|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 13:41:07.2242|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 13:41:07.2571|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 13:41:07.3066|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 13:41:07.3066|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 13:51:38.0026|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 13:51:38.0267|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 13:51:38.0671|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 13:51:38.0962|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 13:51:38.1211|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 13:53:10.5317|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 13:53:29.9325|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 13:54:41.2389|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 13:55:12.3801|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 13:55:12.4310|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 13:55:12.4537|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 13:55:12.4746|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 13:55:12.4891|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 13:59:04.3939|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 13:59:04.4422|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 13:59:04.4556|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 13:59:04.4735|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 13:59:04.5129|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:01:48.5062|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:01:48.5460|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:01:48.6047|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:01:48.6047|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:01:48.6402|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:06:26.3095|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception
+2022-04-15 14:07:33.8347|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:07:33.8700|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:07:33.9075|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:07:33.9075|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:07:33.9328|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:09:27.2003|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:09:27.2302|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:09:27.2796|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:09:27.2796|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:09:27.2973|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:10:37.2428|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:10:37.2645|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:10:37.2931|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:10:37.3077|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:10:37.5135|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:11:54.1802|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:11:54.2242|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:11:54.2388|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:11:54.2388|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:11:54.2614|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:15:43.6243|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:15:43.6456|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:15:43.6829|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:15:43.6829|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:15:43.6975|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:16:59.2790|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 14:17:10.1992|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 14:17:39.6242|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 14:18:00.5262|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-15 14:20:07.2840|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:20:07.3070|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:20:07.3385|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:20:07.3385|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:20:07.3518|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:21:46.2703|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:21:46.2953|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:21:46.3090|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:21:46.3232|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:21:46.3376|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:22:39.9706|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:22:39.9921|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:22:40.0149|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:22:40.0149|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:22:40.0261|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:24:20.1171|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:24:20.1405|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:24:20.1728|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:24:20.1728|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:24:20.1830|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:27:01.7993|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:27:01.8220|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:27:01.8603|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:27:01.8603|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:27:01.8713|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId
+2022-04-15 14:28:54.1063|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-15 14:28:54.1308|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-15 14:28:54.1740|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-15 14:28:54.1740|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-15 14:28:54.1916|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId

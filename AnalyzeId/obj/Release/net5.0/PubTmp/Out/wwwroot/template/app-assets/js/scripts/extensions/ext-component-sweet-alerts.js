@@ -9,37 +9,37 @@
 $(function () {
   'use strict';
 
-  var basicAlert = $('#basic-alert');
-  var withTitle = $('#with-title');
-  var withFooter = $('#footer-alert');
-  var htmlAlert = $('#html-alert');
+  var basicAlert = $('#basic-alert'),
+    withTitle = $('#with-title'),
+    withFooter = $('#footer-alert'),
+    htmlAlert = $('#html-alert');
 
-  var positionTopStart = $('#position-top-start');
-  var positionTopEnd = $('#position-top-end');
-  var positionBottomStart = $('#position-bottom-start');
-  var positionBottomEnd = $('#position-bottom-end');
+  var positionTopStart = $('#position-top-start'),
+    positionTopEnd = $('#position-top-end'),
+    positionBottomStart = $('#position-bottom-start'),
+    positionBottomEnd = $('#position-bottom-end');
 
-  var bounceIn = $('#bounce-in-animation');
-  var fadeIn = $('#fade-in-animation');
-  var flipX = $('#flip-x-animation');
-  var tada = $('#tada-animation');
-  var shake = $('#shake-animation');
+  var bounceIn = $('#bounce-in-animation'),
+    fadeIn = $('#fade-in-animation'),
+    flipX = $('#flip-x-animation'),
+    tada = $('#tada-animation'),
+    shake = $('#shake-animation');
 
-  var success = $('#type-success');
-  var error = $('#type-error');
-  var warning = $('#type-warning');
-  var info = $('#type-info');
+  var success = $('#type-success'),
+    error = $('#type-error'),
+    warning = $('#type-warning'),
+    info = $('#type-info');
 
-  var customImage = $('#custom-image');
-  var autoClose = $('#auto-close');
-  var outsideClick = $('#outside-click');
-  var question = $('#prompt-function');
-  var ajax = $('#ajax-request');
+  var customImage = $('#custom-image'),
+    autoClose = $('#auto-close'),
+    outsideClick = $('#outside-click'),
+    question = $('#prompt-function'),
+    ajax = $('#ajax-request');
 
-  var confirmText = $('#confirm-text');
-  var confirmColor = $('#confirm-color');
+  var confirmText = $('#confirm-text'),
+    confirmColor = $('#confirm-color');
 
-  var assetPath = '../../../app-assets/';
+  var assetPath = '/template/app-assets/';
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
   }
@@ -102,13 +102,13 @@ $(function () {
         showCloseButton: true,
         showCancelButton: true,
         focusConfirm: false,
-        confirmButtonText: feather.icons['thumbs-up'].toSvg({ class: 'font-medium-1 me-50' }) + 'Great!',
+        confirmButtonText: feather.icons['thumbs-up'].toSvg({ class: 'font-medium-1 mr-50' }) + 'Great!',
         confirmButtonAriaLabel: 'Thumbs up, great!',
         cancelButtonText: feather.icons['thumbs-down'].toSvg({ class: 'font-medium-1' }),
         cancelButtonAriaLabel: 'Thumbs down',
         customClass: {
           confirmButton: 'btn btn-primary',
-          cancelButton: 'btn btn-outline-danger ms-1'
+          cancelButton: 'btn btn-outline-danger ml-1'
         },
         buttonsStyling: false
       });
@@ -447,7 +447,7 @@ $(function () {
         input: 'text',
         customClass: {
           confirmButton: 'btn btn-primary',
-          cancelButton: 'btn btn-outline-danger ms-1'
+          cancelButton: 'btn btn-outline-danger ml-1'
         },
         buttonsStyling: false,
         inputAttributes: {
@@ -493,7 +493,7 @@ $(function () {
         confirmButtonText: 'Yes, delete it!',
         customClass: {
           confirmButton: 'btn btn-primary',
-          cancelButton: 'btn btn-outline-danger ms-1'
+          cancelButton: 'btn btn-outline-danger ml-1'
         },
         buttonsStyling: false
       }).then(function (result) {
@@ -522,7 +522,7 @@ $(function () {
         confirmButtonText: 'Yes, delete it!',
         customClass: {
           confirmButton: 'btn btn-primary',
-          cancelButton: 'btn btn-outline-danger ms-1'
+          cancelButton: 'btn btn-outline-danger ml-1'
         },
         buttonsStyling: false
       }).then(function (result) {

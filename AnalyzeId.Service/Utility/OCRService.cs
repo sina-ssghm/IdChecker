@@ -2,10 +2,11 @@
 using Amazon.S3.Transfer;
 using Amazon.Textract;
 using Amazon.Textract.Model;
+using AnalyzeId.Domain.Model;
 using AnalyzeId.Shared;
-using AnalyzeId.Shared.DTO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using NLog;
 using RestSharp;
@@ -13,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,11 +24,13 @@ namespace AnalyzeId.Service.Utility
     {
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IConfiguration configuration;
         private ILogger logger = LogManager.GetCurrentClassLogger();
-        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment)
+        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment,IConfiguration configuration)
         {
             this.fileUploader = fileUploader;
             this.hostingEnvironment = hostingEnvironment;
+            this.configuration = configuration;
         }
         public async Task<OperationResult<FileUploadPathDTO>> UploadImage(string file)
         {
@@ -99,11 +103,12 @@ namespace AnalyzeId.Service.Utility
                 //{
                 //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                 //}
-                var c = await _GetOCRImage(IDVTask.Result.Data.ImageFrontId,IDVTask.Result.Data.TransactionId);
+                IDVTask.Result.Data.FaceUrl = await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                IDVTask.Result.Data.SignatureUrl = await _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
 
                 IDVTask.Result.Data.BackUrl = fileBackPath;
                 IDVTask.Result.Data.BackUrl = fileBackPath;
-                
+
                 return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
 
                 //if (IDVTask.Result.Succeed == true || (IDVTask.Result.Data.FullName.HasValue() && IDVTask.Result.Data.BirthDate.HasValue()))
@@ -152,7 +157,7 @@ namespace AnalyzeId.Service.Utility
                         Succeed = true,
                         Data = new FinalResultOCRDTO
                         {
-                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Surname+ " "+result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Surname + " " + result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
                             MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
                             Surname = result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
@@ -166,7 +171,7 @@ namespace AnalyzeId.Service.Utility
                             ImageFaseId = result?.Result?.Files?.Processed?.Face,
                             TransactionId = result?.Result?.Transaction?.ID,
                             JsonResultIDv = response.Content,
-                      
+
                         },
 
                         Message = OperationResult<int>.SuccessMessage
@@ -218,9 +223,9 @@ namespace AnalyzeId.Service.Utility
                         {
                             FullName = x[0].value + " " + x[2].value + " " + x[1].value,
                             MiddleName = x[2].value,
-                            Surname = x[2].value+" "+ x[1].value,
+                            Surname = x[2].value + " " + x[1].value,
                             FirstName = x[0].value,
-                            Address = x[17].value ,
+                            Address = x[17].value,
                             DocumentNumber = x[8].value,
                             BirthDate = x[10].value,
                             ExpiryDate = x[9].value,
@@ -232,29 +237,45 @@ namespace AnalyzeId.Service.Utility
             return null;
         }
 
-        public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO  finalResultAZ)
+        public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
         {
-            return new FinalResultOCRDTO
-            {
-                FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName: finalResultIdv?.FirstName,
-                MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv ?.MiddleName,
-                Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv ?.Surname,
-                FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv ?.FullName,
-                Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv ?.Address,
-                BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv ?.BirthDate,
-                ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv ?.ExpiryDate,
-                DocumentNumber =! finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv ?.DocumentNumber,
-                 BackUrl = finalResultIdv.BackUrl,
-                FrontUrl = finalResultIdv.FrontUrl,
-                JsonResultIDv = finalResultIdv?.JsonResultIDv,
-            };
+
+            finalResultIdv.FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName;
+            finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
+            finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;
+            finalResultIdv.FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName;
+            finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
+            finalResultIdv.BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate;
+            finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate;
+            finalResultIdv.DocumentNumber = !finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv?.DocumentNumber;
+
+            //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;
+            //finalResultIdv.ImageBackId = finalResultIdv?.ImageBackId;
+
+            //finalResultIdv.FrontUrl = finalResultIdv?.FrontUrl;
+            //finalResultIdv.ImageFrontId = finalResultIdv?.ImageFrontId;
+
+            //finalResultIdv.FaceUrl = finalResultIdv?.FaceUrl;
+            //finalResultIdv.ImageFaseId = finalResultIdv?.ImageFaseId;
+
+            //finalResultIdv.SignatureUrl = finalResultIdv?.SignatureUrl;
+            //finalResultIdv.ImageSignatureId = finalResultIdv?.ImageSignatureId;
+
+            //finalResultIdv.JsonResultIDv = finalResultIdv?.JsonResultIDv;
+            //finalResultIdv.TransactionId = finalResultIdv?.TransactionId;
+
+            return finalResultIdv;
         }
 
 
-        private async Task<OperationResult<FinalResultOCRDTO>> _GetOCRImage(string imageId, string transactionId)
+        private async Task<string> _GetOCRImage(string imageId, string transactionId)
         {
             try
             {
+                if (imageId == null || transactionId == null)
+                {
+                    return null;
+                }
                 var client = new RestClient("https://services.idvpacific.com.au/api/Result/RetrieveFile");
                 client.Timeout = -1;
                 var request = new RestRequest(Method.GET);
@@ -263,32 +284,59 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Transaction_ID", transactionId);
                 request.AddParameter("Image_ID", imageId);
                 request.AddParameter("Username", "hamid");
-          
 
                 IRestResponse response = client.Execute(request);
+
                 if (response.IsSuccessful)
                 {
-                    var result = response.Content;
+                     
 
-                    return new OperationResult<FinalResultOCRDTO>
-                    {
-                        
-                        Message = OperationResult<int>.SuccessMessage
-                    };
+                    var paths = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + ".jpg";
+                     
+                    File.WriteAllBytes(paths, response.RawBytes);
+                    return paths;
                 }
-                return new OperationResult<FinalResultOCRDTO>
-                {
-                    Succeed = false,
-                    Message = OperationResult<int>.ErrorMessage,
-                };
+                return null;
 
 
             }
             catch (Exception ex)
             {
                 logger.Debug(ex);
-                return OperationResult<FinalResultOCRDTO>.Error(ex);
+                return null;
+            }
+        } 
+        public void SendRequestToWebhook(string transactionId)
+        {
+            try
+            {
+               
+                var webhook=  configuration.GetSection("Webhook").Value;
+                var client = new RestClient(webhook);
+                client.Timeout = -1;
+                var request = new RestRequest(Method.GET);
+                request.AddParameter("Transaction_ID", JsonConvert.SerializeObject(transactionId));
+                IRestResponse response = client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
             }
         }
+        public string SaveImageBase64(string base64, string type)
+        {
+            try
+            {
+                var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + "."+ type.Remove(0, type.IndexOf("/") + 1));
+                System.IO.File.WriteAllBytes(fullPath, Convert.FromBase64String(base64));
+                return fullPath;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                throw;
+            }
+        }
+     
     }
 }

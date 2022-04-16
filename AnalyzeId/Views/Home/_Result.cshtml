@@ -1,0 +1,56 @@
+﻿@model FinalResultOCRDTO
+@{
+    Layout = null;
+}
+
+
+
+
+<form id="myform" asp-action="ConfirmResult" method="post">
+    <input type="hidden" asp-for="FrontUrl" />
+    <input type="hidden" asp-for="ImageFrontId" />
+    <input type="hidden" asp-for="BackUrl" />
+    <input type="hidden" asp-for="ImageBackId" />
+    <input type="hidden" asp-for="FaceUrl" />
+    <input type="hidden" asp-for="ImageFaseId" />
+    <input type="hidden" asp-for="SignatureUrl" />
+    <input type="hidden" asp-for="ImageSignatureId" />
+    <input type="hidden" asp-for="TransactionId" />
+    <div class="row">
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold"> First Name:</label>
+            <input type="text" asp-for="FirstName" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">Middle Name:</label>
+            <input type="text" asp-for="MiddleName" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">Surname:</label>
+            <input type="text" asp-for="Surname" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">Full Name:</label>
+            <input type="text" asp-for="FullName" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">Document Number:</label>
+            <input type="text" asp-for="DocumentNumber" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">BirthDate:</label>
+            <input type="text" asp-for="BirthDate" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">Expiry Date:</label>
+            <input type="text" asp-for="ExpiryDate" class="form-control" />
+        </div>
+        <div class="col-6 mt-1">
+            <label class="font-weight-bold">Address:</label>
+            <input type="text" asp-for="Address" class="form-control" />
+        </div>
+        @*<div class="col-12">
+            <button type="submit" class="btn mt-2 text-light  bg-site btn-sm">Save</button>
+        </div>*@
+    </div>
+</form>

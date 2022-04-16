@@ -38,7 +38,7 @@ $(function () {
     checkboxId = 100,
     isRtl = $('html').attr('data-textdirection') === 'rtl';
 
-  var assetPath = '../../../app-assets/';
+  var assetPath = '/template/app-assets/';
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
   }
@@ -114,15 +114,15 @@ $(function () {
       return option.text;
     }
     var $person =
-      '<div class="d-flex align-items-center">' +
-      '<img class="d-block rounded-circle me-50" src="' +
+      '<div class="media align-items-center">' +
+      '<img class="d-block rounded-circle mr-50" src="' +
       $(option.element).data('img') +
       '" height="26" width="26" alt="' +
       option.text +
       '">' +
-      '<p class="mb-0">' +
+      '<div class="media-body"><p class="mb-0">' +
       option.text +
-      '</p></div>';
+      '</p></div></div>';
 
     return $person;
   }
@@ -250,8 +250,7 @@ $(function () {
           Update: 'info'
         };
         $.each(selected, function (index, value) {
-          todoBadge +=
-            '<span class="badge rounded-pill badge-light-' + badgeColor[value] + ' me-50">' + value + '</span>';
+          todoBadge += '<div class="badge badge-pill badge-light-' + badgeColor[value] + ' mr-50">' + value + '</div>';
         });
         // HTML Output
         if (todoTitle != '') {
@@ -261,11 +260,11 @@ $(function () {
               '<div class="todo-title-area">' +
               feather.icons['more-vertical'].toSvg({ class: 'drag-icon' }) +
               '<div class="title-wrapper">' +
-              '<div class="form-check">' +
-              '<input type="checkbox" class="form-check-input" id="customCheck' +
+              '<div class="custom-control custom-checkbox">' +
+              '<input type="checkbox" class="custom-control-input" id="customCheck' +
               checkboxId +
               '" />' +
-              '<label class="form-check-label" for="customCheck' +
+              '<label class="custom-control-label" for="customCheck' +
               checkboxId +
               '"></label>' +
               '</div>' +
@@ -275,10 +274,10 @@ $(function () {
               '</div>' +
               '</div>' +
               '<div class="todo-item-action">' +
-              '<span class="badge-wrapper me-1">' +
+              '<div class="badge-wrapper mr-1">' +
               todoBadge +
-              '</span>' +
-              '<small class="text-nowrap text-muted me-1">' +
+              '</div>' +
+              '<small class="text-nowrap text-muted mr-1">' +
               todoDate +
               '</small>' +
               '<div class="avatar">' +
@@ -305,7 +304,7 @@ $(function () {
   }
 
   // Task checkbox change
-  todoTaskListWrapper.on('change', '.form-check', function (event) {
+  todoTaskListWrapper.on('change', '.custom-checkbox', function (event) {
     var $this = $(this).find('input');
     if ($this.prop('checked')) {
       $this.closest('.todo-item').addClass('completed');
@@ -318,7 +317,7 @@ $(function () {
       $this.closest('.todo-item').removeClass('completed');
     }
   });
-  todoTaskListWrapper.on('click', '.form-check', function (event) {
+  todoTaskListWrapper.on('click', '.custom-checkbox', function (event) {
     event.stopPropagation();
   });
 
@@ -329,11 +328,11 @@ $(function () {
     updateBtns.removeClass('d-none');
     if ($(this).hasClass('completed')) {
       modalTitle.html(
-        '<button type="button" class="btn btn-sm btn-outline-success complete-todo-item waves-effect waves-float waves-light" data-bs-dismiss="modal">Completed</button>'
+        '<button type="button" class="btn btn-sm btn-outline-success complete-todo-item waves-effect waves-float waves-light" data-dismiss="modal">Completed</button>'
       );
     } else {
       modalTitle.html(
-        '<button type="button" class="btn btn-sm btn-outline-secondary complete-todo-item waves-effect waves-float waves-light" data-bs-dismiss="modal">Mark Complete</button>'
+        '<button type="button" class="btn btn-sm btn-outline-secondary complete-todo-item waves-effect waves-float waves-light" data-dismiss="modal">Mark Complete</button>'
       );
     }
     taskTag.val('').trigger('change');

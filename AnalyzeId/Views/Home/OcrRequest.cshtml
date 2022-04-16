@@ -18,13 +18,13 @@
     </div>
     <div class="col-sm-4 col-8 text-center m-auto">
         <a href="##"  class="btn mt-1 font-size-1 bg-site p-2 waves-effect camera camera-file text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>
-        <a href="##" class="btn mt-1 font-size-1 bg-site p-2 waves-effect CanvasCamera camera-can text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>
+        @*<a href="##" style="display:none" class="btn mt-1 font-size-1 bg-site p-2 waves-effect CanvasCamera camera-can text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>*@
         <button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-file font-size-1 p-2 mt-2 text-light w-100">
             Skip
         </button>
-        <button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-can font-size-1 p-2 mt-2 text-light w-100">
+        @*<button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-can font-size-1 p-2 mt-2 text-light w-100">
             Skip
-        </button>
+        </button>*@
     </div>
 </div>
 
@@ -70,7 +70,8 @@
 
 
 <div class="cameraDiv text-center d-none">
-    <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#File').click()">Select File</button>
+    <button class="btn bg-site btn-adn block waves-effect text-light d-none open-camera-btn" onclick="">Open Camera</button>
+    <button class="btn bg-site btn-adn block waves-effect text-light d-none storage-btn"  >Select From Storage</button>
     <div class="row d-none" id="camraPreview">
         <div class=" col-sm-6 col-md-4 p-0 m-auto">
             <h3 class="mt-2 text-bold text-black">@(Model.UrlFront==null?"FRONT IMAGE UPLOAD": "BACK IMAGE UPLOAD")</h3>
@@ -83,21 +84,23 @@
             <div class="card-body">
                 @*<h3 class="card-title">Passport check</h3>*@
                 @*<p class="card-text">
-            Start by clicking the link below:
-            </p>*@
+        Start by clicking the link below:
+        </p>*@
                 <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
                     <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
                     <input type="file" class="d-none" id="File" name="File" accept="image/*" capture="camera">
                     @*<input type="text" id="File" name="File" />*@
 
                 </form>
-                <button class="btn bg-site btn-adn block waves-effect text-light" onclick="$('#resultForm').submit()">
-                    Confirm
-                </button>
-                <button href="#" class="btn bg-site text-light waves-effect retryCamera">
-                    Retry
-                </button>
-
+                <div class="row text-center">
+                    <button class="btn bg-site m-auto btn-adn block waves-effect text-light" onclick="$('#resultForm').submit()">
+                        Confirm
+                    </button>
+                    <button type="button" class="btn m-auto bg-site btn-adn block waves-effect text-light camera camera-file  retryCamera">
+                        Retry
+                    </button>
+                    @*<button type="button" class="btn m-auto bg-site btn-adn block waves-effect text-light  camera-can " onclick="window.location.reload()"> Retry </button>*@
+                </div>
             </div>
         </div>
     </div>
@@ -107,10 +110,10 @@
         </a>
 
     </div>*@
-    <div class="canvascontainer d-none">
+    @*<div class="canvascontainer d-none">
         <video id="videoplayer" autoplay muted playsinline class="d-none"></video>
         <div class="position-relative camera-video-div">
-            <canvas id="streamCanvas" class=""></canvas>
+            <canvas id="streamCanvas" class="w-100"></canvas>
             <button onclick="CaptureAndProccess()" class="btn btn-danger btn-lg capture-btn rounded">
                 Tap to
                 capture
@@ -120,7 +123,7 @@
             <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")" />
             <input type="text" id="File" name="File" />
         </form>
-    </div>
+    </div>*@
 </div>
 <div class="spin d-none text-center" style="display:none">
     <div class="spinner-border text-danger"></div>

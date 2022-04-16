@@ -33,10 +33,10 @@
 }
 
 .bs-stepper .bs-stepper-header .step .step-trigger {
+  padding : 0;
   -webkit-flex-wrap : nowrap;
       -ms-flex-wrap : nowrap;
           flex-wrap : nowrap;
-  padding : 0;
   font-weight : normal;
 }
 

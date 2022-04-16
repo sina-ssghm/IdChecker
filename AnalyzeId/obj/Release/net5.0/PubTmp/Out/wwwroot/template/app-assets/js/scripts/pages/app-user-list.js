@@ -8,38 +8,25 @@
 
 ==========================================================================================*/
 $(function () {
-  ('use strict');
+  'use strict';
 
   var dtUserTable = $('.user-list-table'),
     newUserSidebar = $('.new-user-modal'),
     newUserForm = $('.add-new-user'),
-    select = $('.select2'),
-    dtContact = $('.dt-contact'),
     statusObj = {
       1: { title: 'Pending', class: 'badge-light-warning' },
       2: { title: 'Active', class: 'badge-light-success' },
       3: { title: 'Inactive', class: 'badge-light-secondary' }
     };
 
-  var assetPath = '../../../app-assets/',
-    userView = 'app-user-view-account.html';
-
+  var assetPath = '/template/app-assets/',
+    userView = 'app-user-view.html',
+    userEdit = 'app-user-edit.html';
   if ($('body').attr('data-framework') === 'laravel') {
     assetPath = $('body').attr('data-asset-path');
-    userView = assetPath + 'app/user/view/account';
+    userView = assetPath + 'app/user/view';
+    userEdit = assetPath + 'app/user/edit';
   }
-
-  select.each(function () {
-    var $this = $(this);
-    $this.wrap('<div class="position-relative"></div>');
-    $this.select2({
-      // the following code is used to disable x-scrollbar when click in select input and
-      // take 100% width in responsive also
-      dropdownAutoWidth: true,
-      width: '100%',
-      dropdownParent: $this.parent()
-    });
-  });
 
   // Users List datatable
   if (dtUserTable.length) {
@@ -47,11 +34,11 @@ $(function () {
       ajax: assetPath + 'data/user-list.json', // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: '' },
+        { data: 'responsive_id' },
         { data: 'full_name' },
+        { data: 'email' },
         { data: 'role' },
         { data: 'current_plan' },
-        { data: 'billing' },
         { data: 'status' },
         { data: '' }
       ],
@@ -61,10 +48,7 @@ $(function () {
           className: 'control',
           orderable: false,
           responsivePriority: 2,
-          targets: 0,
-          render: function (data, type, full, meta) {
-            return '';
-          }
+          targets: 0
         },
         {
           // User full name and username
@@ -72,7 +56,7 @@ $(function () {
           responsivePriority: 4,
           render: function (data, type, full, meta) {
             var $name = full['full_name'],
-              $email = full['email'],
+              $uname = full['username'],
               $image = full['avatar'];
             if ($image) {
               // For Avatar image
@@ -95,18 +79,18 @@ $(function () {
               '<div class="avatar-wrapper">' +
               '<div class="avatar ' +
               colorClass +
-              ' me-1">' +
+              ' mr-1">' +
               $output +
               '</div>' +
               '</div>' +
               '<div class="d-flex flex-column">' +
               '<a href="' +
               userView +
-              '" class="user_name text-truncate text-body"><span class="fw-bolder">' +
+              '" class="user_name text-truncate"><span class="font-weight-bold">' +
               $name +
               '</span></a>' +
-              '<small class="emp_post text-muted">' +
-              $email +
+              '<small class="emp_post text-muted">@' +
+              $uname +
               '</small>' +
               '</div>' +
               '</div>';
@@ -115,25 +99,17 @@ $(function () {
         },
         {
           // User Role
-          targets: 2,
+          targets: 3,
           render: function (data, type, full, meta) {
             var $role = full['role'];
             var roleBadgeObj = {
-              Subscriber: feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary me-50' }),
-              Author: feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning me-50' }),
-              Maintainer: feather.icons['database'].toSvg({ class: 'font-medium-3 text-success me-50' }),
-              Editor: feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info me-50' }),
-              Admin: feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger me-50' })
+              Subscriber: feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary mr-50' }),
+              Author: feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning mr-50' }),
+              Maintainer: feather.icons['database'].toSvg({ class: 'font-medium-3 text-success mr-50' }),
+              Editor: feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+              Admin: feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger mr-50' })
             };
             return "<span class='text-truncate align-middle'>" + roleBadgeObj[$role] + $role + '</span>';
-          }
-        },
-        {
-          targets: 4,
-          render: function (data, type, full, meta) {
-            var $billing = full['billing'];
-
-            return '<span class="text-nowrap">' + $billing + '</span>';
           }
         },
         {
@@ -143,7 +119,7 @@ $(function () {
             var $status = full['status'];
 
             return (
-              '<span class="badge rounded-pill ' +
+              '<span class="badge badge-pill ' +
               statusObj[$status].class +
               '" text-capitalized>' +
               statusObj[$status].title +
@@ -159,17 +135,22 @@ $(function () {
           render: function (data, type, full, meta) {
             return (
               '<div class="btn-group">' +
-              '<a class="btn btn-sm dropdown-toggle hide-arrow" data-bs-toggle="dropdown">' +
+              '<a class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">' +
               feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
               '</a>' +
-              '<div class="dropdown-menu dropdown-menu-end">' +
+              '<div class="dropdown-menu dropdown-menu-right">' +
               '<a href="' +
               userView +
               '" class="dropdown-item">' +
-              feather.icons['file-text'].toSvg({ class: 'font-small-4 me-50' }) +
+              feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) +
               'Details</a>' +
+              '<a href="' +
+              userEdit +
+              '" class="dropdown-item">' +
+              feather.icons['archive'].toSvg({ class: 'font-small-4 mr-50' }) +
+              'Edit</a>' +
               '<a href="javascript:;" class="dropdown-item delete-record">' +
-              feather.icons['trash-2'].toSvg({ class: 'font-small-4 me-50' }) +
+              feather.icons['trash-2'].toSvg({ class: 'font-small-4 mr-50' }) +
               'Delete</a></div>' +
               '</div>' +
               '</div>'
@@ -177,11 +158,11 @@ $(function () {
           }
         }
       ],
-      order: [[1, 'desc']],
+      order: [[2, 'desc']],
       dom:
-        '<"d-flex justify-content-between align-items-center header-actions mx-2 row mt-75"' +
-        '<"col-sm-12 col-lg-4 d-flex justify-content-center justify-content-lg-start" l>' +
-        '<"col-sm-12 col-lg-8 ps-xl-75 ps-0"<"dt-action-buttons d-flex align-items-center justify-content-center justify-content-lg-end flex-lg-nowrap flex-wrap"<"me-1"f>B>>' +
+        '<"d-flex justify-content-between align-items-center header-actions mx-1 row mt-75"' +
+        '<"col-lg-12 col-xl-6" l>' +
+        '<"col-lg-12 col-xl-6 pl-xl-75 pl-0"<"dt-action-buttons text-xl-right text-lg-left text-md-right text-left d-flex align-items-center justify-content-lg-end align-items-center flex-sm-nowrap flex-wrap mr-1"<"mr-1"f>B>>' +
         '>t' +
         '<"d-flex justify-content-between mx-2 row mb-1"' +
         '<"col-sm-12 col-md-6"i>' +
@@ -195,55 +176,11 @@ $(function () {
       // Buttons with Dropdown
       buttons: [
         {
-          extend: 'collection',
-          className: 'btn btn-outline-secondary dropdown-toggle me-2',
-          text: feather.icons['external-link'].toSvg({ class: 'font-small-4 me-50' }) + 'Export',
-          buttons: [
-            {
-              extend: 'print',
-              text: feather.icons['printer'].toSvg({ class: 'font-small-4 me-50' }) + 'Print',
-              className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5] }
-            },
-            {
-              extend: 'csv',
-              text: feather.icons['file-text'].toSvg({ class: 'font-small-4 me-50' }) + 'Csv',
-              className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5] }
-            },
-            {
-              extend: 'excel',
-              text: feather.icons['file'].toSvg({ class: 'font-small-4 me-50' }) + 'Excel',
-              className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5] }
-            },
-            {
-              extend: 'pdf',
-              text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 me-50' }) + 'Pdf',
-              className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5] }
-            },
-            {
-              extend: 'copy',
-              text: feather.icons['copy'].toSvg({ class: 'font-small-4 me-50' }) + 'Copy',
-              className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5] }
-            }
-          ],
-          init: function (api, node, config) {
-            $(node).removeClass('btn-secondary');
-            $(node).parent().removeClass('btn-group');
-            setTimeout(function () {
-              $(node).closest('.dt-buttons').removeClass('btn-group').addClass('d-inline-flex mt-50');
-            }, 50);
-          }
-        },
-        {
           text: 'Add New User',
-          className: 'add-new btn btn-primary',
+          className: 'add-new btn btn-primary mt-50',
           attr: {
-            'data-bs-toggle': 'modal',
-            'data-bs-target': '#modals-slide-in'
+            'data-toggle': 'modal',
+            'data-target': '#modals-slide-in'
           },
           init: function (api, node, config) {
             $(node).removeClass('btn-secondary');
@@ -260,26 +197,19 @@ $(function () {
             }
           }),
           type: 'column',
-          renderer: function (api, rowIdx, columns) {
-            var data = $.map(columns, function (col, i) {
-              return col.columnIndex !== 6 // ? Do not show row in modal popup if title is blank (for check box)
-                ? '<tr data-dt-row="' +
-                    col.rowIdx +
-                    '" data-dt-column="' +
-                    col.columnIndex +
-                    '">' +
-                    '<td>' +
-                    col.title +
-                    ':' +
-                    '</td> ' +
-                    '<td>' +
-                    col.data +
-                    '</td>' +
-                    '</tr>'
-                : '';
-            }).join('');
-            return data ? $('<table class="table"/>').append('<tbody>' + data + '</tbody>') : false;
-          }
+          renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+            tableClass: 'table',
+            columnDefs: [
+              {
+                targets: 2,
+                visible: false
+              },
+              {
+                targets: 3,
+                visible: false
+              }
+            ]
+          })
         }
       },
       language: {
@@ -292,12 +222,11 @@ $(function () {
       initComplete: function () {
         // Adding role filter once table initialized
         this.api()
-          .columns(2)
+          .columns(3)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="UserRole">Role</label>').appendTo('.user_role');
             var select = $(
-              '<select id="UserRole" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Select Role </option></select>'
+              '<select id="UserRole" class="form-control text-capitalize mb-md-0 mb-2"><option value=""> Select Role </option></select>'
             )
               .appendTo('.user_role')
               .on('change', function () {
@@ -315,12 +244,11 @@ $(function () {
           });
         // Adding plan filter once table initialized
         this.api()
-          .columns(3)
+          .columns(4)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="UserPlan">Plan</label>').appendTo('.user_plan');
             var select = $(
-              '<select id="UserPlan" class="form-select text-capitalize mb-md-0 mb-2"><option value=""> Select Plan </option></select>'
+              '<select id="UserPlan" class="form-control text-capitalize mb-md-0 mb-2"><option value=""> Select Plan </option></select>'
             )
               .appendTo('.user_plan')
               .on('change', function () {
@@ -341,9 +269,8 @@ $(function () {
           .columns(5)
           .every(function () {
             var column = this;
-            var label = $('<label class="form-label" for="FilterTransaction">Status</label>').appendTo('.user_status');
             var select = $(
-              '<select id="FilterTransaction" class="form-select text-capitalize mb-md-0 mb-2xx"><option value=""> Select Status </option></select>'
+              '<select id="FilterTransaction" class="form-control text-capitalize mb-md-0 mb-2xx"><option value=""> Select Status </option></select>'
             )
               .appendTo('.user_status')
               .on('change', function () {
@@ -367,6 +294,15 @@ $(function () {
           });
       }
     });
+  }
+
+  // Check Validity
+  function checkValidity(el) {
+    if (el.validate().checkForm()) {
+      submitBtn.attr('disabled', false);
+    } else {
+      submitBtn.attr('disabled', true);
+    }
   }
 
   // Form Validation
@@ -395,13 +331,9 @@ $(function () {
     });
   }
 
-  // Phone Number
-  if (dtContact.length) {
-    dtContact.each(function () {
-      new Cleave($(this), {
-        phone: true,
-        phoneRegionCode: 'US'
-      });
-    });
-  }
+  // To initialize tooltip with body container
+  $('body').tooltip({
+    selector: '[data-toggle="tooltip"]',
+    container: 'body'
+  });
 });

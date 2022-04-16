@@ -61,7 +61,7 @@
 .dark-layout .picker__holder .picker__table thead tr .picker__weekday {
   color: #b4b7bd; }
 
-.dark-layout .picker__holder .picker__table tbody tr td .picker__day {
+.dark-layout .picker__holder .picker__table tbody tr td .picker__day:not(.picker__day--highlighted) {
   color: #b4b7bd; }
 
 .dark-layout .picker__holder .picker__table tbody tr td .picker__day.picker__day--selected {
@@ -69,9 +69,6 @@
 
 .dark-layout .picker__holder .picker__table tbody tr td .picker__day.picker__day--outfocus {
   opacity: 0.65; }
-
-.dark-layout .picker__holder .picker__table tbody tr td .picker__day.picker__day--today {
-  color: #fff; }
 
 .dark-layout .picker__holder .picker__table tbody tr td .picker__day:not(.picker__day--today):not(.picker__day--highlighted):hover {
   background-color: #3b4253;
@@ -99,7 +96,7 @@
 .dark-layout .picker--time .picker__holder .picker__list {
   background-color: #161d31; }
 
-.dark-layout .picker--time .picker__holder .picker__list .picker__list-item:not(.picker__list-item--selected):hover {
+.dark-layout .picker--time .picker__holder .picker__list .picker__list-item.picker__list-item--selected, .dark-layout .picker--time .picker__holder .picker__list .picker__list-item:hover {
   background-color: #283046; }
 
 .dark-layout .picker--time .picker__holder .picker__list .picker__list-item.picker__list-item--disabled {

@@ -11,6 +11,13 @@ namespace AnalyzeId.Shared
         public static bool HasValue(this string txt)
         {
             return !string.IsNullOrWhiteSpace(txt);
+        } 
+        
+        public static string UrlToDirectoryPath(this string txt)
+        {
+            return txt!=null? txt.Remove(0, txt.IndexOf("Files") - 1):null;
         }
+
+
     }
 }

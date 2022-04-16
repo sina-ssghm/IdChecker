@@ -1,3 +1,4 @@
+using AnalyzeId.Service;
 using AnalyzeId.Service.Utility;
 using AnalyzeId.Shared;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +28,9 @@ namespace AnalyzeId
         {
             services.AddScoped<IOCRService, OCRService>();
             services.AddSingleton<IFileUploader, FileUploader>();
+            services.AddSingleton<IOCRRepository,OCRRepository>();
+            services.AddSingleton<IOCRFilesRepository, OCRFilesRepository>();
+            services.AddSingleton<AccountService, AccountService>();
 
             services.AddRazorPages();
             services.AddMvc();

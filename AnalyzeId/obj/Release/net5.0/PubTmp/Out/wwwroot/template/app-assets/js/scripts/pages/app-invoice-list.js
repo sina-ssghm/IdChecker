@@ -12,7 +12,7 @@ $(function () {
   'use strict';
 
   var dtInvoiceTable = $('.invoice-list-table'),
-    assetPath = '../../../app-assets/',
+    assetPath = '/template/app-assets/',
     invoicePreview = 'app-invoice-preview.html',
     invoiceAdd = 'app-invoice-add.html',
     invoiceEdit = 'app-invoice-edit.html';
@@ -55,7 +55,7 @@ $(function () {
           render: function (data, type, full, meta) {
             var $invoiceId = full['invoice_id'];
             // Creates full output for row
-            var $rowOutput = '<a class="fw-bold" href="' + invoicePreview + '"> #' + $invoiceId + '</a>';
+            var $rowOutput = '<a class="font-weight-bold" href="' + invoicePreview + '"> #' + $invoiceId + '</a>';
             return $rowOutput;
           }
         },
@@ -76,11 +76,11 @@ $(function () {
                 'Partial Payment': { class: 'bg-light-warning', icon: 'pie-chart' }
               };
             return (
-              "<span data-bs-toggle='tooltip' data-bs-html='true' title='<span>" +
+              "<span data-toggle='tooltip' data-html='true' title='<span>" +
               $invoiceStatus +
-              '<br> <span class="fw-bold">Balance:</span> ' +
+              '<br> <span class="font-weight-bold">Balance:</span> ' +
               $balance +
-              '<br> <span class="fw-bold">Due Date:</span> ' +
+              '<br> <span class="font-weight-bold">Due Date:</span> ' +
               $dueDate +
               "</span>'>" +
               '<div class="avatar avatar-status ' +
@@ -125,7 +125,7 @@ $(function () {
               '<div class="avatar-wrapper">' +
               '<div class="avatar' +
               colorClass +
-              'me-50">' +
+              'mr-50">' +
               $output +
               '</div>' +
               '</div>' +
@@ -174,7 +174,7 @@ $(function () {
             var $balance = full['balance'];
             if ($balance === 0) {
               var $badge_class = 'badge-light-success';
-              return '<span class="badge rounded-pill ' + $badge_class + '" text-capitalized> Paid </span>';
+              return '<span class="badge badge-pill ' + $badge_class + '" text-capitalized> Paid </span>';
             } else {
               return '<span class="d-none">' + $balance + '</span>' + $balance;
             }
@@ -193,32 +193,32 @@ $(function () {
           render: function (data, type, full, meta) {
             return (
               '<div class="d-flex align-items-center col-actions">' +
-              '<a class="me-1" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Send Mail">' +
-              feather.icons['send'].toSvg({ class: 'font-medium-2 text-body' }) +
+              '<a class="mr-1" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Send Mail">' +
+              feather.icons['send'].toSvg({ class: 'font-medium-2' }) +
               '</a>' +
-              '<a class="me-25" href="' +
+              '<a class="mr-1" href="' +
               invoicePreview +
-              '" data-bs-toggle="tooltip" data-bs-placement="top" title="Preview Invoice">' +
-              feather.icons['eye'].toSvg({ class: 'font-medium-2 text-body' }) +
+              '" data-toggle="tooltip" data-placement="top" title="Preview Invoice">' +
+              feather.icons['eye'].toSvg({ class: 'font-medium-2' }) +
               '</a>' +
               '<div class="dropdown">' +
-              '<a class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown">' +
-              feather.icons['more-vertical'].toSvg({ class: 'font-medium-2 text-body' }) +
+              '<a class="btn btn-sm btn-icon px-0" data-toggle="dropdown">' +
+              feather.icons['more-vertical'].toSvg({ class: 'font-medium-2' }) +
               '</a>' +
-              '<div class="dropdown-menu dropdown-menu-end">' +
-              '<a href="#" class="dropdown-item">' +
-              feather.icons['download'].toSvg({ class: 'font-small-4 me-50' }) +
+              '<div class="dropdown-menu dropdown-menu-right">' +
+              '<a href="javascript:void(0);" class="dropdown-item">' +
+              feather.icons['download'].toSvg({ class: 'font-small-4 mr-50' }) +
               'Download</a>' +
               '<a href="' +
               invoiceEdit +
               '" class="dropdown-item">' +
-              feather.icons['edit'].toSvg({ class: 'font-small-4 me-50' }) +
+              feather.icons['edit'].toSvg({ class: 'font-small-4 mr-50' }) +
               'Edit</a>' +
-              '<a href="#" class="dropdown-item">' +
-              feather.icons['trash'].toSvg({ class: 'font-small-4 me-50' }) +
+              '<a href="javascript:void(0);" class="dropdown-item">' +
+              feather.icons['trash'].toSvg({ class: 'font-small-4 mr-50' }) +
               'Delete</a>' +
-              '<a href="#" class="dropdown-item">' +
-              feather.icons['copy'].toSvg({ class: 'font-small-4 me-50' }) +
+              '<a href="javascript:void(0);" class="dropdown-item">' +
+              feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) +
               'Duplicate</a>' +
               '</div>' +
               '</div>' +
@@ -230,8 +230,8 @@ $(function () {
       order: [[1, 'desc']],
       dom:
         '<"row d-flex justify-content-between align-items-center m-1"' +
-        '<"col-lg-6 d-flex align-items-center"l<"dt-action-buttons text-xl-end text-lg-start text-lg-end text-start "B>>' +
-        '<"col-lg-6 d-flex align-items-center justify-content-lg-end flex-lg-nowrap flex-wrap pe-lg-1 p-0"f<"invoice_status ms-sm-2">>' +
+        '<"col-lg-6 d-flex align-items-center"l<"dt-action-buttons text-xl-right text-lg-left text-lg-right text-left "B>>' +
+        '<"col-lg-6 d-flex align-items-center justify-content-lg-end flex-lg-nowrap flex-wrap pr-lg-1 p-0"f<"invoice_status ml-sm-2">>' +
         '>t' +
         '<"d-flex justify-content-between mx-2 row"' +
         '<"col-sm-12 col-md-6"i>' +
@@ -251,7 +251,7 @@ $(function () {
       buttons: [
         {
           text: 'Add Record',
-          className: 'btn btn-primary btn-add-record ms-2',
+          className: 'btn btn-primary btn-add-record ml-2',
           action: function (e, dt, button, config) {
             window.location = invoiceAdd;
           }
@@ -267,37 +267,30 @@ $(function () {
             }
           }),
           type: 'column',
-          renderer: function (api, rowIdx, columns) {
-            var data = $.map(columns, function (col, i) {
-              return col.columnIndex !== 2 // ? Do not show row in modal popup if title is blank (for check box)
-                ? '<tr data-dt-row="' +
-                    col.rowIdx +
-                    '" data-dt-column="' +
-                    col.columnIndex +
-                    '">' +
-                    '<td>' +
-                    col.title +
-                    ':' +
-                    '</td> ' +
-                    '<td>' +
-                    col.data +
-                    '</td>' +
-                    '</tr>'
-                : '';
-            }).join('');
-            return data ? $('<table class="table"/>').append('<tbody>' + data + '</tbody>') : false;
-          }
+          renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+            tableClass: 'table',
+            columnDefs: [
+              {
+                targets: 2,
+                visible: false
+              },
+              {
+                targets: 3,
+                visible: false
+              }
+            ]
+          })
         }
       },
       initComplete: function () {
-        $(document).find('[data-bs-toggle="tooltip"]').tooltip();
+        $(document).find('[data-toggle="tooltip"]').tooltip();
         // Adding role filter once table initialized
         this.api()
           .columns(7)
           .every(function () {
             var column = this;
             var select = $(
-              '<select id="UserRole" class="form-select ms-50 text-capitalize"><option value=""> Select Status </option></select>'
+              '<select id="UserRole" class="form-control ml-50 text-capitalize"><option value=""> Select Status </option></select>'
             )
               .appendTo('.invoice_status')
               .on('change', function () {
@@ -315,7 +308,7 @@ $(function () {
           });
       },
       drawCallback: function () {
-        $(document).find('[data-bs-toggle="tooltip"]').tooltip();
+        $(document).find('[data-toggle="tooltip"]').tooltip();
       }
     });
   }
