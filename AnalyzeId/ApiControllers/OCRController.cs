@@ -50,8 +50,8 @@ namespace AnalyzeId.ApiControllers
             }
             var data = new ResultOCRAndFilesViewModel
             {
-                OCRs = OCRRepository.Get(transactionId),
-                OCRFiles = oCRFilesRepository.GetAll(transactionId)
+                OCRs = OCRRepository.GetForApi(transactionId),
+                OCRFiles = oCRFilesRepository.GetAllForOcrApi(transactionId)
             };
             operation.Data = data;
             return JsonConvert.SerializeObject(operation);
@@ -62,7 +62,7 @@ namespace AnalyzeId.ApiControllers
         public string GetFile(string transactionId, Guid imageId, [FromHeader(Name = "API-UserName")] string username, [FromHeader(Name = "API-Password")] string pass)
         {
 
-            var operation = new OperationResult<object> { Succeed = true, Message = "Done Successfully" };
+            var operation = new GetImageBase64ForApiViewModel { Succeed=true, Message= "Done Successfully" };
             if (transactionId == null)
             {
                 operation.Message = "Transaction-ID not valid";

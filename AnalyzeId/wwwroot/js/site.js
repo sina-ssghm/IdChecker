@@ -103,3 +103,43 @@ const b64toBlob = (b64Data, contentType = 'image/png', sliceSize = 512) => {
     const blob = new Blob(byteArrays, { type: contentType });
     return blob;
 }
+
+let rotateImage = () => {
+    let img = new Image();
+    img.src = document.getElementsByClassName('camera-preview-img')[0].src;
+    let canvas = document.createElement("canvas");
+    img.onload = function () {
+        rotateImage();
+        saveImage(img.src.replace(/^.*[\\\/]/, ''));
+    }
+    let rotateImage = () => {
+        let ctx = canvas.getContext("2d");
+        canvas.width = img.height;
+        canvas.height = img.width;
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(Math.PI / 2);
+        ctx.drawImage(img, -img.width / 2, -img.height / 2);
+    }
+
+    let saveImage = (img_name) => {
+        let file64 = canvas.toDataURL("image/png");
+        var file = dataBase64URLtoFile(file64, "a.png")
+        document.getElementById('File').value = "";
+        let list = new DataTransfer();
+        list.items.add(file);
+        document.getElementById('File').files = list.files;
+        $(".camera-preview-img").attr("src", file64)
+        //a.download = img_name;
+        //document.body.appendChild(a);
+        //a.click();
+    }
+}
+
+function dataBase64URLtoFile(dataurl, filename) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new File([u8arr], filename, { type: mime });
+}

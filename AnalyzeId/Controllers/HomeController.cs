@@ -59,7 +59,7 @@ namespace AnalyzeId.Controllers
                 fileDTO.IsContinue = true;
                 return View(fileDTO);
             }
-            fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
+            fileDTO.UrlFront = fileDTO.UrlFront ?? result?.Data?.FullPath;
             return View(nameof(OcrRequest), fileDTO);
         }
 

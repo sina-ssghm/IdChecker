@@ -3,6 +3,7 @@ using Amazon.S3.Transfer;
 using Amazon.Textract;
 using Amazon.Textract.Model;
 using AnalyzeId.Domain.Model;
+using AnalyzeId.Domain.ViewModel;
 using AnalyzeId.Shared;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,7 +27,7 @@ namespace AnalyzeId.Service.Utility
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
         private ILogger logger = LogManager.GetCurrentClassLogger();
-        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment,IConfiguration configuration)
+        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment, IConfiguration configuration)
         {
             this.fileUploader = fileUploader;
             this.hostingEnvironment = hostingEnvironment;
@@ -103,8 +104,11 @@ namespace AnalyzeId.Service.Utility
                 //{
                 //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                 //}
-                IDVTask.Result.Data.FaceUrl = await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
-                IDVTask.Result.Data.SignatureUrl = await _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
+                var faceUrl =  _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                var signatureUrl =  _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
+                await Task.WhenAll(faceUrl, signatureUrl);
+                IDVTask.Result.Data.FaceUrl = faceUrl.Result;
+                IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
 
                 IDVTask.Result.Data.BackUrl = fileBackPath;
                 IDVTask.Result.Data.BackUrl = fileBackPath;
@@ -157,10 +161,10 @@ namespace AnalyzeId.Service.Utility
                         Succeed = true,
                         Data = new FinalResultOCRDTO
                         {
-                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Surname + " " + result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Given_Name,
                             MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
-                            Surname =  result?.Result?.Data?.Given_Name,
+                            Surname = result?.Result?.Data?.Given_Name,
                             DocumentNumber = result?.Result?.Data?.Document_Number,
                             BirthDate = result?.Result?.Data?.Birth_Date,
                             ExpiryDate = result?.Result?.Data?.Expiry_Date,
@@ -221,9 +225,9 @@ namespace AnalyzeId.Service.Utility
                         var x = res.IdentityDocuments.FirstOrDefault().IdentityDocumentFields.Select(s => new { key = s.Type.Text, value = s.ValueDetection.Text }).ToList();
                         return new FinalResultOCRDTO
                         {
-                            FullName = x[0].value + " " + x[2].value + " " + x[1].value,
+                            FullName = x[0].value + " " + x[1].value,
                             MiddleName = x[2].value,
-                            Surname = x[2].value + " " + x[1].value,
+                            Surname = x[1].value,
                             FirstName = x[0].value,
                             Address = x[17].value,
                             DocumentNumber = x[8].value,
@@ -283,38 +287,32 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Transaction_ID", transactionId);
                 request.AddParameter("Image_ID", imageId);
                 request.AddParameter("Username", "hamid");
-
                 IRestResponse response = client.Execute(request);
-
                 if (response.IsSuccessful)
                 {
-                     
-
                     var paths = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + ".jpg";
-                     
                     File.WriteAllBytes(paths, response.RawBytes);
                     return paths;
                 }
                 return null;
-
-
             }
             catch (Exception ex)
             {
                 logger.Debug(ex);
                 return null;
             }
-        } 
+        }
         public void SendRequestToWebhook(string transactionId)
         {
             try
             {
-               
-                var webhook=  configuration.GetSection("Webhook").Value;
+                var model = new SendRequestToWebhookViewModel { Message = "The request was successful", Transaction_ID = transactionId, Succeed = true };
+                var webhook = configuration.GetSection("Webhook").Value;
                 var client = new RestClient(webhook);
                 client.Timeout = -1;
-                var request = new RestRequest(Method.GET);
-                request.AddParameter("Transaction_ID", JsonConvert.SerializeObject(transactionId));
+                var request = new RestRequest(Method.POST);
+                var data = JsonConvert.SerializeObject(model);
+                request.AddParameter("Result", JsonConvert.SerializeObject(model));
                 IRestResponse response = client.Execute(request);
             }
             catch (Exception ex)
@@ -326,7 +324,7 @@ namespace AnalyzeId.Service.Utility
         {
             try
             {
-                var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + "."+ type.Remove(0, type.IndexOf("/") + 1));
+                var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + "." + type.Remove(0, type.IndexOf("/") + 1));
                 System.IO.File.WriteAllBytes(fullPath, Convert.FromBase64String(base64));
                 return fullPath;
             }
@@ -336,6 +334,6 @@ namespace AnalyzeId.Service.Utility
                 throw;
             }
         }
-     
+
     }
 }

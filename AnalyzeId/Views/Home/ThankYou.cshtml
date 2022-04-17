@@ -1,18 +1,56 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ThankYou";
+
 }
 
-  <div class="row">
+@*<div class="row">
 
-        <div class="col-sm-4 m-auto text-center">
-            <h2 class="text-center">ID CHECKER</h2>
-            <h4 class="text-center mt-1 mb-1">THANK YOU</h4>
-                @*<p class="text-center">Your request successfully</p>*@
-                <a class="btn btn-danger btn-red m-auto"  asp-action="Index" asp-controller="Home">Home</a>
-        </div>
-
+    <div class="col-sm-4 m-auto text-center">
+    <h2 class="text-center">ID CHECKER</h2>
+    <h4 class="text-center mt-1 mb-1">THANK YOU</h4>
+    <a class="btn btn-danger btn-red m-auto"  asp-action="Index" asp-controller="Home">Home</a>
     </div>
 
+    </div>*@
+<html>
+<head>
+    <title>Rotate and Save image in JavaScript</title>
+</head>
+<body>
+    <p>Click the image to rotate 180 degrees and save</p>
+
+    <img src="/Image/footer.jpeg" id="myimage"
+         onclick="rotateImage();" alt="" />
+</body>
+
+<script>
+    let rotateImage = () => {
+        let img = new Image();
+        img.src = document.getElementById('myimage').src;
+        let canvas = document.createElement("canvas");
+        img.onload = function(){
+            rotateImage();
+            saveImage(img.src.replace(/^.*[\\\/]/, ''));
+        }
+        let rotateImage = () => {
+            let ctx = canvas.getContext("2d");
+            canvas.width = img.height;
+            canvas.height = img.width;
+            ctx.translate(canvas.width / 2,canvas.height / 2);
+            ctx.rotate(Math.PI/2);
+            ctx.drawImage(img, -img.width / 2, -img.height / 2);
+        }
+
+        let saveImage = (img_name) => {
+            let file = canvas.toDataURL("image/png");
+            $("#myimage").attr("src",file)
+            //a.download = img_name;
+            //document.body.appendChild(a);
+            //a.click();
+        }
+    }
+
+</script>
+</html>
 
 

@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace AnalyzeId.Domain.Model
 {
-    public class OCR
+    public class OCR: BaseViewModel
     {
-        [BsonId]
-        public Guid Id { get; set; }
-
+   
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string Surname { get; set; }

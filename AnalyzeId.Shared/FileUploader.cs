@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -57,6 +58,7 @@ namespace AnalyzeId.Shared
                     int oneMeg = 1020 * 1024;
                     if (file != null && file.Length > oneMeg * 5)
                     {
+                        
                         using (var memory = new MemoryStream())
                         {
                             await file.CopyToAsync(memory);
@@ -87,8 +89,8 @@ namespace AnalyzeId.Shared
                             names.Add("\\Files\\" + fileName);
                         }
                     }
-                   
-                  
+                    //saveRotateImg((Directory.GetCurrentDirectory() + @"\wwwroot\Files\" + fileName), 1);
+
                 }
                 return names;
             }
@@ -171,5 +173,46 @@ namespace AnalyzeId.Shared
                 }
             }
         }
+
+        public Boolean saveRotateImg(string path,int count)
+        {
+            // Load the image from the original path
+            using (Image image = Image.FromFile(path))
+            {
+                //rotate the picture by 90 degrees and re-save the picture as a Jpeg
+                //image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+
+                switch (count)
+                {
+                   case 0:
+                        image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                        break;
+                    case 1:
+                        image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                        break;
+                    case 2:
+                        image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                        break;
+                    case 4:
+                        image.RotateFlip(RotateFlipType.RotateNoneFlipNone);
+                        break;
+                    default:
+                        break;
+                }
+                // Save the image to the new_path
+                System.IO.File.Delete(path);
+                image.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            return true;
+        }
+
+
+
+
+
+
+
+
+
     }
 }

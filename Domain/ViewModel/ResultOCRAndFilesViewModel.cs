@@ -5,7 +5,7 @@ namespace AnalyzeId.Domain.ViewModel
 {
     public class ResultOCRAndFilesViewModel
     {
-        public List<OCR>  OCRs{ get; set; }
-        public List<OCRFileViewModel>  OCRFiles{ get; set; }
+        public List<OCRForApiViewModel>  OCRs{ get; set; }
+        public List<OCRFileForApiViewModel>  OCRFiles{ get; set; }
     }
 }

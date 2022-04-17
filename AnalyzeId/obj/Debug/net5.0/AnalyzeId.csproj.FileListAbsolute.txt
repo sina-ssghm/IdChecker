@@ -2571,8 +2571,6 @@ C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.dll
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\ref\AnalyzeId.dll
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.pdb
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\obj\Debug\net5.0\AnalyzeId.genruntimeconfig.cache
-C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\ref\AnalyzeId.dll
-C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Debug\net5.0\staticwebassets\AnalyzeId.StaticWebAssets.xml
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\DnsClient.dll
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\MongoDB.Bson.dll
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\MongoDB.Driver.dll
@@ -2598,3 +2596,34 @@ C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win-x6
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\DnsClient.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.Domain.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.Domain.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Debug\net5.0\Razor\Views\Home\_Result.cshtml.g.cs
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Debug\net5.0\refint\AnalyzeId.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll

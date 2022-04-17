@@ -51,6 +51,15 @@
         </div>
         @*<div class="col-12">
             <button type="submit" class="btn mt-2 text-light  bg-site btn-sm">Save</button>
-        </div>*@
+            </div>*@
+        <div class="col-12 text-center mt-2">
+            <button type="submit" @*onclick="$('#myform').submit()"*@ class="btn bg-site m-auto text-light waves-effect">
+                Confirm
+            </button>
+            <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site m-auto text-light waves-effect">
+                Back to home
+            </a>
+
+        </div>
     </div>
 </form>

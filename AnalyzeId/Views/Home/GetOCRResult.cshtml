@@ -1,6 +1,6 @@
 ﻿@model OperationResult<FinalResultOCRDTO>
 @{
-     ViewData["Title"] = "Result";
+    ViewData["Title"] = "Result";
     var data = Model?.Data;
     var jsonRtesult = Model?.Data?.JsonResultIDv;
 }
@@ -22,10 +22,10 @@ else if (data != null)
 
 
     <div class="row mt-3">
-        <div class="col-sm-8 ">
+        <div class="col-sm-12 ">
             <div class="card">
                 <div class="card-body">
-              <partial name="_Result" model="@Model.Data"></partial>
+                    <partial name="_Result" model="@Model.Data"></partial>
                 </div>
             </div>
             @if (jsonRtesult != null)
@@ -40,7 +40,7 @@ else if (data != null)
                                 <div class="card-body">
                                     <pre id="json-renderer">
                                         @(Html.Raw(jsonRtesult))
-                                                    </pre>
+                                                                    </pre>
                                 </div>
                             </div>
                         </div>
@@ -49,53 +49,42 @@ else if (data != null)
             }
 
         </div>
-        <div class=" col-sm-4">
-            @if (Model?.Data?.FrontUrl != null || Model?.Data?.BackUrl != null)
+        <div class="col-12">
+            @if (Model?.Data?.FrontUrl != null || Model?.Data?.BackUrl != null || Model?.Data?.FaceUrl != null || Model?.Data?.SignatureUrl != null)
             {
                 <div class="card">
 
                     <div class="card-body">
-                        @if (Model?.Data?.FrontUrl != null)
-                        {
-                            <div class="m-auto" asp-remove="">
-                                <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
-                            </div>
-                        }
-                        @if (Model?.Data?.BackUrl != null)
-                        {
-                            <div class="m-auto" asp-remove="">
-                                <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
-                            </div>
-                        }
-                    </div>
-                </div>
-            }
-
-            @if (Model?.Data?.FaceUrl != null || Model?.Data?.SignatureUrl != null)
-            {
-
-                <div class="card">
-
-                    <div class="card-body">
-                        @if (Model?.Data?.FaceUrl != null)
-                        {
-                            <div class="m-auto" asp-remove="">
-                                <img class="card-img-top" src="@Model.Data.FaceUrl.Remove(0,Model.Data.FaceUrl.IndexOf("Files")-1)" width="50%" alt="">
-                            </div>
-                        }
-                        @if(Model?.Data?.SignatureUrl != null)
-                        {
-                        <div class="m-auto" asp-remove="">
-                            <img class="card-img-top" src="@Model.Data.SignatureUrl.Remove(0,Model.Data.SignatureUrl.IndexOf("Files")-1)" width="50%" alt="">
+                        <div class="col-12 row">
+                            @if (Model?.Data?.FrontUrl != null)
+                            {
+                                <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                    <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
+                                </div>
+                            }
+                            @if (Model?.Data?.BackUrl != null)
+                            {
+                                <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                    <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
+                                </div>
+                            }
+                            @if (Model?.Data?.FaceUrl != null)
+                            {
+                                <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                    <img class="card-img-top" src="@Model.Data.FaceUrl.Remove(0,Model.Data.FaceUrl.IndexOf("Files")-1)" width="50%" alt="">
+                                </div>
+                            }
+                            @if (Model?.Data?.SignatureUrl != null)
+                            {
+                                <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                    <img class="card-img-top" src="@Model.Data.SignatureUrl.Remove(0,Model.Data.SignatureUrl.IndexOf("Files")-1)" width="50%" alt="">
+                                </div>
+                            }
                         </div>
-                        }
                     </div>
                 </div>
             }
         </div>
-
-
-
     </div>
     <div>
         @*<div class="text-center">
@@ -107,15 +96,7 @@ else if (data != null)
 
     </div>
 
-    <div class="align-content-center text-center mt-2 mb-3 m-auto">
-          <button type="button" onclick="$('#myform').submit()" class="btn bg-site text-light waves-effect">
-           Confirm
-        </button>
-        <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site text-light waves-effect">
-            Back to home
-        </a>
 
-    </div>
 }
 else
 {
@@ -165,7 +146,9 @@ else
 @section Scripts{
 <script src="~/lib/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
 <script src="~/lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
+@if(jsonRtesult!=null){
 <script>
     $('#json-renderer').jsonViewer(JSON.parse(`@(Html.Raw(jsonRtesult.Replace("'"," ").Replace("\"{","{").Replace("}\"", "}").Replace("\\\"","\"").Replace("\\n", "").Replace("\r", "")))`), { collapsed: true, rootCollapsable :false });
 </script>
+}
 }
