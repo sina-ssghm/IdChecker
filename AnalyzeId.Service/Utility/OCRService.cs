@@ -160,7 +160,7 @@ namespace AnalyzeId.Service.Utility
                             FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Surname + " " + result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
                             MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
-                            Surname = result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            Surname =  result?.Result?.Data?.Given_Name,
                             DocumentNumber = result?.Result?.Data?.Document_Number,
                             BirthDate = result?.Result?.Data?.Birth_Date,
                             ExpiryDate = result?.Result?.Data?.Expiry_Date,
@@ -234,7 +234,6 @@ namespace AnalyzeId.Service.Utility
                 }
 
             }
-            return null;
         }
 
         public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
