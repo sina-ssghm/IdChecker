@@ -3,6 +3,7 @@ using Amazon.S3.Transfer;
 using Amazon.Textract;
 using Amazon.Textract.Model;
 using AnalyzeId.Domain.Model;
+using AnalyzeId.Domain.ViewModel;
 using AnalyzeId.Shared;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,12 +26,14 @@ namespace AnalyzeId.Service.Utility
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
+        private readonly IImagePassportUrlRepository passportUrlRepository;
         private ILogger logger = LogManager.GetCurrentClassLogger();
-        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment,IConfiguration configuration)
+        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment, IConfiguration configuration, IImagePassportUrlRepository passportUrlRepository)
         {
             this.fileUploader = fileUploader;
             this.hostingEnvironment = hostingEnvironment;
             this.configuration = configuration;
+            this.passportUrlRepository = passportUrlRepository;
         }
         public async Task<OperationResult<FileUploadPathDTO>> UploadImage(string file)
         {
@@ -58,7 +61,7 @@ namespace AnalyzeId.Service.Utility
                 return OperationResult<FileUploadPathDTO>.Error(ex);
             }
         }
-        public async Task<OperationResult<FileUploadPathDTO>> UploadImage(IFormFile file)
+        public async Task<OperationResult<FileUploadPathDTO>> UploadImage(IFormFile file, Guid id, bool isFront)
         {
             try
             {
@@ -67,6 +70,7 @@ namespace AnalyzeId.Service.Utility
                 {
                     var filePath = await fileUploader.CheckAndUploadAsync(file);
                     var fullPath = Path.Combine(hostingEnvironment.WebRootPath, filePath.TrimStart('/', '\\'));
+                    await passportUrlRepository.Update(id, filePath, isFront);
                     return new OperationResult<FileUploadPathDTO>
                     {
                         Succeed = true,
@@ -87,27 +91,56 @@ namespace AnalyzeId.Service.Utility
             }
         }
 
-        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string fileFrontPath, string fileBackPath)
+        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(Guid Id)
         {
             try
             {
-                var IDVTask = _GetOCRResult(fileFrontPath, fileBackPath);
-                var awsTask = _GetOCRResultByAmazonApi(fileFrontPath);
+                var time = DateTime.Now;
+                var imgPassport = await passportUrlRepository.Get(Id);
+                if (string.IsNullOrEmpty(imgPassport?.FrontUrl) &&(string.IsNullOrEmpty(imgPassport?.BackUrl)||imgPassport.BackUrl=="||skip||"))
+                { 
+                    while (true)
+                    {
+                        System.Threading.Thread.Sleep(3000);
+                        imgPassport = await passportUrlRepository.Get(Id);
+                        if (!string.IsNullOrEmpty(imgPassport?.FrontUrl) && (!string.IsNullOrEmpty(imgPassport?.BackUrl) || imgPassport.BackUrl == "||skip||"))
+                        {
+                            break;
+                        }
+                        else if (time.AddMinutes(1) < DateTime.Now)
+                        {
+                            return new OperationResult<FinalResultOCRDTO> { Data = null, Message = "Please try again", Succeed = false };
+                        }
+                    }
+                }
+                imgPassport.FrontUrl = imgPassport.FrontUrl.PathToUrl();
+                imgPassport.BackUrl = string.IsNullOrEmpty(imgPassport.BackUrl) || imgPassport?.BackUrl== "||skip||" ? null : imgPassport.BackUrl.PathToUrl();
+
+                var IDVTask = _GetOCRResult(imgPassport.FrontUrl, imgPassport.BackUrl);
+                var awsTask = _GetOCRResultByAmazonApi(imgPassport.FrontUrl);
                 await Task.WhenAll(IDVTask, awsTask);
-                awsTask.Result.FrontUrl = fileFrontPath;
-                awsTask.Result.BackUrl = fileBackPath;
-                IDVTask.Result.Data.FrontUrl = fileFrontPath;
-                IDVTask.Result.Data.BackUrl = fileBackPath;
+                awsTask.Result.FrontUrl = imgPassport.FrontUrl;
+                awsTask.Result.BackUrl = imgPassport.BackUrl;
+                if (IDVTask.Result.Data != null)
+                {
+                    IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
+                    IDVTask.Result.Data.BackUrl = imgPassport.BackUrl; var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                    var signatureUrl = _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
+                    await Task.WhenAll(faceUrl, signatureUrl);
+                    IDVTask.Result.Data.FaceUrl = faceUrl.Result;
+                    IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
+                    IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
+                    IDVTask.Result.Data.BackUrl = imgPassport.BackUrl;
+                }
+
 
                 //if (IDVTask.Result.Data.ImageFaseId!=null)
                 //{
                 //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                 //}
-                IDVTask.Result.Data.FaceUrl = await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
-                IDVTask.Result.Data.SignatureUrl = await _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
 
-                IDVTask.Result.Data.BackUrl = fileBackPath;
-                IDVTask.Result.Data.BackUrl = fileBackPath;
+
+
 
                 return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
 
@@ -116,7 +149,6 @@ namespace AnalyzeId.Service.Utility
                 //    return new OperationResult<FinalResultOCRDTO> { Data = IDVTask.Result.Data, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
                 //}
                 //return new OperationResult<FinalResultOCRDTO> { Data = awsTask.Result, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
-
             }
             catch (Exception ex)
             {
@@ -157,10 +189,10 @@ namespace AnalyzeId.Service.Utility
                         Succeed = true,
                         Data = new FinalResultOCRDTO
                         {
-                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Surname + " " + result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Given_Name,
                             MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
-                            Surname = result?.Result?.Data?.Middle_Name + " " + result?.Result?.Data?.Surname,
+                            Surname = result?.Result?.Data?.Given_Name,
                             DocumentNumber = result?.Result?.Data?.Document_Number,
                             BirthDate = result?.Result?.Data?.Birth_Date,
                             ExpiryDate = result?.Result?.Data?.Expiry_Date,
@@ -221,9 +253,9 @@ namespace AnalyzeId.Service.Utility
                         var x = res.IdentityDocuments.FirstOrDefault().IdentityDocumentFields.Select(s => new { key = s.Type.Text, value = s.ValueDetection.Text }).ToList();
                         return new FinalResultOCRDTO
                         {
-                            FullName = x[0].value + " " + x[2].value + " " + x[1].value,
+                            FullName = x[0].value + " " + x[1].value,
                             MiddleName = x[2].value,
-                            Surname = x[2].value + " " + x[1].value,
+                            Surname = x[1].value,
                             FirstName = x[0].value,
                             Address = x[17].value,
                             DocumentNumber = x[8].value,
@@ -234,11 +266,11 @@ namespace AnalyzeId.Service.Utility
                 }
 
             }
-            return null;
         }
 
         public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
         {
+            finalResultIdv = finalResultIdv == null ? new FinalResultOCRDTO { } : finalResultIdv;
 
             finalResultIdv.FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName;
             finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
@@ -247,7 +279,7 @@ namespace AnalyzeId.Service.Utility
             finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
             finalResultIdv.BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate;
             finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate;
-            finalResultIdv.DocumentNumber = !finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv?.DocumentNumber;
+            finalResultIdv.DocumentNumber = !finalResultAZ.DocumentNumber.HasValue() ? finalResultIdv?.DocumentNumber: finalResultAZ.DocumentNumber;
 
             //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;
             //finalResultIdv.ImageBackId = finalResultIdv?.ImageBackId;
@@ -284,38 +316,32 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Transaction_ID", transactionId);
                 request.AddParameter("Image_ID", imageId);
                 request.AddParameter("Username", "hamid");
-
                 IRestResponse response = client.Execute(request);
-
                 if (response.IsSuccessful)
                 {
-                     
-
                     var paths = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + ".jpg";
-                     
                     File.WriteAllBytes(paths, response.RawBytes);
                     return paths;
                 }
                 return null;
-
-
             }
             catch (Exception ex)
             {
                 logger.Debug(ex);
                 return null;
             }
-        } 
+        }
         public void SendRequestToWebhook(string transactionId)
         {
             try
             {
-               
-                var webhook=  configuration.GetSection("Webhook").Value;
+                var model = new SendRequestToWebhookViewModel { Message = "The request was successful", Transaction_ID = transactionId, Succeed = true };
+                var webhook = configuration.GetSection("Webhook").Value;
                 var client = new RestClient(webhook);
                 client.Timeout = -1;
-                var request = new RestRequest(Method.GET);
-                request.AddParameter("Transaction_ID", JsonConvert.SerializeObject(transactionId));
+                var request = new RestRequest(Method.POST);
+                var data = JsonConvert.SerializeObject(model);
+                request.AddParameter("Result", JsonConvert.SerializeObject(model));
                 IRestResponse response = client.Execute(request);
             }
             catch (Exception ex)
@@ -327,7 +353,7 @@ namespace AnalyzeId.Service.Utility
         {
             try
             {
-                var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + "."+ type.Remove(0, type.IndexOf("/") + 1));
+                var fullPath = Path.Combine(Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\" + Guid.NewGuid().ToString() + "." + type.Remove(0, type.IndexOf("/") + 1));
                 System.IO.File.WriteAllBytes(fullPath, Convert.FromBase64String(base64));
                 return fullPath;
             }
@@ -337,6 +363,6 @@ namespace AnalyzeId.Service.Utility
                 throw;
             }
         }
-     
+
     }
 }

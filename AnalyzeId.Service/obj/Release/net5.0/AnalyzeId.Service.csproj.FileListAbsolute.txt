@@ -15,7 +15,6 @@ C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Release\n
 C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId.Service\obj\Release\net5.0\AnalyzeId.Service.pdb
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Service.deps.json
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Service.dll
-C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\ref\AnalyzeId.Service.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Service.pdb
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Shared.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Shared.pdb
@@ -28,3 +27,6 @@ C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Release\ne
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Release\net5.0\AnalyzeId.Service.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Release\net5.0\ref\AnalyzeId.Service.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Release\net5.0\AnalyzeId.Service.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Domain.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Release\net5.0\AnalyzeId.Domain.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Release\net5.0\refint\AnalyzeId.Service.dll

@@ -12,6 +12,7 @@ using AnalyzeId.Domain.ViewModel;
 using AnalyzeId.Domain.Enum;
 using AnalyzeId.Shared;
 using System.IO;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AnalyzeId.Controllers
 {
@@ -20,13 +21,20 @@ namespace AnalyzeId.Controllers
         private readonly IOCRService oCRService;
         private readonly IOCRRepository oCRRepository;
         private readonly IOCRFilesRepository oCRFilesRepository;
-
-        public HomeController(IOCRService oCRService, IOCRRepository oCRRepository, IOCRFilesRepository oCRFilesRepository)
+        private readonly IServiceProvider serviceProvider;
+        private readonly IImagePassportUrlRepository passportUrlRepository;
+        private readonly IOCRService service;
+     
+        public HomeController(IOCRService oCRService, IOCRRepository oCRRepository, IOCRFilesRepository oCRFilesRepository, IServiceProvider  serviceProvider,IImagePassportUrlRepository passportUrlRepository)
         {
             this.oCRService = oCRService;
             this.oCRRepository = oCRRepository;
             this.oCRFilesRepository = oCRFilesRepository;
+            this.serviceProvider = serviceProvider;
+            this.passportUrlRepository = passportUrlRepository;
+            service = serviceProvider.GetRequiredService<IOCRService>();
         }
+       
         public async Task<IActionResult> Index(string frontPath)
         {
             return View(new OCRFileDTO { UrlFront = frontPath });
@@ -50,22 +58,34 @@ namespace AnalyzeId.Controllers
 
         public async Task<IActionResult> Result(OCRFileDTO fileDTO)
         {
-            var result = await oCRService.UploadImage(fileDTO.File);
-            if ((fileDTO.File == null && fileDTO.UrlFront != null) || (fileDTO.File != null && fileDTO.UrlFront != null))
+            var isbackImage = fileDTO.IdPass.HasValue;
+           var idPass=fileDTO?.IdPass!=null?fileDTO.IdPass.Value: passportUrlRepository.Add(new ImagePassportViewModel { }).GetAwaiter().GetResult().Data;
+            if (fileDTO.UrlBack=="||skip||" && fileDTO.IdPass.HasValue)
             {
-                fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
-                fileDTO.UrlBack = fileDTO.UrlFront == null ? null : result?.Data?.FullPath;
+               await passportUrlRepository.Update(fileDTO.IdPass.Value,fileDTO.UrlBack,false);
+            }
+             UploadImage(fileDTO.File, idPass,fileDTO?.IdPass!=null?false:true);
+
+            if (isbackImage)
+            {
+                //fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
+                //fileDTO.UrlBack = fileDTO.UrlFront == null ? null : result?.Data?.FullPath;
                 fileDTO.Succeed = true;
                 fileDTO.IsContinue = true;
+                fileDTO.IdPass = idPass;
                 return View(fileDTO);
             }
-            fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
+            fileDTO.IdPass = idPass;
             return View(nameof(OcrRequest), fileDTO);
         }
 
         public async Task<IActionResult> GetOCRResult(OCRFileDTO fileDTO)
         {
-            var result = await oCRService.GetOCRResult(fileDTO.UrlFront, fileDTO.UrlBack);
+            if (fileDTO?.IdPass == null)
+            {
+                return NotFound();
+            }
+            var result = await oCRService.GetOCRResult(fileDTO.IdPass.Value);
             return View(result);
         }
 
@@ -76,6 +96,7 @@ namespace AnalyzeId.Controllers
             oCRFilesRepository.Add(model);
             return RedirectToAction(nameof(Signature),new { transactionId =model.TransactionId});
         }
+
         [HttpGet]
         public async Task<IActionResult> Signature(string transactionId)
         {
@@ -103,7 +124,6 @@ namespace AnalyzeId.Controllers
                     oCRService.SendRequestToWebhook(transactionId);
                 }
                 return Json("true");
-                
             }
             catch (Exception ex)
             {
@@ -115,6 +135,13 @@ namespace AnalyzeId.Controllers
         public async Task<IActionResult> ThankYou()
         {
             return View();
+        }
+
+
+        public void UploadImage(IFormFile file, Guid id, bool isFront)
+        {
+
+            service.UploadImage(file, id, isFront);
         }
     }
 }

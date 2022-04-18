@@ -1,4 +1,5 @@
 ﻿using AnalyzeId.Domain.Model;
+using AnalyzeId.Domain.ViewModel;
 using AnalyzeId.Shared;
 using MongoDB.Driver;
 using System;
@@ -43,7 +44,22 @@ namespace AnalyzeId.Service.Utility
           var result=  collection.Find(s=>s.TransactionId==transactionId).ToList();
             return result;
         }
-       
+        public List<OCRForApiViewModel> GetForApi(string transactionId)
+        {
+            return collection.Find(s => s.TransactionId == transactionId).ToList()
+                .Select(p => new OCRForApiViewModel
+                {
+                    Address = p.Address,
+                    BirthDate = p.BirthDate,
+                    DocumentNumber = p.DocumentNumber,
+                    ExpiryDate = p.ExpiryDate,
+                    FirstName = p.FirstName,
+                    FullName = p.FullName,
+                    MiddleName = p.MiddleName,
+                    Surname = p.Surname,
+                    TransactionId = p.TransactionId,
+                }).ToList();
+        }
 
     }
 }

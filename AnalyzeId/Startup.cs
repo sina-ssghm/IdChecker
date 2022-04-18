@@ -27,10 +27,11 @@ namespace AnalyzeId
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IOCRService, OCRService>();
-            services.AddSingleton<IFileUploader, FileUploader>();
-            services.AddSingleton<IOCRRepository,OCRRepository>();
-            services.AddSingleton<IOCRFilesRepository, OCRFilesRepository>();
-            services.AddSingleton<AccountService, AccountService>();
+            services.AddScoped<IFileUploader, FileUploader>();
+            services.AddScoped<IOCRRepository,OCRRepository>();
+            services.AddScoped<IOCRFilesRepository, OCRFilesRepository>();
+            services.AddScoped<AccountService, AccountService>();
+            services.AddScoped<IImagePassportUrlRepository, ImagePassportUrlRepository>();
 
             services.AddRazorPages();
             services.AddMvc();

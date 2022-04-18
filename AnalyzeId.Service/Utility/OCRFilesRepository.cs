@@ -90,6 +90,17 @@ namespace AnalyzeId.Service.Utility
             }).ToList();
             return result;
         }
+        public List<OCRFileForApiViewModel> GetAllForOcrApi(string transactionId)
+        {
+            var result = collection.Find(s => s.TransactionId == transactionId).ToList().Select(p => new
+            OCRFileForApiViewModel
+            {
+                 Image_ID=p.Id.ToString(),
+                  //Transaction_Id=p.TransactionId,
+                   
+            }).ToList();
+            return result;
+        }
 
         public Byte[] GetImage(string transactionId,Guid imageId)
         {

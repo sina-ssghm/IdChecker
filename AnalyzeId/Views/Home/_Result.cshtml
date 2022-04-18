@@ -39,11 +39,20 @@
         </div>
         <div class="col-6 mt-1">
             <label class="font-weight-bold">BirthDate:</label>
-            <input type="text" asp-for="BirthDate" class="form-control" />
+            <div class="position-relative">
+                <input type="text" asp-for="BirthDate" class="form-control" id="BirthDate"
+                       data-ha-datetimepicker="#BirthDate"
+                       data-ha-dp-resultformat="{day}/{month}/{year}" data-ha-dp-disabletime="true" />
+                <img src="~/image/calendar.svg" data-feather="calendar" class="position-absolute" style="right:10px;top:14px" />
+            </div>
         </div>
         <div class="col-6 mt-1">
-            <label class="font-weight-bold">Expiry Date:</label>
-            <input type="text" asp-for="ExpiryDate" class="form-control" />
+            <label class="font-weight-bold">Expiry Date:</label> <div class="position-relative">
+                <input type="text" asp-for="ExpiryDate" class="form-control" class="form-control" id="ExpiryDate"
+                       data-ha-datetimepicker="#ExpiryDate"
+                       data-ha-dp-resultformat="{day}/{month}/{year}" data-ha-dp-disabletime="true" />
+                <img src="~/image/calendar.svg" data-feather="calendar" class="position-absolute" style="right:10px;top:14px" />
+            </div>
         </div>
         <div class="col-6 mt-1">
             <label class="font-weight-bold">Address:</label>
@@ -51,6 +60,15 @@
         </div>
         @*<div class="col-12">
             <button type="submit" class="btn mt-2 text-light  bg-site btn-sm">Save</button>
-        </div>*@
+            </div>*@
+        <div class="col-12 text-center mt-2">
+            <button type="submit" @*onclick="$('#myform').submit()"*@ class="btn bg-site m-auto text-light waves-effect">
+                Confirm
+            </button>
+            <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site m-auto text-light waves-effect">
+                Back to home
+            </a>
+
+        </div>
     </div>
 </form>

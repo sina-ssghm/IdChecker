@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewData["Title"] - ID Checker</title>
+    <title>@*@ViewData["Title"] -*@ Id Checker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
     @*<link href="/lib/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet" />*@
     <link rel="apple-touch-icon" href="/template/app-assets/images/ico/apple-icon-120.png">
@@ -33,6 +33,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="/template/assets/css/style.css">
     <!-- END: Custom CSS-->
+    <link href="~/lib/HaDatepicker/ha-datetimepicker.min.css" rel="stylesheet" />
 
     @*<link href="/lib/dropify-master/dist/css/dropify.min.css" rel="stylesheet" />*@
 
@@ -132,7 +133,7 @@
         });
        
     </script>
-
+    <script src="~/lib/HaDatepicker/ha-datetimepicker.js"></script>
     <script src="/template/app-assets/js/scripts/components/components-dropdowns.js"></script>
     <script src="/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

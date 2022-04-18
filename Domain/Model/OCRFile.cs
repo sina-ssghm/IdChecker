@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace AnalyzeId.Domain.Model
 {
-    public class OCRFile
+    public class OCRFile : Base
     {
-        [BsonId]
-        public Guid Id { get; set; }
-
         public string TransactionId { get; set; }
         public FileType  FileType{ get; set; }
         public string File { get; set; }
