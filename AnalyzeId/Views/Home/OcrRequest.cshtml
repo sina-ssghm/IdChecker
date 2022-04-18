@@ -19,7 +19,7 @@
     <div class="col-sm-4 col-8 text-center m-auto">
         <a href="##" class="btn mt-1 font-size-1 bg-site p-2 waves-effect camera camera-file text-bold text-light w-100">CAPTURE @(Model?.IdPass==null?"FRONT":"BACK") </a>
         @*<a href="##" style="display:none" class="btn mt-1 font-size-1 bg-site p-2 waves-effect CanvasCamera camera-can text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>*@
-        <button type="button" onclick="submitForm(true)" class="btn @(Model.IdPass==null?"d-none":"") bg-secondary camera-file font-size-1 p-2 mt-2 text-light w-100">
+        <button type="button" onclick="skip()" class="btn @(Model.IdPass==null?"d-none":"") bg-secondary camera-file font-size-1 p-2 mt-2 text-light w-100">
             Skip
         </button>
         @*<button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-can font-size-1 p-2 mt-2 text-light w-100">
@@ -77,7 +77,7 @@
         <div class=" col-sm-6 col-md-4 p-0 m-auto">
             <h3 class="mt-2 text-bold text-black">@(Model?.IdPass==null?"FRONT IMAGE UPLOAD": "BACK IMAGE UPLOAD")</h3>
             <div class="">
-                <i class="fa fa-rotate-left text-light " style="font-size:29px;position:absolute;top: 72px;left: 9px;"  onclick="rotateImage();" ></i>
+                <i class="fa fa-rotate-left text-light " style="font-size: 29px;position:absolute;top:63px;left: 20px;cursor: pointer;"  onclick="rotateImage();" ></i>
                 <img class="m-auto card-img-top1  camera-preview-img" width="100%" src="" alt="">
             </div>
 
@@ -90,6 +90,7 @@
                     </p>*@
                 <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
                     @*<input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">*@
+                     <input type="hidden" value="||skip||" name="X" id="skip"/>
                       <input type="hidden" class="d-none" id="IdPass" name="IdPass" value="@(Model?.IdPass)">
                     <input type="file" class="d-none" id="File" name="File" accept="image/*" capture="camera">
                     @*<input type="text" id="File" name="File" />*@
@@ -149,7 +150,11 @@
 
 <script src="/script/script.js" asp-append-version="true"></script>
 <script>
+    function skip(){
 
+    $('#skip').attr("name","UrlBack")
+    $('#resultForm').submit()
+}
 </script>
 }
 

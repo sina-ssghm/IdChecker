@@ -1296,3 +1296,464 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
 2022-04-18 13:39:07.3369|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2022-04-18 13:39:07.5588|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-18 13:39:07.6369|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 13:58:11.0106|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 13:58:11.0291|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 13:58:11.0492|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 13:58:11.0506|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 13:58:11.0506|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 14:07:37.2045|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 14:07:37.2224|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 14:07:37.2224|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 14:07:37.2224|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 14:07:37.2224|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 14:16:09.1226|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 14:28:48.4715|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:32:17.8835|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:32:24.6764|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:33:50.0089|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:33:56.6844|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:35:32.3728|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:35:39.7886|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 14:36:14.2133|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 14:36:14.2345|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 14:36:14.2433|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 14:36:14.2433|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 14:36:14.2433|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 14:41:00.9572|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 14:41:00.9805|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 14:41:00.9805|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 14:41:00.9805|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 14:41:00.9805|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 14:43:02.2121|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 14:46:19.4432|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 14:47:36.7086|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:11:38.5419|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:15:42.2240|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:17:21.5069|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-18 15:21:15.0768|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 15:21:15.1073|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 15:21:15.1147|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 15:21:15.1147|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 15:21:15.1147|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 15:24:19.6217|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-18 15:26:41.1499|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-18 15:28:19.1531|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-18 15:28:57.8914|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 15:28:57.9097|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 15:28:57.9097|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 15:28:57.9097|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 15:28:57.9097|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 15:30:01.7611|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 15:30:47.2652|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:33:13.0274|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:35:26.6466|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:35:32.4707|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 176
+2022-04-18 15:35:32.5101|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 229
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 121
+2022-04-18 15:36:55.8925|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:38:04.9379|DEBUG|AnalyzeId.Service.Utility.OCRService|System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:62794)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.EstablishProxyTunnel(Boolean async, HttpRequestHeaders headers, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync(CancellationToken cancellationToken)
+   at Amazon.Runtime.Internal.HttpHandler`1.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.Unmarshaller.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 252
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 121
+2022-04-18 15:44:30.2251|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 15:44:30.2456|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 15:44:30.2595|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 15:44:30.2697|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 15:44:30.2697|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 15:45:54.3440|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 15:46:22.6233|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:47:03.6830|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:50:32.4732|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:50:54.0385|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:51:41.6818|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:52:45.2797|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:54:03.0505|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:55:21.8840|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 15:56:42.2780|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 15:56:42.2953|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 15:56:42.3027|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 15:56:42.3027|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 15:56:42.3027|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:01:15.3054|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 16:05:11.9573|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 16:05:11.9773|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 16:05:11.9882|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 16:05:11.9882|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 16:05:11.9882|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:05:48.0312|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 16:10:04.1187|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 16:10:04.1393|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 16:10:04.1577|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 16:10:04.1705|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 16:10:04.2274|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:11:19.5910|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 16:12:18.8003|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 16:14:43.4465|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 179
+2022-04-18 16:17:46.1007|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 16:17:46.1174|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 16:17:46.1174|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 16:17:46.1174|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 16:17:46.1174|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:18:25.0294|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:18:32.6490|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:18:32.7097|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 176
+2022-04-18 16:18:32.7890|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 229
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 121
+2022-04-18 16:19:52.5112|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:20:09.0857|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:20:16.4928|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:32:34.2284|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 16:32:39.9249|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront)
+2022-04-18 16:45:53.7261|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 16:45:53.7478|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 16:45:53.7606|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 16:45:53.7606|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 16:45:53.7712|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:47:47.5631|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 16:47:47.5798|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 16:47:47.5869|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 16:47:47.5869|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 16:47:47.5869|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:48:41.6708|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:49:17.7082|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:54:21.4579|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 16:54:21.4741|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 16:54:21.4741|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 16:54:21.4909|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 16:54:21.4909|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 16:57:36.5028|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:57:43.4805|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 16:59:32.4871|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 17:11:57.9137|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 17:11:57.9320|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 17:11:57.9320|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 17:11:57.9320|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 17:11:57.9397|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 17:13:15.7963|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 17:13:15.8188|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 17:13:15.8188|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 17:13:15.8188|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 17:13:15.8188|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 17:16:34.1168|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 17:16:34.1393|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 17:16:34.1488|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 17:16:34.1488|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 17:16:34.1488|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 17:17:55.8051|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 17:17:58.8520|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 176
+2022-04-18 17:17:58.9093|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 229
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 121
+2022-04-18 17:19:14.1817|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 17:19:31.1232|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 17:19:34.8708|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 176
+2022-04-18 17:19:34.9804|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 229
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 121
+2022-04-18 17:21:13.9016|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 17:21:13.9205|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 17:21:13.9336|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 17:21:13.9336|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 17:21:13.9336|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 17:21:42.1571|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 17:21:42.1807|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 17:21:42.1942|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 17:21:42.2161|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 17:21:42.2374|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 17:22:33.8110|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 17:22:33.8308|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 17:22:33.8706|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 17:22:33.8706|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 17:22:33.8706|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId

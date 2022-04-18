@@ -97,49 +97,50 @@ namespace AnalyzeId.Service.Utility
             {
                 var time = DateTime.Now;
                 var imgPassport = await passportUrlRepository.Get(Id);
-                if (string.IsNullOrEmpty(imgPassport?.FrontUrl))
-                {
+                if (string.IsNullOrEmpty(imgPassport?.FrontUrl) &&(string.IsNullOrEmpty(imgPassport?.BackUrl)||imgPassport.BackUrl=="||skip||"))
+                { 
                     while (true)
                     {
                         System.Threading.Thread.Sleep(3000);
                         imgPassport = await passportUrlRepository.Get(Id);
-                        if (imgPassport?.FrontUrl != null )
+                        if (!string.IsNullOrEmpty(imgPassport?.FrontUrl) && (!string.IsNullOrEmpty(imgPassport?.BackUrl) || imgPassport.BackUrl == "||skip||"))
                         {
                             break;
-                        }else if (time.AddMinutes(1) < DateTime.Now)
+                        }
+                        else if (time.AddMinutes(1) < DateTime.Now)
                         {
-                            return new OperationResult<FinalResultOCRDTO> { Data = null, Message ="Please try again", Succeed =false};
+                            return new OperationResult<FinalResultOCRDTO> { Data = null, Message = "Please try again", Succeed = false };
                         }
                     }
                 }
                 imgPassport.FrontUrl = imgPassport.FrontUrl.PathToUrl();
-                imgPassport.BackUrl =string.IsNullOrEmpty(imgPassport.BackUrl)? null: imgPassport.BackUrl.PathToUrl();
+                imgPassport.BackUrl = string.IsNullOrEmpty(imgPassport.BackUrl) || imgPassport?.BackUrl== "||skip||" ? null : imgPassport.BackUrl.PathToUrl();
 
                 var IDVTask = _GetOCRResult(imgPassport.FrontUrl, imgPassport.BackUrl);
                 var awsTask = _GetOCRResultByAmazonApi(imgPassport.FrontUrl);
                 await Task.WhenAll(IDVTask, awsTask);
                 awsTask.Result.FrontUrl = imgPassport.FrontUrl;
                 awsTask.Result.BackUrl = imgPassport.BackUrl;
-                if (IDVTask.Result.Data!=null)
+                if (IDVTask.Result.Data != null)
                 {
-       IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
-                IDVTask.Result.Data.BackUrl = imgPassport.BackUrl;   var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
-                var signatureUrl = _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
-                await Task.WhenAll(faceUrl, signatureUrl);
-                IDVTask.Result.Data.FaceUrl = faceUrl.Result;
-                IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
-                    IDVTask.Result.Data.BackUrl = imgPassport.FrontUrl;
+                    IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
+                    IDVTask.Result.Data.BackUrl = imgPassport.BackUrl; var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                    var signatureUrl = _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
+                    await Task.WhenAll(faceUrl, signatureUrl);
+                    IDVTask.Result.Data.FaceUrl = faceUrl.Result;
+                    IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
+                    IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
                     IDVTask.Result.Data.BackUrl = imgPassport.BackUrl;
                 }
-         
+
 
                 //if (IDVTask.Result.Data.ImageFaseId!=null)
                 //{
                 //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                 //}
-             
 
-             
+
+
 
                 return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
 
@@ -269,8 +270,8 @@ namespace AnalyzeId.Service.Utility
 
         public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
         {
-            finalResultIdv= finalResultIdv == null ? new FinalResultOCRDTO { } : finalResultIdv;
-           
+            finalResultIdv = finalResultIdv == null ? new FinalResultOCRDTO { } : finalResultIdv;
+
             finalResultIdv.FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName;
             finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
             finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;
@@ -278,7 +279,7 @@ namespace AnalyzeId.Service.Utility
             finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
             finalResultIdv.BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate;
             finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate;
-            finalResultIdv.DocumentNumber = !finalResultIdv.DocumentNumber.HasValue() ? finalResultAZ?.DocumentNumber : finalResultIdv?.DocumentNumber;
+            finalResultIdv.DocumentNumber = !finalResultAZ.DocumentNumber.HasValue() ? finalResultIdv?.DocumentNumber: finalResultAZ.DocumentNumber;
 
             //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;
             //finalResultIdv.ImageBackId = finalResultIdv?.ImageBackId;

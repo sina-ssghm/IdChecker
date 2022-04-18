@@ -8,7 +8,7 @@
 <link href="~/lib/jquery-focuspoint/css/focuspoint.css" rel="stylesheet" />
 @if (Model.Succeed == false)
 {
-    <div class="card bg-danger text-white">
+    <div class="card bg-danger text-white col-6 m-auto">
         <div class="card-body">
             <h4 class="card-title text-white">Error!</h4>
             <p class="card-text">
@@ -146,6 +146,7 @@ else
 @section Scripts{
 <script src="~/lib/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
 <script src="~/lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
+
 @if(jsonRtesult!=null){
 <script>
     $('#json-renderer').jsonViewer(JSON.parse(`@(Html.Raw(jsonRtesult.Replace("'"," ").Replace("\"{","{").Replace("}\"", "}").Replace("\\\"","\"").Replace("\\n", "").Replace("\r", "")))`), { collapsed: true, rootCollapsable :false });

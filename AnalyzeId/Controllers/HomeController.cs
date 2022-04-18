@@ -23,7 +23,8 @@ namespace AnalyzeId.Controllers
         private readonly IOCRFilesRepository oCRFilesRepository;
         private readonly IServiceProvider serviceProvider;
         private readonly IImagePassportUrlRepository passportUrlRepository;
-
+        private readonly IOCRService service;
+     
         public HomeController(IOCRService oCRService, IOCRRepository oCRRepository, IOCRFilesRepository oCRFilesRepository, IServiceProvider  serviceProvider,IImagePassportUrlRepository passportUrlRepository)
         {
             this.oCRService = oCRService;
@@ -31,7 +32,9 @@ namespace AnalyzeId.Controllers
             this.oCRFilesRepository = oCRFilesRepository;
             this.serviceProvider = serviceProvider;
             this.passportUrlRepository = passportUrlRepository;
+            service = serviceProvider.GetRequiredService<IOCRService>();
         }
+       
         public async Task<IActionResult> Index(string frontPath)
         {
             return View(new OCRFileDTO { UrlFront = frontPath });
@@ -57,8 +60,11 @@ namespace AnalyzeId.Controllers
         {
             var isbackImage = fileDTO.IdPass.HasValue;
            var idPass=fileDTO?.IdPass!=null?fileDTO.IdPass.Value: passportUrlRepository.Add(new ImagePassportViewModel { }).GetAwaiter().GetResult().Data;
-            var serviceOcr = serviceProvider.GetRequiredService<IOCRService>();
-            var result = serviceOcr.UploadImage(fileDTO.File, idPass,fileDTO?.IdPass!=null?false:true);
+            if (fileDTO.UrlBack=="||skip||" && fileDTO.IdPass.HasValue)
+            {
+               await passportUrlRepository.Update(fileDTO.IdPass.Value,fileDTO.UrlBack,false);
+            }
+             UploadImage(fileDTO.File, idPass,fileDTO?.IdPass!=null?false:true);
 
             if (isbackImage)
             {
@@ -129,6 +135,13 @@ namespace AnalyzeId.Controllers
         public async Task<IActionResult> ThankYou()
         {
             return View();
+        }
+
+
+        public void UploadImage(IFormFile file, Guid id, bool isFront)
+        {
+
+            service.UploadImage(file, id, isFront);
         }
     }
 }
