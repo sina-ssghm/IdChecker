@@ -1286,3 +1286,13 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
    at System.IO.FileInfo.get_Length()
    at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
    at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 178
+2022-04-18 13:26:10.5258|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 13:26:10.5509|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 13:26:10.5509|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 13:26:10.5509|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 13:26:10.5509|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 13:39:07.2770|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 13:39:07.3369|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 13:39:07.3369|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 13:39:07.5588|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 13:39:07.6369|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
