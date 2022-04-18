@@ -1,4 +1,12 @@
 ﻿HaDateTimePicker.init();
+function spin1() {
+    document.querySelector('.spin').classList.remove('d-none');
+    document.querySelector('.spin').style.display = "block"
+}
+function unspin1() {
+    document.querySelector('.spin').classList.add('d-none');
+    document.querySelector('.spin').style.display = "none"
+}
 
 function SubmitSignature() {
     document.getElementById('submit-form-btn').classList.add('disabled')
@@ -12,14 +20,11 @@ function SubmitSignature() {
     else {
         var img = signaturePad.toDataURL().split(',')[1];
         var blob = b64toBlob(img);
-        debugger;
-
         $("#procces").removeClass("d-none")
         $("#sigshow").addClass("d-none")
             var trId = $("#transactionId").val()
             var type = blob.type
             $.post("/Home/Signature", { file: img, type: type, transactionId: trId }, function (res) {
-                debugger
                 if (res == "true") {
                     window.location.replace('/Home/ThankYou');
                 } else {
@@ -107,6 +112,8 @@ const b64toBlob = (b64Data, contentType = 'image/png', sliceSize = 512) => {
 }
 
 let rotateImage = () => {
+    spin1()
+    document.querySelector('.cameraDiv').classList.add('d-none');
     let img = new Image();
     img.src = document.getElementsByClassName('camera-preview-img')[0].src;
     let canvas = document.createElement("canvas");
@@ -131,6 +138,8 @@ let rotateImage = () => {
         list.items.add(file);
         document.getElementById('File').files = list.files;
         $(".camera-preview-img").attr("src", file64)
+        unspin1()
+        document.querySelector('.cameraDiv').classList.remove('d-none');
         //a.download = img_name;
         //document.body.appendChild(a);
         //a.click();
