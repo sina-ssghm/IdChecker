@@ -996,3 +996,293 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot\Fi
 2022-04-17 17:06:44.3275|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2022-04-17 17:06:44.3275|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-17 17:06:44.3275|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 08:55:21.4422|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 08:55:21.4606|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 08:55:21.4606|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 08:55:21.4606|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 08:55:21.4775|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 08:55:24.1692|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-18 08:55:58.2355|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 08:55:58.2626|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 08:55:58.2626|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 08:55:58.2866|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 08:55:58.2866|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 09:06:19.2429|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 09:06:19.2688|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 09:06:19.2752|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 09:06:19.2752|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 09:06:19.2752|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 09:49:43.7915|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 09:49:43.8137|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 09:49:43.8283|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 09:49:43.8283|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 09:49:43.8417|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 10:01:36.6339|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 10:01:36.6535|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 10:01:36.6535|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 10:01:36.6535|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 10:01:36.6535|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 10:09:38.4263|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 10:09:38.4541|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 10:09:38.4541|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 10:09:38.4541|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 10:09:38.4541|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 10:11:15.6145|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 10:11:15.6325|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 10:11:15.6436|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 10:11:15.6436|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 10:11:15.6436|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 10:46:58.0817|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 10:46:58.1006|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 10:46:58.1121|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 10:46:58.1121|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 10:46:58.1121|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 10:48:04.3405|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 10:48:04.3578|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 10:48:04.3578|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 10:48:04.3578|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 10:48:04.3578|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 10:48:42.5778|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 11:01:20.1904|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 11:01:20.2150|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 11:01:20.2186|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 11:01:20.2186|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 11:01:20.2186|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 11:06:13.4620|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 151
+2022-04-18 11:06:13.6265|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 204
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 100
+2022-04-18 11:07:30.2577|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 151
+2022-04-18 11:07:30.4008|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 204
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 100
+2022-04-18 11:13:08.5988|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 11:13:08.6179|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 11:13:08.6273|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 11:13:08.6273|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 11:13:08.6273|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 11:14:05.4999|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Files\d2eaf48d-cc5b-493c-ad9a-a7e29709ec222.jpg'.
+File name: 'C:\Files\d2eaf48d-cc5b-493c-ad9a-a7e29709ec222.jpg'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 152
+2022-04-18 11:14:05.6922|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Files\d2eaf48d-cc5b-493c-ad9a-a7e29709ec222.jpg'.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 205
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 101
+2022-04-18 11:16:39.6454|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Files\d2eaf48d-cc5b-493c-ad9a-a7e29709ec222.jpg'.
+File name: 'C:\Files\d2eaf48d-cc5b-493c-ad9a-a7e29709ec222.jpg'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-18 11:18:48.5709|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 11:18:48.6026|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 11:18:48.6093|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 11:18:48.6093|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 11:18:48.6093|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 11:47:47.0726|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 11:47:47.0904|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 11:47:47.0978|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 11:47:47.0978|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 11:47:47.0978|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 11:52:40.0035|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 11:52:40.0237|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 11:52:40.0360|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 11:52:40.0360|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 11:52:40.0360|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 12:03:53.8455|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-18 12:17:00.2629|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-18 12:19:23.8724|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentException: The tasks argument included a null value. (Parameter 'tasks')
+   at System.Threading.Tasks.Task.WhenAll[TResult](Task`1[] tasks)
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id)
+2022-04-18 12:21:04.3232|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-18 12:25:15.2852|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-18 12:26:00.3230|DEBUG|AnalyzeId.Service.Utility.OCRService|System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:57604)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.EstablishProxyTunnel(Boolean async, HttpRequestHeaders headers, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync(CancellationToken cancellationToken)
+   at Amazon.Runtime.Internal.HttpHandler`1.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.Unmarshaller.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path)
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id)
+2022-04-18 12:27:15.8803|DEBUG|AnalyzeId.Service.Utility.OCRService|System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:57604)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.EstablishProxyTunnel(Boolean async, HttpRequestHeaders headers, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync(CancellationToken cancellationToken)
+   at Amazon.Runtime.Internal.HttpHandler`1.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.Unmarshaller.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path)
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id)
+2022-04-18 12:27:54.1134|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath)
+2022-04-18 12:28:47.9205|DEBUG|AnalyzeId.Service.Utility.OCRService|System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (127.0.0.1:57604)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|283_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.DefaultConnectAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(Func`3 callback, DnsEndPoint endPoint, HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.EstablishProxyTunnel(Boolean async, HttpRequestHeaders headers, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync(CancellationToken cancellationToken)
+   at Amazon.Runtime.Internal.HttpHandler`1.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.Unmarshaller.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.EndpointDiscoveryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CredentialsRetriever.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.RetryHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.CallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.ErrorCallbackHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at Amazon.Runtime.Internal.MetricsHandler.InvokeAsync[T](IExecutionContext executionContext)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path)
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id)
+2022-04-18 12:29:03.8514|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 12:29:03.8699|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 12:29:03.8772|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 12:29:03.8772|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 12:29:03.8772|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 12:29:17.0686|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 178
+2022-04-18 13:04:36.5321|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-18 13:04:36.5754|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-18 13:04:36.5754|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-18 13:04:36.5754|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-18 13:04:36.5754|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-18 13:04:57.1598|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 178
+2022-04-18 13:05:20.8878|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 178
+2022-04-18 13:06:08.3783|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.FileNotFoundException: Could not find file 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'.
+File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 178

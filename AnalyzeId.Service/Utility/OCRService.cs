@@ -26,12 +26,14 @@ namespace AnalyzeId.Service.Utility
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
+        private readonly IImagePassportUrlRepository passportUrlRepository;
         private ILogger logger = LogManager.GetCurrentClassLogger();
-        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment, IConfiguration configuration)
+        public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment, IConfiguration configuration, IImagePassportUrlRepository passportUrlRepository)
         {
             this.fileUploader = fileUploader;
             this.hostingEnvironment = hostingEnvironment;
             this.configuration = configuration;
+            this.passportUrlRepository = passportUrlRepository;
         }
         public async Task<OperationResult<FileUploadPathDTO>> UploadImage(string file)
         {
@@ -59,7 +61,7 @@ namespace AnalyzeId.Service.Utility
                 return OperationResult<FileUploadPathDTO>.Error(ex);
             }
         }
-        public async Task<OperationResult<FileUploadPathDTO>> UploadImage(IFormFile file)
+        public async Task<OperationResult<FileUploadPathDTO>> UploadImage(IFormFile file, Guid id, bool isFront)
         {
             try
             {
@@ -68,6 +70,7 @@ namespace AnalyzeId.Service.Utility
                 {
                     var filePath = await fileUploader.CheckAndUploadAsync(file);
                     var fullPath = Path.Combine(hostingEnvironment.WebRootPath, filePath.TrimStart('/', '\\'));
+                    await passportUrlRepository.Update(id, filePath, isFront);
                     return new OperationResult<FileUploadPathDTO>
                     {
                         Succeed = true,
@@ -88,30 +91,55 @@ namespace AnalyzeId.Service.Utility
             }
         }
 
-        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string fileFrontPath, string fileBackPath)
+        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(Guid Id)
         {
             try
             {
-                var IDVTask = _GetOCRResult(fileFrontPath, fileBackPath);
-                var awsTask = _GetOCRResultByAmazonApi(fileFrontPath);
+                var time = DateTime.Now;
+                var imgPassport = await passportUrlRepository.Get(Id);
+                if (string.IsNullOrEmpty(imgPassport?.FrontUrl))
+                {
+                    while (true)
+                    {
+                        System.Threading.Thread.Sleep(3000);
+                        imgPassport = await passportUrlRepository.Get(Id);
+                        if (imgPassport?.FrontUrl != null )
+                        {
+                            break;
+                        }else if (time.AddMinutes(1) < DateTime.Now)
+                        {
+                            return new OperationResult<FinalResultOCRDTO> { Data = null, Message ="Please try again", Succeed =false};
+                        }
+                    }
+                }
+                imgPassport.FrontUrl = imgPassport.FrontUrl.PathToUrl();
+                imgPassport.BackUrl =string.IsNullOrEmpty(imgPassport.BackUrl)? null: imgPassport.BackUrl.PathToUrl();
+
+                var IDVTask = _GetOCRResult(imgPassport.FrontUrl, imgPassport.BackUrl);
+                var awsTask = _GetOCRResultByAmazonApi(imgPassport.FrontUrl);
                 await Task.WhenAll(IDVTask, awsTask);
-                awsTask.Result.FrontUrl = fileFrontPath;
-                awsTask.Result.BackUrl = fileBackPath;
-                IDVTask.Result.Data.FrontUrl = fileFrontPath;
-                IDVTask.Result.Data.BackUrl = fileBackPath;
+                awsTask.Result.FrontUrl = imgPassport.FrontUrl;
+                awsTask.Result.BackUrl = imgPassport.BackUrl;
+                if (IDVTask.Result.Data!=null)
+                {
+       IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
+                IDVTask.Result.Data.BackUrl = imgPassport.BackUrl;   var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                var signatureUrl = _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
+                await Task.WhenAll(faceUrl, signatureUrl);
+                IDVTask.Result.Data.FaceUrl = faceUrl.Result;
+                IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
+                    IDVTask.Result.Data.BackUrl = imgPassport.FrontUrl;
+                    IDVTask.Result.Data.BackUrl = imgPassport.BackUrl;
+                }
+         
 
                 //if (IDVTask.Result.Data.ImageFaseId!=null)
                 //{
                 //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                 //}
-                var faceUrl =  _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
-                var signatureUrl =  _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
-                await Task.WhenAll(faceUrl, signatureUrl);
-                IDVTask.Result.Data.FaceUrl = faceUrl.Result;
-                IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
+             
 
-                IDVTask.Result.Data.BackUrl = fileBackPath;
-                IDVTask.Result.Data.BackUrl = fileBackPath;
+             
 
                 return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
 
@@ -120,7 +148,6 @@ namespace AnalyzeId.Service.Utility
                 //    return new OperationResult<FinalResultOCRDTO> { Data = IDVTask.Result.Data, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
                 //}
                 //return new OperationResult<FinalResultOCRDTO> { Data = awsTask.Result, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
-
             }
             catch (Exception ex)
             {
@@ -242,7 +269,8 @@ namespace AnalyzeId.Service.Utility
 
         public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
         {
-
+            finalResultIdv= finalResultIdv == null ? new FinalResultOCRDTO { } : finalResultIdv;
+           
             finalResultIdv.FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName;
             finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
             finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;

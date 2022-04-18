@@ -8,12 +8,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AnalyzeId.Service.Utility
 {
-    public class UnitOfWork<TCollection> where TCollection : class
+    public class UnitOfWork<TCollection> : IUnitOfWork<TCollection> where TCollection : class
     {
         private readonly IMongoDatabase db;
         private readonly IMongoCollection<TCollection> collection;
@@ -23,7 +24,11 @@ namespace AnalyzeId.Service.Utility
             var client = new MongoClient();
             db = client.GetDatabase("IdChecker");
             collection = db.GetCollection<TCollection>("OCRFile");
+     
+
         }
+
+
 
         public async Task<OperationResult<object>> AddAsync(TCollection collection2)
         {

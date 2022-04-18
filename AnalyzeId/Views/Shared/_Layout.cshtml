@@ -33,6 +33,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="/template/assets/css/style.css">
     <!-- END: Custom CSS-->
+    <link href="~/lib/HaDatepicker/ha-datetimepicker.min.css" rel="stylesheet" />
 
     @*<link href="/lib/dropify-master/dist/css/dropify.min.css" rel="stylesheet" />*@
 
@@ -132,7 +133,7 @@
         });
        
     </script>
-
+    <script src="~/lib/HaDatepicker/ha-datetimepicker.js"></script>
     <script src="/template/app-assets/js/scripts/components/components-dropdowns.js"></script>
     <script src="/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

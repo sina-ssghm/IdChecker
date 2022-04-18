@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AnalyzeId.Domain.Model
 {
-    public class OCR: BaseViewModel
+    public class OCR: Base
     {
    
         public string FirstName { get; set; }

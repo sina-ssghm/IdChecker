@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnalyzeId.Domain.Model
 {
-    public class ImagePassport:BaseViewModel
+    public class ImagePassport:Base
     {
         public string FrontUrl { get; set; }
         public string BackUrl { get; set; }

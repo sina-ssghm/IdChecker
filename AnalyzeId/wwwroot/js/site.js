@@ -1,4 +1,6 @@
-﻿function SubmitSignature() {
+﻿HaDateTimePicker.init();
+
+function SubmitSignature() {
     document.getElementById('submit-form-btn').classList.add('disabled')
 
     var isEmpty = signaturePad.isEmpty();

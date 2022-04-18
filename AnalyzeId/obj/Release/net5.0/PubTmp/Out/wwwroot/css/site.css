@@ -110,7 +110,7 @@ body {
 .text-left {
     text-align: left;
 }
-
+/*
 @media (max-width: 576px) {
     .camera-file {
         display: none;
@@ -129,4 +129,4 @@ body {
     .camera-file {
         display: block;
     }
-}
+}*/

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnalyzeId.Domain.Model
 {
-    public class BaseViewModel
+    public class Base
     {
         [BsonId]
         public Guid Id { get; set; }
