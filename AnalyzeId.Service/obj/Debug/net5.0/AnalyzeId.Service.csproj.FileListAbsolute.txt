@@ -90,3 +90,5 @@ C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\Analyze
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\ref\AnalyzeId.Service.dll
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.dll
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.pdb

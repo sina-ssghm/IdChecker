@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj": {}
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj": {
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj",
+        "projectUniqueName": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj",
         "projectName": "AnalyzeId.Service",
-        "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj",
-        "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Service\\obj\\",
+        "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj",
+        "packagesPath": "C:\\Users\\bralik 36287951\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bralik 36287951\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +31,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
-                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj"
+              "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
+                "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj"
               },
-              "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
-                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj"
+              "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
+                "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj"
               }
             }
           }
@@ -103,25 +102,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
         "projectName": "AnalyzeId.Shared",
-        "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
-        "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\obj\\",
+        "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj",
+        "packagesPath": "C:\\Users\\bralik 36287951\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bralik 36287951\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -135,8 +133,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
-                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj"
+              "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
+                "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj"
               }
             }
           }
@@ -191,25 +189,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj": {
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj",
+        "projectUniqueName": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj",
         "projectName": "AnalyzeId",
-        "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj",
-        "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId\\obj\\",
+        "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj",
+        "packagesPath": "C:\\Users\\bralik 36287951\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bralik 36287951\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -223,14 +220,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj": {
-                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj"
+              "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj": {
+                "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Service\\AnalyzeId.Service.csproj"
               },
-              "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
-                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj"
+              "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj": {
+                "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId.Shared\\AnalyzeId.Shared.csproj"
               },
-              "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
-                "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj"
+              "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
+                "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj"
               }
             }
           }
@@ -300,25 +297,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
+    "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj",
         "projectName": "AnalyzeId.Domain",
-        "projectPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj",
-        "packagesPath": "C:\\Users\\Ahmad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj",
+        "packagesPath": "C:\\Users\\bralik 36287951\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bralik 36287951\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -368,7 +364,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
