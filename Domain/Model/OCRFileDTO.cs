@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-
+using System;
 
 namespace AnalyzeId.Domain.Model
 {
@@ -13,5 +13,7 @@ namespace AnalyzeId.Domain.Model
         public bool IsContinue { get; set; }
         public bool Succeed { get; set; }
         public bool IsShowResult { get; set; }
+        public Guid? IdPass { get; set; }
+        public string ApplicationId { get; set; }
     }
 }

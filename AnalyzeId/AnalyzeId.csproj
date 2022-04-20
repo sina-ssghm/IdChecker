@@ -27,4 +27,16 @@
     <Folder Include="wwwroot\Files\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\lib\HaDatepicker\ha-datetimepicker.js" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-datetimepicker.min.js" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-dp-fonts\Roboto-Regular.woff2" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-dp-fonts\subset-DINNextLTW23-Regular.woff2" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-lunardate.js" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-lunardate.min.js" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-solar-date.min.js" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-solardate.js" />
+    <None Include="wwwroot\lib\HaDatepicker\ha-solardate.min.js" />
+  </ItemGroup>
+
 </Project>

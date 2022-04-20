@@ -526,7 +526,7 @@ function RequestPassportData(file) {
     /*var form = new FormData();*/
     /*form.append('File', file)*/
     //$('#File').val(file);
-
+    debugger;
     document.querySelector('#CanvasForm #File').value = file;
     $('#CanvasForm').submit();
     //var settings = {

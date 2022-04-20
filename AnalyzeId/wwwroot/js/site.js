@@ -1,4 +1,6 @@
-﻿function SubmitSignature() {
+﻿
+
+function SubmitSignature(appId) {
     document.getElementById('submit-form-btn').classList.add('disabled')
 
     var isEmpty = signaturePad.isEmpty();
@@ -10,16 +12,15 @@
     else {
         var img = signaturePad.toDataURL().split(',')[1];
         var blob = b64toBlob(img);
-        debugger;
-
         $("#procces").removeClass("d-none")
         $("#sigshow").addClass("d-none")
             var trId = $("#transactionId").val()
             var type = blob.type
-            $.post("/Home/Signature", { file: img, type: type, transactionId: trId }, function (res) {
-                debugger
-                if (res == "true") {
-                    window.location.replace('/Home/ThankYou');
+        $.post("/Home/Signature", { file: img, type: type, applicationId: appId }, function (res) {
+            debugger;
+            if (res == "true") {
+
+                window.location.href = `/Home/ThankYou/appid?appId='${appId}'`;
                 } else {
                     var validation = document.getElementsByClassName('validation')[0];
                     validation.classList.remove('d-none');
@@ -58,48 +59,66 @@ function UploadFileInDvice(file) {
     })
 }
 
-function UploadFile(file) {
-    return new Promise((resolve) => {
+//const b64toBlob = (b64Data, contentType = 'image/png', sliceSize = 512) => {
+//    const byteCharacters = atob(b64Data);
+//    const byteArrays = [];
 
-        // var data = file;
-        var data = new FormData();
-        data.append('File', new File([file], "img.png"));
+//    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+//        const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-        var config = {
-            method: 'post',
-            url: `${endpoint}/api/Forms/File`,
-            headers: {
-                'API-Username': apiUsername,
-                'API-Password': apiPassword,
-                'Application_ID': applicationId,
-                'Element_Key': 'SIGN',
-                'Element_Title': 'Signature',
-                'ID_Document_Code': '0',
-                'OCR': 'False',
-                'Content-Type': 'image/png'
-            },
-            data: data
-        };
+//        const byteNumbers = new Array(slice.length);
+//        for (let i = 0; i < slice.length; i++) {
+//            byteNumbers[i] = slice.charCodeAt(i);
+//        }
 
-        resolve(axios(config));
-    })
-}
-const b64toBlob = (b64Data, contentType = 'image/png', sliceSize = 512) => {
-    const byteCharacters = atob(b64Data);
-    const byteArrays = [];
+//        const byteArray = new Uint8Array(byteNumbers);
+//        byteArrays.push(byteArray);
+//    }
 
-    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-        const slice = byteCharacters.slice(offset, offset + sliceSize);
+//    const blob = new Blob(byteArrays, { type: contentType });
+//    return blob;
+//}
 
-        const byteNumbers = new Array(slice.length);
-        for (let i = 0; i < slice.length; i++) {
-            byteNumbers[i] = slice.charCodeAt(i);
-        }
-
-        const byteArray = new Uint8Array(byteNumbers);
-        byteArrays.push(byteArray);
+let rotateImage = () => {
+    spin1()
+    document.querySelector('.cameraDiv').classList.add('d-none');
+    let img = new Image();
+    img.src = document.getElementsByClassName('camera-preview-img')[0].src;
+    let canvas = document.createElement("canvas");
+    img.onload = function () {
+        rotateImage();
+        saveImage(img.src.replace(/^.*[\\\/]/, ''));
+    }
+    let rotateImage = () => {
+        let ctx = canvas.getContext("2d");
+        canvas.width = img.height;
+        canvas.height = img.width;
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(Math.PI / 2);
+        ctx.drawImage(img, -img.width / 2, -img.height / 2);
     }
 
-    const blob = new Blob(byteArrays, { type: contentType });
-    return blob;
+    let saveImage = (img_name) => {
+        let file64 = canvas.toDataURL("image/png");
+        var file = dataBase64URLtoFile(file64, "a.png")
+        document.getElementById('File').value = "";
+        let list = new DataTransfer();
+        list.items.add(file);
+        document.getElementById('File').files = list.files;
+        $(".camera-preview-img").attr("src", file64)
+        unspin1()
+        document.querySelector('.cameraDiv').classList.remove('d-none');
+        //a.download = img_name;
+        //document.body.appendChild(a);
+        //a.click();
+    }
+}
+
+function dataBase64URLtoFile(dataurl, filename) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new File([u8arr], filename, { type: mime });
 }
