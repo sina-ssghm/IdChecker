@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Front";
+}
+
+@*<header>
+    <img src="~/assets/img/919px-Nissan_2020_logo.svg.png" class="brand-logo">
+</header>*@
+<div class="row">
+
+    <div class="col-sm-4 m-auto">
+        <h2 class="text-center">Nissan Test Drive</h2>
+        <p class="text-center">Scan The QR Code with your phone to capture your driving license details</p>
+        <div id="frontQR" class="text-center">
+            <img src="~/assets/img/ecd6bc09da634e4e2efa16b571618a22.gif" style="width: 100px;">
+        </div>
+
+        <a class="btn btn-dark btn-black" asp-action="Index" asp-controller="Home"> &lt; Cancel</a>
+    </div>
+
+</div>
+
+@section Scripts{
+<script>
+    startApp();
+</script>
+    }

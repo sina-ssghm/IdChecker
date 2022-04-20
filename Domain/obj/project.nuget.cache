@@ -1,31 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "C3IOygixE03FSRqt9NPHFzUrTMS0/2tKBaD8yXX5k4nbHl6Ri6q1evfn/hf2ok7VJBC2krYAFC4luc3ge2yxBA==",
+  "dgSpecHash": "7c4D6g4PE9ZTl6r8v3XA6hr0Fd27KtEtTLL+3GQf6zAgip9vY7gTqwtiyk+yiKv+VmEudbUxb6IcIUCbetxX6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj",
+  "projectFilePath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\Domain\\AnalyzeId.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Ahmad\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.11\\microsoft.aspnetcore.http.features.5.0.11.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\mongodb.bson\\2.15.0\\mongodb.bson.2.15.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\mongodb.driver\\2.15.0\\mongodb.driver.2.15.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\mongodb.driver.core\\2.15.0\\mongodb.driver.core.2.15.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ahmad\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.11\\microsoft.aspnetcore.http.features.5.0.11.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\mongodb.bson\\2.15.0\\mongodb.bson.2.15.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\mongodb.driver\\2.15.0\\mongodb.driver.2.15.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\mongodb.driver.core\\2.15.0\\mongodb.driver.core.2.15.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Ahmad\\source\\repos\\IdChecker\\Domain\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

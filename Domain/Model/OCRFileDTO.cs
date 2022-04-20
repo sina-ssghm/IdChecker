@@ -14,5 +14,6 @@ namespace AnalyzeId.Domain.Model
         public bool Succeed { get; set; }
         public bool IsShowResult { get; set; }
         public Guid? IdPass { get; set; }
+        public string ApplicationId { get; set; }
     }
 }

@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[3.7.4.18, )"
             },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.8, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.11, )"
@@ -104,11 +108,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
->>>>>>> 02b97b62ff0196c24ffb99315d76c8aaadac14c3
         }
       }
     },
@@ -201,11 +201,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
->>>>>>> 02b97b62ff0196c24ffb99315d76c8aaadac14c3
         }
       }
     },
@@ -274,11 +270,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
->>>>>>> 02b97b62ff0196c24ffb99315d76c8aaadac14c3
         }
       }
     }

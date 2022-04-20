@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "2jGBv7ZRyjFB9xi+sUgcN/WKjSIct2YRtUPKaueCeUdqjiIcBFBRXBHXLjMRMKeCm2cvqMVwUINIuJVK6y3ARw==",
-=======
-  "dgSpecHash": "5vqKMvLrr6A9okvwrSjzwX0Ko7wHTXo+S5tDMW6lt5AZP4v3mjZU4ve9RYB6csB0v8LvwUXzelT85rSskkb32Q==",
->>>>>>> 02b97b62ff0196c24ffb99315d76c8aaadac14c3
+  "dgSpecHash": "mdGz/8IzRC9DrmtxDYktwKs/nAXqA4s5398MZ0NIX8cqW4G1bQmMWE0lOQqIOmvicEcfymYoe/mF31rlA4jZNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\bralik 36287951\\source\\repos\\IdChecker\\AnalyzeId\\AnalyzeId.csproj",
   "expectedPackageFiles": [
@@ -16,6 +12,9 @@
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\magick.net-q16-anycpu\\8.4.0\\magick.net-q16-anycpu.8.4.0.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\magick.net.core\\8.4.0\\magick.net.core.8.4.0.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.8\\microsoft.aspnet.mvc.5.2.8.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.8\\microsoft.aspnet.razor.3.2.8.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.8\\microsoft.aspnet.webpages.3.2.8.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -56,6 +55,7 @@
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.templating\\5.0.2\\microsoft.visualstudio.web.codegeneration.templating.5.0.2.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\5.0.2\\microsoft.visualstudio.web.codegeneration.utils.5.0.2.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\5.0.2\\microsoft.visualstudio.web.codegenerators.mvc.5.0.2.nupkg.sha512",
+    "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\bralik 36287951\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
@@ -161,5 +161,46 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Mvc 5.2.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Mvc",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Razor 3.2.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Razor",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebPages 3.2.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebPages",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Web.Infrastructure 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Web.Infrastructure",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

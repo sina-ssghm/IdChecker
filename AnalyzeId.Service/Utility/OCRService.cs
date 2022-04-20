@@ -4,6 +4,9 @@ using Amazon.Textract;
 using Amazon.Textract.Model;
 using AnalyzeId.Domain.Model;
 using AnalyzeId.Domain.ViewModel;
+using AnalyzeId.Domain.ViewModel.CreateApplicationViewModel;
+using AnalyzeId.Domain.ViewModel.CreateElement;
+using AnalyzeId.Domain.ViewModel.UploadFile;
 using AnalyzeId.Shared;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -90,47 +93,154 @@ namespace AnalyzeId.Service.Utility
                 return OperationResult<FileUploadPathDTO>.Error(ex);
             }
         }
-
-        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(Guid Id)
+        public async Task<string> UploadImage(IFormFile file)
         {
             try
             {
-                var time = DateTime.Now;
-                var imgPassport = await passportUrlRepository.Get(Id);
-                if (string.IsNullOrEmpty(imgPassport?.FrontUrl) &&(string.IsNullOrEmpty(imgPassport?.BackUrl)||imgPassport.BackUrl=="||skip||"))
-                { 
-                    while (true)
+
+                if (file != null)
+                {
+                    var filePath = await fileUploader.CheckAndUploadAsync(file);
+                    var fullPath = Path.Combine(hostingEnvironment.WebRootPath, filePath.TrimStart('/', '\\'));
+                    return fullPath;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return null;
+            }
+        }
+        public async Task<OperationResult<string>> UploadImage(IFormFile file,string urlImage, string applicationId, bool? isFront)
+        {
+            try
+            {
+                if (file != null || urlImage!=null)
+                {
+                    var url = urlImage != null? urlImage : await UploadImage(file);
+                    if (url == null)
                     {
-                        System.Threading.Thread.Sleep(3000);
-                        imgPassport = await passportUrlRepository.Get(Id);
-                        if (!string.IsNullOrEmpty(imgPassport?.FrontUrl) && (!string.IsNullOrEmpty(imgPassport?.BackUrl) || imgPassport.BackUrl == "||skip||"))
+                        return null;
+                    }
+                    var client = new RestClient("https://services.idvpacific.com.au/api/Forms/File");
+                    client.Timeout = -1;
+                    var userName = configuration.GetSection("User_Name").Value;
+                    var password = configuration.GetSection("Password").Value;
+                    var key = "SIGN";
+                    var title = "Signature";
+                    var type = "0";
+
+                    if (isFront == true)
+                    {
+                        key = "DLF";
+                        title = "Driving Licence - Front";
+                        type = "2";
+                    }
+                    else if (isFront == false)
+                    {
+                        key = "DLB";
+                        title = "Driving Licence - Back";
+                        type = "3";
+                    }
+
+                    var request = new RestRequest(Method.POST);
+                    request.AddHeader("API-Username", userName);
+                    request.AddHeader("API-Password", password);
+                    request.AddHeader("Application_ID", applicationId);
+                    request.AddHeader("Element_Key", key);
+                    request.AddHeader("Element_Title", title);
+                    request.AddHeader("ID_Document_Code", type);
+                    request.AddHeader("OCR", "false");
+                    request.AddFile("File", url);
+                    IRestResponse response = client.Execute(request);
+                    if (response.IsSuccessful)
+                    {
+                        var result = System.Text.Json.JsonSerializer.Deserialize<UploadFileViewModel>(response.Content);
+                        if (!result.Message.Error)
                         {
-                            break;
-                        }
-                        else if (time.AddMinutes(1) < DateTime.Now)
-                        {
-                            return new OperationResult<FinalResultOCRDTO> { Data = null, Message = "Please try again", Succeed = false };
+
+                            return new OperationResult<string>
+                            {
+                                Succeed = true,
+                                Data = url,
+                                Message = OperationResult<string>.SuccessMessage
+                            };
                         }
                     }
-                }
-                imgPassport.FrontUrl = imgPassport.FrontUrl.PathToUrl();
-                imgPassport.BackUrl = string.IsNullOrEmpty(imgPassport.BackUrl) || imgPassport?.BackUrl== "||skip||" ? null : imgPassport.BackUrl.PathToUrl();
+                    return new OperationResult<string>
+                    {
+                        Succeed = false,
+                        Message = OperationResult<string>.ErrorMessage,
+                    };
+                };
+                return new OperationResult<string> { Succeed = false, Message = "File Not Selected" };
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return OperationResult<string>.Error(ex);
+            }
+        }
+        public async Task<OperationResult<string>> CreateApplication()
+        {
+            try
+            {
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
+                var client = new RestClient("https://services.idvpacific.com.au/api/Forms/Application");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
+                request.AddParameter("Application_Title", "Nissan API Form");
+                request.AddParameter("Date_Format", "yyyy-mm-dd");
 
-                var IDVTask = _GetOCRResult(imgPassport.FrontUrl, imgPassport.BackUrl);
-                var awsTask = _GetOCRResultByAmazonApi(imgPassport.FrontUrl);
+
+                IRestResponse response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    var result = System.Text.Json.JsonSerializer.Deserialize<CreateApplicationViewModel>(response.Content);
+
+                    return new OperationResult<string>
+                    {
+                        Succeed = true,
+                        Data = result.Result.Application_ID,
+
+                        Message = OperationResult<int>.SuccessMessage
+                    };
+                }
+                return new OperationResult<string>
+                {
+                    Succeed = false,
+                    Message = OperationResult<int>.ErrorMessage,
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return OperationResult<string>.Error(ex);
+            }
+        }
+        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string frontUrl, string backUrl)
+        {
+            try
+            {
+                var IDVTask = _GetOCRResult(frontUrl, backUrl);
+                var awsTask = _GetOCRResultByAmazonApi(frontUrl);
                 await Task.WhenAll(IDVTask, awsTask);
-                awsTask.Result.FrontUrl = imgPassport.FrontUrl;
-                awsTask.Result.BackUrl = imgPassport.BackUrl;
+                awsTask.Result.FrontUrl = frontUrl;
+                awsTask.Result.BackUrl = backUrl;
                 if (IDVTask.Result.Data != null)
                 {
-                    IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
-                    IDVTask.Result.Data.BackUrl = imgPassport.BackUrl; var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                    IDVTask.Result.Data.FrontUrl = frontUrl;
+                    IDVTask.Result.Data.BackUrl = backUrl; var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                     var signatureUrl = _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
                     await Task.WhenAll(faceUrl, signatureUrl);
                     IDVTask.Result.Data.FaceUrl = faceUrl.Result;
                     IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
-                    IDVTask.Result.Data.FrontUrl = imgPassport.FrontUrl;
-                    IDVTask.Result.Data.BackUrl = imgPassport.BackUrl;
+                    IDVTask.Result.Data.FrontUrl = frontUrl;
+                    IDVTask.Result.Data.BackUrl = backUrl;
                 }
 
 
@@ -156,16 +266,17 @@ namespace AnalyzeId.Service.Utility
                 return OperationResult<FinalResultOCRDTO>.Error(ex);
             }
         }
-
         private async Task<OperationResult<FinalResultOCRDTO>> _GetOCRResult(string fileFrontPath, string fileBackPath)
         {
             try
             {
                 var client = new RestClient("https://services.idvpacific.com.au/api/Request/OCR-ID-PREMIUM");
                 client.Timeout = -1;
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
                 var request = new RestRequest(Method.POST);
-                request.AddHeader("API-Username", "hamid");
-                request.AddHeader("API-Password", "5150Murphy.mo71*");
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
                 request.AddParameter("Date_Format", "yyyy-mm-dd");
                 request.AddParameter("Processing_Type", "6");
                 request.AddParameter("Document_Validation", "True");
@@ -267,7 +378,6 @@ namespace AnalyzeId.Service.Utility
 
             }
         }
-
         public FinalResultOCRDTO ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ)
         {
             finalResultIdv = finalResultIdv == null ? new FinalResultOCRDTO { } : finalResultIdv;
@@ -277,10 +387,9 @@ namespace AnalyzeId.Service.Utility
             finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;
             finalResultIdv.FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName;
             finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
-            finalResultIdv.BirthDate = !finalResultIdv.BirthDate.HasValue() ? finalResultAZ?.BirthDate : finalResultIdv?.BirthDate;
+            finalResultIdv.BirthDate = !finalResultAZ.BirthDate.HasValue() ? finalResultIdv?.BirthDate : finalResultAZ?.BirthDate;
             finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate;
-            finalResultIdv.DocumentNumber = !finalResultAZ.DocumentNumber.HasValue() ? finalResultIdv?.DocumentNumber: finalResultAZ.DocumentNumber;
-
+            finalResultIdv.DocumentNumber = !finalResultAZ.DocumentNumber.HasValue() ? finalResultIdv?.DocumentNumber : finalResultAZ.DocumentNumber;
             //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;
             //finalResultIdv.ImageBackId = finalResultIdv?.ImageBackId;
 
@@ -298,8 +407,6 @@ namespace AnalyzeId.Service.Utility
 
             return finalResultIdv;
         }
-
-
         private async Task<string> _GetOCRImage(string imageId, string transactionId)
         {
             try
@@ -310,9 +417,11 @@ namespace AnalyzeId.Service.Utility
                 }
                 var client = new RestClient("https://services.idvpacific.com.au/api/Result/RetrieveFile");
                 client.Timeout = -1;
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
                 var request = new RestRequest(Method.GET);
-                request.AddHeader("API-Username", "hamid");
-                request.AddHeader("API-Password", "5150Murphy.mo71*");
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
                 request.AddParameter("Transaction_ID", transactionId);
                 request.AddParameter("Image_ID", imageId);
                 request.AddParameter("Username", "hamid");
@@ -361,6 +470,159 @@ namespace AnalyzeId.Service.Utility
             {
                 return null;
                 throw;
+            }
+        }
+        public async Task<OperationResult<object>> CreateElement(FinalResultOCRDTO result)
+        {
+            try
+            {
+                var client = new RestClient("https://services.idvpacific.com.au/api/Forms/Element");
+                client.Timeout = -1;
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
+
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
+                request.AddHeader("Application_ID", result.ApplicationId);
+                var body = new
+                {
+                    Elements = new[]
+                    {
+                       new{Key="E1",Title="First_Name",Value=result.FirstName},
+                       new{Key="E2",Title="Last_Name",Value=result.Surname},
+                       new{Key="E3",Title="Full_Name",Value=result.FullName},
+                       new{Key="E4",Title="Driving_Licence_Number",Value=result.DocumentNumber},
+                       new{Key="E5",Title="Expiry_Date",Value=result.ExpiryDate},
+                       new{Key="E6",Title="Birth_Date",Value=result.BirthDate},
+                       new{Key="E7",Title="Address",Value=result.Address},
+                       new{Key="E8",Title="T&C",Value="True"},
+                   },
+                };
+    
+         
+                request.AddParameter("application/json", JsonConvert.SerializeObject(body), ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    var resultVM = System.Text.Json.JsonSerializer.Deserialize<CreateElementViewModel>(response.Content);
+                    if (!resultVM.Message.Error)
+                    {
+
+                        return new OperationResult<object>
+                        {
+                            Succeed = true,
+                            Message = OperationResult<object>.SuccessMessage
+                        };
+                    }
+                }
+                return new OperationResult<object>
+                {
+                    Succeed = false,
+                    Message = OperationResult<object>.ErrorMessage,
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return OperationResult<object>.Error(ex);
+            }
+        }
+        public async Task<OperationResult<object>> UploadSignature(FinalResultOCRDTO result)
+        {
+            try
+            {
+                var client = new RestClient("https://services.idvpacific.com.au/api/Forms/Element");
+                client.Timeout = -1;
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
+
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
+                request.AddHeader("Application_ID", result.ApplicationId);
+                var body = new
+                {
+                    Elements = new[]
+                    {
+                       new{Key="E1",Title="First_Name",Value=result.FirstName},
+                       new{Key="E2",Title="Last_Name",Value=result.Surname},
+                       new{Key="E3",Title="Full_Name",Value=result.FullName},
+                       new{Key="E4",Title="Driving_Licence_Number",Value=result.DocumentNumber},
+                       new{Key="E5",Title="Expiry_Date",Value=result.ExpiryDate},
+                       new{Key="E6",Title="Birth_Date",Value=result.BirthDate},
+                       new{Key="E7",Title="Address",Value=result.Address},
+                       new{Key="E8",Title="T&C",Value="True"},
+                   },
+                };
+
+
+                request.AddParameter("application/json", JsonConvert.SerializeObject(body), ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    var resultVM = System.Text.Json.JsonSerializer.Deserialize<CreateElementViewModel>(response.Content);
+                    if (!resultVM.Message.Error)
+                    {
+
+                        return new OperationResult<object>
+                        {
+                            Succeed = true,
+                            Message = OperationResult<object>.SuccessMessage
+                        };
+                    }
+                }
+                return new OperationResult<object>
+                {
+                    Succeed = false,
+                    Message = OperationResult<object>.ErrorMessage,
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return OperationResult<object>.Error(ex);
+            }
+        }
+        public async Task<OperationResult<object>> ExecuteOcr(string appId)
+        {
+            try
+            {
+                var client = new RestClient("https://services.idvpacific.com.au/api/Forms/Execute");
+                var request = new RestRequest(Method.POST);
+                client.Timeout = -1;
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
+                var webhook = configuration.GetSection("Webhook").Value;
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
+                request.AddParameter("Application_ID",appId);
+                request.AddParameter("Secure_Callback_URL", webhook);
+      
+                IRestResponse response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    var resultVM = System.Text.Json.JsonSerializer.Deserialize<CreateElementViewModel>(response.Content);
+                    if (!resultVM.Message.Error)
+                    {
+
+                        return new OperationResult<object>
+                        {
+                            Succeed = true,
+                            Message = OperationResult<object>.SuccessMessage
+                        };
+                    }
+                }
+                return new OperationResult<object>
+                {
+                    Succeed = false,
+                    Message = OperationResult<object>.ErrorMessage,
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return OperationResult<object>.Error(ex);
             }
         }
 

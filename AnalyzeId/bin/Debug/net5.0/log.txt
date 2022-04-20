@@ -1757,3 +1757,275 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
 2022-04-18 17:22:33.8706|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2022-04-18 17:22:33.8706|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-18 17:22:33.8706|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:00:43.7467|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:00:43.7639|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:00:43.7639|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:00:43.7639|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:00:43.7639|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:10:22.3548|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:10:22.3781|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:10:22.3987|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:10:22.4187|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:10:22.4196|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:11:36.6501|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:11:36.6876|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:11:36.6982|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:11:36.6982|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:11:36.6982|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:13:12.2074|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:13:12.2360|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:13:12.2360|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:13:12.2360|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:13:12.2360|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:13:22.6847|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:13:22.7034|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:13:22.7034|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:13:22.7034|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:13:22.7034|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:14:55.2563|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-19 09:15:02.9507|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at System.IO.FileInfo..ctor(String originalPath, String fullPath, String fileName, Boolean isNormalized)
+   at System.IO.FileInfo..ctor(String fileName)
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 176
+2022-04-19 09:15:03.1488|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Path cannot be null. (Parameter 'path')
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResultByAmazonApi(String path) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 229
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(Guid Id) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 121
+2022-04-19 09:31:02.6503|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:31:02.6670|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:31:02.7084|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:31:02.7256|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:31:02.7256|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 09:32:08.8851|DEBUG|AnalyzeId.Service.Utility.OCRService|System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at AnalyzeId.Shared.FileUploader.CheckAndUploadAsync(IFormFile file) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Shared\FileUploader.cs:line 123
+   at AnalyzeId.Service.Utility.OCRService.UploadImage(IFormFile file, Guid id, Boolean isFront) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 71
+2022-04-19 09:46:58.9748|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 09:46:58.9914|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 09:46:58.9914|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 09:46:58.9914|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 09:46:58.9914|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 10:58:19.7192|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 10:58:19.7418|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 10:58:19.7488|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 10:58:19.7488|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 10:58:19.7488|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 11:05:55.9175|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 11:05:55.9366|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 11:05:55.9474|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 11:05:55.9474|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 11:05:55.9474|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 11:40:11.1327|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-19 11:40:34.1290|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 11:40:34.1481|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 11:40:34.1616|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 11:40:34.1616|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 11:40:34.1616|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 12:30:31.4576|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 12:30:31.4771|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 12:30:31.4836|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 12:30:31.4836|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 12:30:31.4836|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 12:52:27.2096|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 12:52:27.2286|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 12:52:27.2286|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 12:52:27.2286|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 12:52:27.2286|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 12:57:26.3325|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 12:57:26.3509|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 12:57:26.3570|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 12:57:26.3570|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 12:57:26.3570|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 13:06:53.5500|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 13:06:53.5680|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 13:06:53.5738|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 13:06:53.5738|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 13:06:53.5738|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 13:55:23.2440|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 13:55:23.2635|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 13:55:23.2635|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 13:55:23.2635|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 13:55:23.2635|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 14:00:18.1343|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 14:00:18.1521|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 14:00:18.1521|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 14:00:18.1521|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 14:00:18.1521|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 14:00:44.4402|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 14:00:44.4584|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 14:00:44.4649|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 14:00:44.4649|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 14:00:44.4649|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 14:01:26.4215|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 14:01:26.4391|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 14:01:26.4391|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 14:01:26.4391|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 14:01:26.4391|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 14:06:14.8398|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 14:06:14.8572|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 14:06:14.8572|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 14:06:14.8572|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 14:06:14.8572|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 14:15:36.5324|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 14:15:36.5510|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 14:15:36.5595|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 14:15:36.5595|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 14:15:36.5595|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-19 14:16:03.7343|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-19 14:18:19.2668|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-19 14:18:19.2840|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-19 14:18:19.2840|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-19 14:18:19.2840|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-19 14:18:19.2840|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 08:20:11.2350|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 08:20:11.2531|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 08:20:11.2599|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 08:20:11.2599|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 08:20:11.2599|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 09:03:45.0483|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 09:03:45.0678|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 09:03:45.0678|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 09:03:45.0678|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 09:03:45.0678|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 12:40:21.2200|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 12:40:21.2393|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 12:40:21.2465|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 12:40:21.2465|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 12:40:21.2465|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 12:44:17.4927|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 12:44:17.5147|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 12:44:17.5147|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 12:44:17.5242|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 12:44:17.5242|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 12:49:59.5918|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 12:49:59.6104|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 12:49:59.6104|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 12:49:59.6178|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 12:49:59.6178|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 13:30:21.7321|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 13:30:21.7521|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 13:30:21.7521|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 13:30:21.7521|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 13:30:21.7521|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 13:49:17.3181|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 13:49:17.3372|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 13:49:17.3372|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 13:49:17.3372|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 13:49:17.3372|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 14:00:18.4159|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 14:00:18.4347|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 14:00:18.4347|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 14:00:18.4347|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 14:00:18.4347|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 14:54:06.8549|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 14:54:06.8787|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 14:54:06.9073|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 14:54:06.9073|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 14:54:06.9073|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:11:29.3698|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:11:29.3886|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:11:29.3886|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:11:29.4022|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:11:29.4022|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:23:36.8367|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:23:36.8559|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:23:36.8559|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:23:36.8559|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:23:36.8559|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:30:25.4433|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:30:25.4665|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:30:25.4790|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:30:25.4790|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:30:25.4790|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:34:53.3709|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:34:53.4122|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:34:53.4152|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:34:53.4152|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:34:53.4152|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:36:39.9057|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:36:39.9248|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:36:39.9317|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:36:39.9317|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:36:39.9317|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:43:53.8374|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:43:53.8623|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:43:53.8623|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:43:53.8776|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:43:53.8776|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 15:58:09.6068|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 15:58:09.6244|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 15:58:09.6244|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 15:58:09.6244|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 15:58:09.6244|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:00:51.3481|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:00:51.3701|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:00:51.3701|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:00:51.3701|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:00:51.3701|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:01:27.4751|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:01:27.4964|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:01:27.4964|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:01:27.4964|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:01:27.4964|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:05:50.9715|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:05:50.9937|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:05:50.9937|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:05:50.9937|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:05:50.9937|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:08:46.7385|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:08:46.7556|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:08:46.7627|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:08:46.7627|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:08:46.7627|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:36:43.5833|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:36:43.6063|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:36:43.6063|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:36:43.6063|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:36:43.6063|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:40:17.0217|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:40:17.0412|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:40:17.0412|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:40:17.0412|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:40:17.0412|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 16:43:31.7986|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-20 16:46:07.5674|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-20 16:50:20.1950|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 16:50:20.2153|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 16:50:20.2153|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 16:50:20.2153|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 16:50:20.2153|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 17:22:20.2289|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 17:22:20.2480|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 17:22:20.2545|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 17:22:20.2545|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 17:22:20.2545|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 17:26:07.3134|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 17:26:07.3323|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 17:26:07.3391|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 17:26:07.3391|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 17:26:07.3391|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 17:29:00.0366|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 17:29:00.0543|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 17:29:00.0614|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 17:29:00.0614|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 17:29:00.0614|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 17:45:31.3770|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 17:45:31.3976|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 17:45:31.4035|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 17:45:31.4035|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 17:45:31.4035|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-20 18:01:17.3396|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-20 18:01:17.3697|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-20 18:01:17.3697|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-20 18:01:17.3697|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-20 18:01:17.3697|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId

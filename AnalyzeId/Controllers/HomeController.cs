@@ -21,28 +21,28 @@ namespace AnalyzeId.Controllers
         private readonly IOCRService oCRService;
         private readonly IOCRRepository oCRRepository;
         private readonly IOCRFilesRepository oCRFilesRepository;
-        private readonly IServiceProvider serviceProvider;
+        private readonly IServiceScopeFactory serviceProvider;
         private readonly IImagePassportUrlRepository passportUrlRepository;
         private readonly IOCRService service;
-     
-        public HomeController(IOCRService oCRService, IOCRRepository oCRRepository, IOCRFilesRepository oCRFilesRepository, IServiceProvider  serviceProvider,IImagePassportUrlRepository passportUrlRepository)
+
+        public HomeController(IOCRService oCRService, IOCRRepository oCRRepository, IOCRFilesRepository oCRFilesRepository, IServiceScopeFactory serviceProvider, IImagePassportUrlRepository passportUrlRepository)
         {
             this.oCRService = oCRService;
             this.oCRRepository = oCRRepository;
             this.oCRFilesRepository = oCRFilesRepository;
             this.serviceProvider = serviceProvider;
             this.passportUrlRepository = passportUrlRepository;
-            service = serviceProvider.GetRequiredService<IOCRService>();
         }
-       
+
         public async Task<IActionResult> Index(string frontPath)
         {
             return View(new OCRFileDTO { UrlFront = frontPath });
         }
 
-        public async Task<IActionResult> OcrRequest(string frontPath)
+        public async Task<IActionResult> OcrRequest()
         {
-            return View(new OCRFileDTO { UrlFront = frontPath });
+            var appId = await oCRService.CreateApplication();
+            return View(new OCRFileDTO { ApplicationId = appId.Data});
         }
 
         public async Task<IActionResult> CanvasResult(string file)
@@ -59,71 +59,80 @@ namespace AnalyzeId.Controllers
         public async Task<IActionResult> Result(OCRFileDTO fileDTO)
         {
             var isbackImage = fileDTO.IdPass.HasValue;
-           var idPass=fileDTO?.IdPass!=null?fileDTO.IdPass.Value: passportUrlRepository.Add(new ImagePassportViewModel { }).GetAwaiter().GetResult().Data;
-            if (fileDTO.UrlBack=="||skip||" && fileDTO.IdPass.HasValue)
+            if (fileDTO.UrlBack != "||skip||")
             {
-               await passportUrlRepository.Update(fileDTO.IdPass.Value,fileDTO.UrlBack,false);
+                var isfront = fileDTO.UrlFront != null ? false : true;
+                var res = await oCRService.UploadImage(fileDTO.File,null, fileDTO.ApplicationId,isfront);
+                if (res.Succeed && isfront)
+                {
+                    fileDTO.UrlFront =res.Data;
+                }
+                else
+                {
+                        fileDTO.UrlBack = res.Data;
+                }
             }
-             UploadImage(fileDTO.File, idPass,fileDTO?.IdPass!=null?false:true);
+         
+            
+            //var idPass = fileDTO?.IdPass != null ? fileDTO.IdPass.Value : passportUrlRepository.Add(new ImagePassportViewModel { }).GetAwaiter().GetResult().Data;
+            //if (fileDTO.UrlBack == "||skip||" && fileDTO.IsUploadFront)
+            //{
+            //    await passportUrlRepository.Update(fileDTO.IdPass.Value, fileDTO.UrlBack, false);
+            //}
+            //UploadImage(fileDTO.File, idPass, fileDTO?.IdPass != null ? false : true);
 
-            if (isbackImage)
+            if (fileDTO.UrlFront!=null &&(fileDTO.UrlBack=="||skip||"||fileDTO.UrlBack!=null))
             {
-                //fileDTO.UrlFront = fileDTO.UrlFront ?? result.Data.FullPath;
-                //fileDTO.UrlBack = fileDTO.UrlFront == null ? null : result?.Data?.FullPath;
                 fileDTO.Succeed = true;
                 fileDTO.IsContinue = true;
-                fileDTO.IdPass = idPass;
                 return View(fileDTO);
             }
-            fileDTO.IdPass = idPass;
+            //fileDTO.IdPass = idPass;
             return View(nameof(OcrRequest), fileDTO);
         }
 
         public async Task<IActionResult> GetOCRResult(OCRFileDTO fileDTO)
         {
-            if (fileDTO?.IdPass == null)
+            if (fileDTO?.UrlFront == null || fileDTO?.ApplicationId == null)
             {
                 return NotFound();
             }
-            var result = await oCRService.GetOCRResult(fileDTO.IdPass.Value);
+            var result = await oCRService.GetOCRResult(fileDTO.UrlFront,fileDTO.UrlBack);
+            result.Data.ApplicationId= fileDTO.ApplicationId;   
             return View(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> ConfirmResult(FinalResultOCRDTO model)
         {
-            oCRRepository.Add(model);
-            oCRFilesRepository.Add(model);
-            return RedirectToAction(nameof(Signature),new { transactionId =model.TransactionId});
+          var res= await oCRService.CreateElement(model);
+            if (res.Succeed)
+            {
+                return RedirectToAction(nameof(Signature), new { appId = model.ApplicationId });
+            }
+            return View(new OperationResult<FinalResultOCRDTO> {Message="Error",Succeed=false });
+            
         }
 
         [HttpGet]
-        public async Task<IActionResult> Signature(string transactionId)
+        public async Task<IActionResult> Signature(string appId)
         {
-            return View(new SignatureViewModel {TransactionId=transactionId });
+            return View(new SignatureViewModel { ApplicationId = appId });
         }
 
         [HttpPost]
-        public async Task<IActionResult> Signature(string file,string type,string transactionId)
+        public async Task<IActionResult> Signature(string file, string type, string applicationId)
         {
             try
             {
                 var url = oCRService.SaveImageBase64(file, type);
-                if (url.HasValue())
+              var res=  await oCRService.UploadImage(null, url ,applicationId, null);
+                if (res.Succeed)
                 {
-                    oCRFilesRepository._Add(new OCRFileViewModel
-                    {
-                        File = url.UrlToDirectoryPath(),
-                        FileType = FileType.Signoture,
-                        TransactionId = transactionId,
-                        UniqueId = null,
-                    });
+                    return Json("true");
                 }
-                if (transactionId!=null)
-                {
-                    oCRService.SendRequestToWebhook(transactionId);
-                }
-                return Json("true");
+                return Json(res.Message);
+     
             }
             catch (Exception ex)
             {
@@ -132,16 +141,17 @@ namespace AnalyzeId.Controllers
             }
         }
 
-        public async Task<IActionResult> ThankYou()
+        public async Task<IActionResult> ThankYou(string appId)
         {
-            return View();
+           await oCRService.ExecuteOcr(appId);
+            return View(nameof(ThankYou));
         }
 
 
-        public void UploadImage(IFormFile file, Guid id, bool isFront)
+        public async Task UploadImage(IFormFile file, Guid id, bool isFront)
         {
-
-            service.UploadImage(file, id, isFront);
+            var service = serviceProvider.CreateScope().ServiceProvider.GetRequiredService<IOCRService>();
+            await service.UploadImage(file, id, isFront);
         }
     }
 }

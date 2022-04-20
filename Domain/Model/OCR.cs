@@ -20,6 +20,8 @@ namespace AnalyzeId.Domain.Model
         public string ExpiryDate { get; set; }
         public string Address { get; set; }
         public string TransactionId { get; set; }
+        public string JsonResponse { get; set; }
+        
 
         public OCRFileViewModel  OCRFile{ get; set; }
     }

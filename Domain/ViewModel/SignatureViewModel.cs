@@ -8,6 +8,6 @@ namespace AnalyzeId.Domain.ViewModel
 {
     public class SignatureViewModel
     {
-        public string TransactionId { get; set; }
+        public string ApplicationId { get; set; }
     }
 }

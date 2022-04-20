@@ -50,11 +50,22 @@ namespace AnalyzeId.ApiControllers
             }
             var data = new ResultOCRAndFilesViewModel
             {
-                OCRs = OCRRepository.GetForApi(transactionId),
-                OCRFiles = oCRFilesRepository.GetAllForOcrApi(transactionId)
+                Result = OCRRepository.GetForApi(transactionId),
+                 Message =new Message
+                 {
+                      Description =operation.Message,
+                       Error =operation.Succeed,
+                 },
+                Transaction=new Transaction
+                {
+                      Transaction_Id = transactionId,
+                       Username = username,
+                    Name = "Ocr get information",
+                     
+                }
             };
-            operation.Data = data;
-            return JsonConvert.SerializeObject(operation);
+            
+            return JsonConvert.SerializeObject(data);
         }
 
         [HttpGet]

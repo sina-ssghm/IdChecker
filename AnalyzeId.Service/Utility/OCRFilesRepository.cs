@@ -5,10 +5,13 @@ using AnalyzeId.Shared;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc.Html;
 
 namespace AnalyzeId.Service.Utility
 {
@@ -73,7 +76,7 @@ namespace AnalyzeId.Service.Utility
                 _Add(new OCRFileViewModel
                 {
                     File = model.SignatureUrl.UrlToDirectoryPath(),
-                    FileType = FileType.ApiSignoture,
+                    FileType = FileType.ApiSignature,
                     TransactionId = model.TransactionId,
                     UniqueId = model.ImageSignatureId
                 });
@@ -96,7 +99,11 @@ namespace AnalyzeId.Service.Utility
             OCRFileForApiViewModel
             {
                  Image_ID=p.Id.ToString(),
-                  //Transaction_Id=p.TransactionId,
+                   File_Name= p.FileType.GetType()
+            .GetMember(p.FileType.ToString())
+            .FirstOrDefault()
+            .GetCustomAttribute<DisplayAttribute>()?
+            .GetName(),
                    
             }).ToList();
             return result;

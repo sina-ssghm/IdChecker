@@ -16,6 +16,8 @@
     <input type="hidden" asp-for="SignatureUrl" />
     <input type="hidden" asp-for="ImageSignatureId" />
     <input type="hidden" asp-for="TransactionId" />
+    <input type="hidden" asp-for="JsonResultIDv" />
+    <input type="hidden" asp-for="ApplicationId" />
     <div class="row">
         <div class="col-6 mt-1">
             <label class="font-weight-bold"> First Name:</label>
@@ -62,7 +64,7 @@
             <button type="submit" class="btn mt-2 text-light  bg-site btn-sm">Save</button>
             </div>*@
         <div class="col-12 text-center mt-2">
-            <button type="submit" @*onclick="$('#myform').submit()"*@ class="btn bg-site m-auto text-light waves-effect">
+            <button type="submit" @*onclick="CreateNewElements()"*@ class="btn submit-form-btn bg-site m-auto text-light waves-effect">
                 Confirm
             </button>
             <a asp-action="Index" asp-controller="Home" class="btn bg-danger-site m-auto text-light waves-effect">
