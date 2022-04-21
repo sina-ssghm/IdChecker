@@ -3,7 +3,7 @@
     ViewData["Title"] = "OcrRequest";
 }
 
-<div class="col text-center" id="scanMenu">
+<div class="col text-center detail" id="scanMenu">
     <div class="col-12 col-sm-12 col-md-6 m-auto text-center">
         <h2 class="mb-2 text-bold-custom ">UPLOAD DRIVER LICENCE</h2>
         <img class="card-img-top" src="/image/page2.jpeg" alt="Card image cap" width="100%" style="">
@@ -17,9 +17,9 @@
         </div>
     </div>
     <div class="col-sm-4 col-8 text-center m-auto">
-        <a href="##" class="btn mt-1 font-size-1 bg-site p-2 waves-effect camera camera-file text-bold text-light w-100">CAPTURE @(Model?.IdPass==null?"FRONT":"BACK") </a>
+        <a href="##" class="btn mt-1 font-size-1 bg-site p-2 waves-effect camera camera-file text-bold text-light w-100">CAPTURE @(Model?.UrlFront==null?"FRONT":"BACK") </a>
         @*<a href="##" style="display:none" class="btn mt-1 font-size-1 bg-site p-2 waves-effect CanvasCamera camera-can text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>*@
-        <button type="button" onclick="skip()" class="btn @(Model.IdPass==null?"d-none":"") bg-secondary camera-file font-size-1 p-2 mt-2 text-light w-100">
+        <button type="button" onclick="skip()" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-file font-size-1 p-2 mt-2 text-light w-100">
             Skip
         </button>
         @*<button type="button" onclick="submitForm(true)" class="btn @(Model.UrlFront==null?"d-none":"") bg-secondary camera-can font-size-1 p-2 mt-2 text-light w-100">
@@ -27,13 +27,6 @@
             </button>*@
     </div>
 </div>
-
-
-<form enctype="multipart/form-data" asp-controller="home" asp-action="GetOCRResult" method="post" class="d-none" id="sendData">
-@*    <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
-    <input type="hidden" class="d-none" id="UrlBack" name="UrlBack" value="@(Model.UrlBack!=null?Model.UrlBack:"")">*@
-      <input type="hidden" class="d-none" id="IdPass" name="IdPass" value="@(Model?.IdPass)">
-</form>
 
 
 @*
@@ -89,9 +82,10 @@
                     Start by clicking the link below:
                     </p>*@
                 <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
-                    @*<input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">*@
+                    <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
                      <input type="hidden" value="||skip||" name="X" id="skip"/>
-                      <input type="hidden" class="d-none" id="IdPass" name="IdPass" value="@(Model?.IdPass)">
+                     <input type="hidden" value="@Model?.ApplicationId" name="ApplicationId" id="ApplicationId"/>
+                      @*<input type="hidden" class="d-none" id="IdPass" name="IdPass" value="@(Model?.IdPass)">*@
                     <input type="file" class="d-none" id="File" name="File" accept="image/*" capture="camera">
                     @*<input type="text" id="File" name="File" />*@
 
@@ -100,6 +94,9 @@
                     <button class="btn bg-site m-auto btn-adn block waves-effect text-light" onclick="$('#resultForm').submit()">
                         Confirm
                     </button>
+                    @*    <button class="btn bg-site m-auto btn-adn block waves-effect text-light" onclick="SubmitImgFront()">
+                        Confirm
+                    </button>*@
                     <button type="button" class="btn m-auto bg-site btn-adn block waves-effect text-light camera camera-file  retryCamera">
                         Retry
                     </button>
@@ -150,8 +147,8 @@
 
 <script src="/script/script.js" asp-append-version="true"></script>
 <script>
+    //$("#ApplicationId").val(applicationId)
     function skip(){
-
     $('#skip').attr("name","UrlBack")
     $('#resultForm').submit()
 }

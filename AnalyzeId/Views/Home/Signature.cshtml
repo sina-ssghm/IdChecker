@@ -15,7 +15,7 @@
             <div class="row col-12">
                 <form id="file-image" asp-action="Signature" style="display:none">
                     <input type="file" name="file" id="" value="signature-file" />
-                    <input type="text" name="transactionId" id="transactionId" value="@Model?.TransactionId" />
+                    @*<input type="text" name="transactionId" id="ApplicationId" value="@Model?.ApplicationId" />*@
                 </form>
                 <div action="" class="mt-4 col-sm-9 m-auto">
                     <canvas id="signaturePad"
@@ -27,7 +27,7 @@
 
                         <div class="col-6">
                             <button id="submit-form-btn" class="btn text-light bg-site btn-red w-100" type="button"
-                                    onclick="SubmitSignature()">
+                                    onclick="SubmitSignature('@(Model?.ApplicationId)')">
                                 Confirm
                             </button>
                         </div>

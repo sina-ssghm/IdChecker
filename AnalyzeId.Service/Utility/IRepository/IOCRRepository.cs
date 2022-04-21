@@ -8,6 +8,6 @@ namespace AnalyzeId.Service.Utility
     {
         void Add(FinalResultOCRDTO final);
         List<OCR> Get(string transactionId);
-        List<OCRForApiViewModel> GetForApi(string transactionId);
+        Domain.ViewModel.Result GetForApi(string transactionId);
     }
 }

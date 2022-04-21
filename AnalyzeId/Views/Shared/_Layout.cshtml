@@ -10,10 +10,10 @@
     @*<link href="/lib/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet" />*@
     <link rel="apple-touch-icon" href="/template/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="/template/app-assets/images/ico/favicon.ico">
-    @*    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">*@
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+ @*   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">*@
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="/template/app-assets/vendors/css/vendors.min.css">
@@ -135,7 +135,11 @@
     </script>
     <script src="~/lib/HaDatepicker/ha-datetimepicker.js"></script>
     <script src="/template/app-assets/js/scripts/components/components-dropdowns.js"></script>
+    <script src="~/lib/axios.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js"></script>
+        <script src="/js/nissanscript.js" asp-append-version="true"></script>
     <script src="/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 <!-- END: Body-->

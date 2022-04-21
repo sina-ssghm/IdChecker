@@ -28,7 +28,8 @@ namespace AnalyzeId.Domain.Model
         public string ImageBackId { get; set; }
         public string ImageFaseId { get; set; }
         public string ImageSignatureId { get; set; }
-        
+        public string Classification { get; set; }
+        public string ApplicationId { get; set; }
 
     }
     public class OCRDTO
