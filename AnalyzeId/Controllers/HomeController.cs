@@ -83,6 +83,7 @@ namespace AnalyzeId.Controllers
 
             if (fileDTO.UrlFront!=null &&(fileDTO.UrlBack=="||skip||"||fileDTO.UrlBack!=null))
             {
+                fileDTO.UrlBack = fileDTO.UrlBack == "||skip||"?null: fileDTO.UrlBack ;
                 fileDTO.Succeed = true;
                 fileDTO.IsContinue = true;
                 return View(fileDTO);

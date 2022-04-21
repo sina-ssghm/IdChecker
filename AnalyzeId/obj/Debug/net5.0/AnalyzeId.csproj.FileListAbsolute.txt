@@ -1712,7 +1712,6 @@ C:\Users\bralik 36287951\Desktop\GIC (1)\GIC\GIC\AnalyzeId\obj\Debug\net5.0\Anal
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\appsettings.json
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\nlog.config
-C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.StaticWebAssets.xml
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.exe
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.deps.json
 C:\Users\Ahmad\Source\Repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.runtimeconfig.json
@@ -2191,3 +2190,16 @@ C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runti
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.Domain.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\AnalyzeId.Domain.pdb
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Debug\net5.0\Razor\Views\Home\_Result.cshtml.g.cs
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Web.Mvc.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Web.Razor.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Web.Helpers.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Web.WebPages.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId\obj\Debug\net5.0\Razor\wwwroot\lib\Front.cshtml.g.cs

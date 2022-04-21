@@ -9,3 +9,4 @@ C:\Users\Ahmad\source\repos\IdChecker\Domain\bin\Debug\net5.0\AnalyzeId.Domain.p
 C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.dll
 C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\ref\AnalyzeId.Domain.dll
 C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.pdb
+C:\Users\Ahmad\source\repos\IdChecker\Domain\obj\Debug\net5.0\AnalyzeId.Domain.csproj.AssemblyReference.cache
