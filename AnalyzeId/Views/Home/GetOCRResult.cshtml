@@ -62,12 +62,12 @@ else if (data != null)
                                     <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
                                 </div>
                             }
-                            @if (Model?.Data?.BackUrl != null)
+                            @*@if (Model?.Data?.BackUrl != null)
                             {
                                 <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
                                     <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
                                 </div>
-                            }
+                            }*@
                             @if (Model?.Data?.FaceUrl != null)
                             {
                                 <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">

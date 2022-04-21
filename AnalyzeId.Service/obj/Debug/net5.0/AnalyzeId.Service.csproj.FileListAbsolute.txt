@@ -77,3 +77,18 @@ C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\Analyze
 C:\Users\Ahmad\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.pdb
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Domain.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.deps.json
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Service.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\bin\Debug\net5.0\AnalyzeId.Shared.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.AssemblyReference.cache
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfoInputs.cache
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.AssemblyInfo.cs
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CoreCompileInputs.cache
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.csproj.CopyComplete
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\refint\AnalyzeId.Service.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\AnalyzeId.Service.pdb
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\obj\Debug\net5.0\ref\AnalyzeId.Service.dll

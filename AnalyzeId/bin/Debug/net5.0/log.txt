@@ -2037,3 +2037,183 @@ File name: 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\wwwroot'
 2022-04-20 18:01:17.3697|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2022-04-20 18:01:17.3697|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
 >>>>>>> 38215fb28ded3b77e226c94fd1d06e3396c0f456
+2022-04-21 00:08:27.9163|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 00:08:27.9449|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 00:08:27.9564|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 00:08:27.9564|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 00:08:27.9564|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 00:12:09.7447|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 290
+2022-04-21 00:14:38.7789|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 290
+2022-04-21 00:16:34.5702|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 290
+2022-04-21 00:17:48.1654|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 290
+2022-04-21 00:20:56.0729|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 290
+2022-04-21 00:23:55.4030|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 00:23:55.4270|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 00:23:55.4345|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 00:23:55.4345|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 00:23:55.4345|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 00:25:25.5268|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:38:48.7865|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 00:38:48.8179|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 00:38:48.8384|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 00:38:48.8397|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 00:38:48.8397|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 00:41:25.1410|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:44:20.3729|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:46:32.4591|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 00:46:32.4810|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 00:46:32.4889|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 00:46:32.4889|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 00:46:32.4889|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 00:47:13.1097|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:48:51.4366|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 00:48:51.5268|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 00:48:51.5268|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 00:48:51.5268|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 00:48:51.5268|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 00:50:27.1265|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:51:34.3356|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: String '' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at AnalyzeId.Service.Utility.OCRService.<ComoareResult>g__ConvertDate|14_0(String date) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 398
+   at AnalyzeId.Service.Utility.OCRService.ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 394
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String frontUrl, String backUrl) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 256
+2022-04-21 00:51:41.7349|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-21 00:51:58.1292|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:52:35.5313|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: String '' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at AnalyzeId.Service.Utility.OCRService.<ComoareResult>g__ConvertDate|14_0(String date) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 398
+   at AnalyzeId.Service.Utility.OCRService.ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 394
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String frontUrl, String backUrl) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 256
+2022-04-21 00:53:12.4039|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 00:53:12.4414|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 00:53:12.4559|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 00:53:12.4559|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 00:53:12.4559|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 00:54:59.8184|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 00:57:09.0459|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 01:00:22.8344|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 01:01:35.7167|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: String '29-04-1992' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at AnalyzeId.Service.Utility.OCRService.<ComoareResult>g__ConvertDate|14_0(String date) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 398
+   at AnalyzeId.Service.Utility.OCRService.ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 393
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String frontUrl, String backUrl) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 256
+2022-04-21 01:01:39.3500|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-21 01:01:47.0419|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 01:03:27.9111|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 01:03:27.9417|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 01:03:27.9674|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 01:03:27.9674|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 01:03:27.9764|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 01:04:01.6123|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 01:05:08.2245|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 01:06:58.1564|DEBUG|AnalyzeId.Service.Utility.OCRService|System.IO.IOException: The filename, directory name, or volume label syntax is incorrect. : 'C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\||skip||'
+   at System.IO.FileSystemInfo.EnsureDataInitialized()
+   at System.IO.FileInfo.get_Length()
+   at RestSharp.RestRequest.AddFile(String name, String path, String contentType)
+   at AnalyzeId.Service.Utility.OCRService._GetOCRResult(String fileFrontPath, String fileBackPath) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 291
+2022-04-21 01:12:28.3162|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: String '29/04/1992' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at AnalyzeId.Service.Utility.OCRService.<ComoareResult>g__ConvertDate|14_0(String date) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 398
+   at AnalyzeId.Service.Utility.OCRService.ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 393
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String frontUrl, String backUrl) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 244
+2022-04-21 01:12:30.2746|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-21 01:13:55.2536|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 01:13:55.2729|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 01:13:55.2866|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 01:13:55.2866|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 01:13:55.2866|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 01:18:18.1708|DEBUG|AnalyzeId.Service.Utility.OCRService|System.FormatException: String '29/04/1992' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at AnalyzeId.Service.Utility.OCRService.<ComoareResult>g__ConvertDate|14_0(String date) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 398
+   at AnalyzeId.Service.Utility.OCRService.ComoareResult(FinalResultOCRDTO finalResultIdv, FinalResultOCRDTO finalResultAZ) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 393
+   at AnalyzeId.Service.Utility.OCRService.GetOCRResult(String frontUrl, String backUrl) in C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId.Service\Utility\OCRService.cs:line 244
+2022-04-21 01:18:20.4852|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-21 01:19:28.2089|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 01:19:28.2470|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 01:19:28.2577|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 01:19:28.2577|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 01:19:28.2577|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 01:22:18.8815|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2022-04-21 01:30:22.1000|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 01:30:22.1225|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 01:30:22.1357|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 01:30:22.1357|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 01:30:22.1357|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId
+2022-04-21 02:10:07.8643|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001
+2022-04-21 02:10:07.8877|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000
+2022-04-21 02:10:07.8952|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-04-21 02:10:07.8952|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-04-21 02:10:07.8952|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId

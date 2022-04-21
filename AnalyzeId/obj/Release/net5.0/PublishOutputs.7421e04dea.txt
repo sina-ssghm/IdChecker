@@ -84,10 +84,12 @@ C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\Pub
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\Image\header.jpeg
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\Image\page1.jpeg
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\Image\page2.jpeg
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\js\nissanscript.js
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\js\site.js
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\autonumeric\autoNumeric.js
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\autonumeric\autoNumeric.min.js
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\autonumeric\autoNumeric.min.js.map
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\axios.min.js
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap-datetimepicker\bootstrap-datetimepicker.min.css
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap-datetimepicker\bootstrap-datetimepicker.min.js
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap-datetimepicker\bootstrap-datetimepicker.pt-BR.js

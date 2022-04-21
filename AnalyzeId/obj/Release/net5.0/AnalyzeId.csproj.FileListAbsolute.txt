@@ -896,3 +896,4 @@ C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Release\net5.0\Sys
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Release\net5.0\System.Web.WebPages.Razor.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Release\net5.0\System.Web.WebPages.dll
 C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\bin\Release\net5.0\Microsoft.Web.Infrastructure.dll
+C:\Users\bralik 36287951\source\repos\IdChecker\AnalyzeId\obj\Release\net5.0\Razor\wwwroot\lib\Front.cshtml.g.cs

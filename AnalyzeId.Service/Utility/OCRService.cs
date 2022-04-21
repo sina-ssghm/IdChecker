@@ -112,13 +112,13 @@ namespace AnalyzeId.Service.Utility
                 return null;
             }
         }
-        public async Task<OperationResult<string>> UploadImage(IFormFile file,string urlImage, string applicationId, bool? isFront)
+        public async Task<OperationResult<string>> UploadImage(IFormFile file, string urlImage, string applicationId, bool? isFront)
         {
             try
             {
-                if (file != null || urlImage!=null)
+                if (file != null || urlImage != null)
                 {
-                    var url = urlImage != null? urlImage : await UploadImage(file);
+                    var url = urlImage != null ? urlImage : await UploadImage(file);
                     if (url == null)
                     {
                         return null;
@@ -241,6 +241,7 @@ namespace AnalyzeId.Service.Utility
                     IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
                     IDVTask.Result.Data.FrontUrl = frontUrl;
                     IDVTask.Result.Data.BackUrl = backUrl;
+                    return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
                 }
 
 
@@ -252,7 +253,7 @@ namespace AnalyzeId.Service.Utility
 
 
 
-                return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
+                return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = "", Succeed = awsTask.Result != null };
 
                 //if (IDVTask.Result.Succeed == true || (IDVTask.Result.Data.FullName.HasValue() && IDVTask.Result.Data.BirthDate.HasValue()))
                 //{
@@ -285,10 +286,10 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Image_Scale", "False");
                 request.AddParameter("Cropping_Mode", "True");
                 request.AddFile("ID_Front_Image", fileFrontPath);
-                if (fileBackPath != null)
-                {
-                    request.AddFile("ID_Back_Image", fileBackPath);
-                }
+                //if (fileBackPath != null)
+                //{
+                //    request.AddFile("ID_Back_Image", fileBackPath);
+                //}
 
                 IRestResponse response = client.Execute(request);
                 if (response.IsSuccessful)
@@ -300,10 +301,10 @@ namespace AnalyzeId.Service.Utility
                         Succeed = true,
                         Data = new FinalResultOCRDTO
                         {
-                            FullName = result?.Result?.Data?.First_Name + " " + result?.Result?.Data?.Given_Name,
+                            FullName = result?.Result?.Data?.Full_Name,
                             MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
-                            Surname = result?.Result?.Data?.Given_Name,
+                            Surname = result?.Result?.Data?.Surname,
                             DocumentNumber = result?.Result?.Data?.Document_Number,
                             BirthDate = result?.Result?.Data?.Birth_Date,
                             ExpiryDate = result?.Result?.Data?.Expiry_Date,
@@ -387,9 +388,16 @@ namespace AnalyzeId.Service.Utility
             finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;
             finalResultIdv.FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName;
             finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
-            finalResultIdv.BirthDate = !finalResultAZ.BirthDate.HasValue() ? finalResultIdv?.BirthDate : finalResultAZ?.BirthDate;
-            finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? finalResultAZ?.ExpiryDate : finalResultIdv?.ExpiryDate;
             finalResultIdv.DocumentNumber = !finalResultAZ.DocumentNumber.HasValue() ? finalResultIdv?.DocumentNumber : finalResultAZ.DocumentNumber;
+
+            finalResultIdv.BirthDate = !finalResultAZ.BirthDate.HasValue() ? ConvertDate(finalResultIdv?.BirthDate) : ConvertDate(finalResultAZ?.BirthDate);
+            finalResultIdv.ExpiryDate = !finalResultIdv.ExpiryDate.HasValue() ? ConvertDate(finalResultAZ?.ExpiryDate) : ConvertDate(finalResultIdv?.ExpiryDate);
+
+            string ConvertDate(string date)
+            {
+                return date.HasValue() ? (date.Contains('/') || date.Contains('-') ? date.Substring(0, 10).Replace("-", "/") : Convert.ToDateTime(date.Replace("-","/")).ToString("dd/MM/yyyy")) : "";
+            }
+
             //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;
             //finalResultIdv.ImageBackId = finalResultIdv?.ImageBackId;
 
@@ -499,8 +507,8 @@ namespace AnalyzeId.Service.Utility
                        new{Key="E8",Title="T&C",Value="True"},
                    },
                 };
-    
-         
+
+
                 request.AddParameter("application/json", JsonConvert.SerializeObject(body), ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
                 if (response.IsSuccessful)
@@ -596,9 +604,9 @@ namespace AnalyzeId.Service.Utility
                 var webhook = configuration.GetSection("Webhook").Value;
                 request.AddHeader("API-Username", userName);
                 request.AddHeader("API-Password", password);
-                request.AddParameter("Application_ID",appId);
+                request.AddParameter("Application_ID", appId);
                 request.AddParameter("Secure_Callback_URL", webhook);
-      
+
                 IRestResponse response = client.Execute(request);
                 if (response.IsSuccessful)
                 {

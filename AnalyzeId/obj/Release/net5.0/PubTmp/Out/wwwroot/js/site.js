@@ -1,14 +1,6 @@
-﻿HaDateTimePicker.init();
-function spin1() {
-    document.querySelector('.spin').classList.remove('d-none');
-    document.querySelector('.spin').style.display = "block"
-}
-function unspin1() {
-    document.querySelector('.spin').classList.add('d-none');
-    document.querySelector('.spin').style.display = "none"
-}
+﻿
 
-function SubmitSignature() {
+function SubmitSignature(appId) {
     document.getElementById('submit-form-btn').classList.add('disabled')
 
     var isEmpty = signaturePad.isEmpty();
@@ -24,9 +16,11 @@ function SubmitSignature() {
         $("#sigshow").addClass("d-none")
             var trId = $("#transactionId").val()
             var type = blob.type
-            $.post("/Home/Signature", { file: img, type: type, transactionId: trId }, function (res) {
-                if (res == "true") {
-                    window.location.replace('/Home/ThankYou');
+        $.post("/Home/Signature", { file: img, type: type, applicationId: appId }, function (res) {
+            debugger;
+            if (res == "true") {
+
+                window.location.href = `/Home/ThankYou/appid?appId='${appId}'`;
                 } else {
                     var validation = document.getElementsByClassName('validation')[0];
                     validation.classList.remove('d-none');
@@ -65,51 +59,25 @@ function UploadFileInDvice(file) {
     })
 }
 
-function UploadFile(file) {
-    return new Promise((resolve) => {
+//const b64toBlob = (b64Data, contentType = 'image/png', sliceSize = 512) => {
+//    const byteCharacters = atob(b64Data);
+//    const byteArrays = [];
 
-        // var data = file;
-        var data = new FormData();
-        data.append('File', new File([file], "img.png"));
+//    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+//        const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-        var config = {
-            method: 'post',
-            url: `${endpoint}/api/Forms/File`,
-            headers: {
-                'API-Username': apiUsername,
-                'API-Password': apiPassword,
-                'Application_ID': applicationId,
-                'Element_Key': 'SIGN',
-                'Element_Title': 'Signature',
-                'ID_Document_Code': '0',
-                'OCR': 'False',
-                'Content-Type': 'image/png'
-            },
-            data: data
-        };
+//        const byteNumbers = new Array(slice.length);
+//        for (let i = 0; i < slice.length; i++) {
+//            byteNumbers[i] = slice.charCodeAt(i);
+//        }
 
-        resolve(axios(config));
-    })
-}
-const b64toBlob = (b64Data, contentType = 'image/png', sliceSize = 512) => {
-    const byteCharacters = atob(b64Data);
-    const byteArrays = [];
+//        const byteArray = new Uint8Array(byteNumbers);
+//        byteArrays.push(byteArray);
+//    }
 
-    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-        const slice = byteCharacters.slice(offset, offset + sliceSize);
-
-        const byteNumbers = new Array(slice.length);
-        for (let i = 0; i < slice.length; i++) {
-            byteNumbers[i] = slice.charCodeAt(i);
-        }
-
-        const byteArray = new Uint8Array(byteNumbers);
-        byteArrays.push(byteArray);
-    }
-
-    const blob = new Blob(byteArrays, { type: contentType });
-    return blob;
-}
+//    const blob = new Blob(byteArrays, { type: contentType });
+//    return blob;
+//}
 
 let rotateImage = () => {
     spin1()
