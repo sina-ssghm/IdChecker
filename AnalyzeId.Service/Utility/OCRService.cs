@@ -286,10 +286,10 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Image_Scale", "False");
                 request.AddParameter("Cropping_Mode", "True");
                 request.AddFile("ID_Front_Image", fileFrontPath);
-                //if (fileBackPath != null)
-                //{
-                //    request.AddFile("ID_Back_Image", fileBackPath);
-                //}
+                if (fileBackPath == "||skip||" || fileBackPath ==null?false:true)
+                {
+                    request.AddFile("ID_Back_Image", fileBackPath);
+                }
 
                 IRestResponse response = client.Execute(request);
                 if (response.IsSuccessful)
@@ -366,8 +366,8 @@ namespace AnalyzeId.Service.Utility
                         return new FinalResultOCRDTO
                         {
                             FullName = x[0].value + " " + x[1].value,
-                            MiddleName = x[2].value,
-                            Surname = x[1].value,
+                            //MiddleName = x[2].value,
+                            LastName = x[1].value,
                             FirstName = x[0].value,
                             Address = x[17].value,
                             DocumentNumber = x[8].value,
@@ -384,8 +384,8 @@ namespace AnalyzeId.Service.Utility
             finalResultIdv = finalResultIdv == null ? new FinalResultOCRDTO { } : finalResultIdv;
 
             finalResultIdv.FirstName = !finalResultIdv.FirstName.HasValue() ? finalResultAZ?.FirstName : finalResultIdv?.FirstName;
-            finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
-            finalResultIdv.Surname = !finalResultIdv.Surname.HasValue() ? finalResultAZ?.Surname : finalResultIdv?.Surname;
+            //finalResultIdv.MiddleName = !finalResultIdv.MiddleName.HasValue() ? finalResultAZ?.MiddleName : finalResultIdv?.MiddleName;
+            finalResultIdv.LastName = !finalResultIdv.LastName.HasValue() ? finalResultAZ?.LastName : finalResultIdv?.LastName;
             finalResultIdv.FullName = !finalResultIdv.FullName.HasValue() ? finalResultAZ?.FullName : finalResultIdv?.FullName;
             finalResultIdv.Address = !finalResultIdv.Address.HasValue() ? finalResultAZ?.Address : finalResultIdv?.Address;
             finalResultIdv.DocumentNumber = !finalResultAZ.DocumentNumber.HasValue() ? finalResultIdv?.DocumentNumber : finalResultAZ.DocumentNumber;
@@ -498,7 +498,7 @@ namespace AnalyzeId.Service.Utility
                     Elements = new[]
                     {
                        new{Key="E1",Title="First_Name",Value=result.FirstName},
-                       new{Key="E2",Title="Last_Name",Value=result.Surname},
+                       new{Key="E2",Title="Last_Name",Value=result.LastName},
                        new{Key="E3",Title="Full_Name",Value=result.FullName},
                        new{Key="E4",Title="Driving_Licence_Number",Value=result.DocumentNumber},
                        new{Key="E5",Title="Expiry_Date",Value=result.ExpiryDate},
@@ -554,7 +554,7 @@ namespace AnalyzeId.Service.Utility
                     Elements = new[]
                     {
                        new{Key="E1",Title="First_Name",Value=result.FirstName},
-                       new{Key="E2",Title="Last_Name",Value=result.Surname},
+                       new{Key="E2",Title="Last_Name",Value=result.LastName},
                        new{Key="E3",Title="Full_Name",Value=result.FullName},
                        new{Key="E4",Title="Driving_Licence_Number",Value=result.DocumentNumber},
                        new{Key="E5",Title="Expiry_Date",Value=result.ExpiryDate},

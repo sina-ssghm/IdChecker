@@ -10,8 +10,8 @@ namespace AnalyzeId.Domain.Model
     public class FinalResultOCRDTO
     {
         public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string Surname{ get; set; }
+        //public string MiddleName { get; set; }
+        public string LastName{ get; set; }
         public string FullName{ get; set; }
         public string DocumentNumber { get; set; }
         public string BirthDate { get; set; }

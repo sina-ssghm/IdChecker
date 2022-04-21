@@ -30,12 +30,12 @@ namespace AnalyzeId.Service.Utility
             {
                 Address = final?.Address,
                 FirstName = final?.FirstName,
-                Surname = final?.Surname,
+                Surname = final?.LastName,
                 BirthDate = final?.BirthDate,
                 DocumentNumber = final?.DocumentNumber,
                 ExpiryDate = final?.ExpiryDate,
                 FullName = final?.FullName,
-                MiddleName = final?.MiddleName,
+                //MiddleName = final?.MiddleName,
                 TransactionId=final?.TransactionId,
                 JsonResponse=final?.JsonResultIDv,
             });
