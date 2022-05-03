@@ -30,6 +30,8 @@ namespace AnalyzeId.Domain.Model
         public string ImageSignatureId { get; set; }
         public string Classification { get; set; }
         public string ApplicationId { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
 
     }
     public class OCRDTO

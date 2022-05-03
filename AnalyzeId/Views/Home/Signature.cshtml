@@ -6,13 +6,14 @@
 <div class="row">
 
     <div class="col-sm-10 col-md-8 col-lg-6 m-auto">
+         
         <div class="text-center mb-2 d-none" id="procces">
-            <div class="spinner-border text-danger text-center"></div>
-            <p>Proccessing...</p>
+            <img src="/Image/Spinner.svg" style="max-width:100px"/>
+                        <h3>Please wait</h3>
         </div>
         <div class="" id="sigshow">
-            <p class="text-center">Please sign below</p>
-            <div class="row col-12">
+            <p class="text-center text-black">Please sign below</p>
+            <div class="row col-12" style="margin:0;">
                 <form id="file-image" asp-action="Signature" style="display:none">
                     <input type="file" name="file" id="" value="signature-file" />
                     @*<input type="text" name="transactionId" id="ApplicationId" value="@Model?.ApplicationId" />*@
@@ -23,16 +24,16 @@
 
                     <div class="validation alert alert-danger d-none mt-3">
                     </div>
-                    <div class="row mt-3">
+                    <div class="row mt-2">
 
-                        <div class="col-6">
-                            <button id="submit-form-btn" class="btn text-light bg-site btn-red w-100" type="button"
+                        <div class="col-12">
+                            <button id="submit-form-btn" class="n-btn n-btn-red w-100 mb-1" type="button"
                                     onclick="SubmitSignature('@(Model?.ApplicationId)')">
                                 Confirm
                             </button>
                         </div>
-                        <div class="col-6">
-                            <a class="btn bg-danger-site text-light btn-black w-100" asp-action="Index" asp-controller="Home">  Home</a>
+                        <div class="col-12">
+                            <a class="n-btn n-btn-gray w-100 text-center" asp-action="Index" asp-controller="Home">  Return to Home</a>
 
                         </div>
                     </div>

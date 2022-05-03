@@ -1,6 +1,7 @@
 ﻿@model OperationResult<FinalResultOCRDTO>
 @{
     ViewData["Title"] = "Result";
+     Layout = null;
     var data = Model?.Data;
     var jsonRtesult = Model?.Data?.JsonResultIDv;
 }
@@ -21,7 +22,7 @@ else if (data != null)
 {
 
 
-    <div class="row mt-3">
+    <div class="row container m-auto">
         <div class="col-sm-12 ">
             <div class="card">
                 <div class="card-body">
@@ -34,7 +35,7 @@ else if (data != null)
                     <div class="collapse-default p-1">
                         <div class="card">
                             <div id="headingCollapse1" class="card-header" data-toggle="collapse" role="button" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                <span class="lead collapse-title text-primary">  Result (Json)  </span>
+                                <span class="lead collapse-title text-nissan">  Result (Json)  </span>
                             </div>
                             <div id="collapse1" role="tabpanel" aria-labelledby="headingCollapse1" class="collapse">
                                 <div class="card-body">
@@ -62,12 +63,12 @@ else if (data != null)
                                     <img class="card-img-top" src="@Model.Data.FrontUrl.Remove(0,Model.Data.FrontUrl.IndexOf("Files")-1)" width="50%" alt="">
                                 </div>
                             }
-                            @*@if (Model?.Data?.BackUrl != null)
+                            @if (Model?.Data?.BackUrl != null && Model?.Data?.BackUrl != "||skip||")
                             {
                                 <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
                                     <img class="card-img-top" src="@Model.Data.BackUrl.Remove(0,Model.Data.BackUrl.IndexOf("Files")-1)" width="50%" alt="">
                                 </div>
-                            }*@
+                            }
                             @if (Model?.Data?.FaceUrl != null)
                             {
                                 <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">

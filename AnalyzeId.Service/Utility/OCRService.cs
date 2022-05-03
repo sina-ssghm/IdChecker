@@ -112,7 +112,7 @@ namespace AnalyzeId.Service.Utility
                 return null;
             }
         }
-        public async Task<OperationResult<string>> UploadImage(IFormFile file, string urlImage, string applicationId, bool? isFront)
+        public async Task<OperationResult<string>> UploadImage(IFormFile file, string urlImage, string applicationId, bool? isFront, bool dontUploadToIdv)
         {
             try
             {
@@ -122,6 +122,15 @@ namespace AnalyzeId.Service.Utility
                     if (url == null)
                     {
                         return null;
+                    }
+                    if (dontUploadToIdv == true)
+                    {
+                        return new OperationResult<string>
+                        {
+                            Succeed = true,
+                            Data = url,
+                            Message = OperationResult<string>.SuccessMessage
+                        };
                     }
                     var client = new RestClient("https://services.idvpacific.com.au/api/Forms/File");
                     client.Timeout = -1;
@@ -195,6 +204,7 @@ namespace AnalyzeId.Service.Utility
                 request.AddHeader("API-Password", password);
                 request.AddParameter("Application_Title", "Nissan API Form");
                 request.AddParameter("Date_Format", "yyyy-mm-dd");
+                request.AddParameter("Branch_ID", "1b2cd180-7a57-11ec-ad77-7be29f4b9c78");
 
 
                 IRestResponse response = client.Execute(request);
@@ -222,7 +232,57 @@ namespace AnalyzeId.Service.Utility
                 return OperationResult<string>.Error(ex);
             }
         }
-        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string frontUrl, string backUrl)
+
+        public async Task<OperationResult<string>> UpdateApplication(string applicationId, string firstname, string lastName, string email, string phoneNumber)
+        {
+            try
+            {
+                var userName = configuration.GetSection("User_Name").Value;
+                var password = configuration.GetSection("Password").Value;
+                var client = new RestClient("https://services.idvpacific.com.au/api/Forms/Application");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.PUT);
+                request.AddHeader("API-Username", userName);
+                request.AddHeader("API-Password", password);
+
+
+                request.AddParameter("Branch_ID", "1b2cd180-7a57-11ec-ad77-7be29f4b9c78");
+
+                request.AlwaysMultipartFormData = true;
+                request.AddParameter("Application_ID", applicationId);
+                request.AddParameter("First_Name", firstname);
+                request.AddParameter("Last_Name", lastName);
+                request.AddParameter("Email_Address", email);
+                request.AddParameter("Phone_Number", phoneNumber);
+
+                IRestResponse response = client.Execute(request);
+                if (response.IsSuccessful)
+                {
+                    var result = System.Text.Json.JsonSerializer.Deserialize<CreateApplicationViewModel>(response.Content);
+
+                    return new OperationResult<string>
+                    {
+                        Succeed = true,
+                        Data = result.Result.Application_ID,
+
+                        Message = OperationResult<int>.SuccessMessage
+                    };
+                }
+                return new OperationResult<string>
+                {
+                    Succeed = false,
+                    Message = OperationResult<int>.ErrorMessage,
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex);
+                return OperationResult<string>.Error(ex);
+            }
+        }
+
+
+        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string frontUrl, string backUrl, string applicationId)
         {
             try
             {
@@ -234,16 +294,26 @@ namespace AnalyzeId.Service.Utility
                 if (IDVTask.Result.Data != null)
                 {
                     IDVTask.Result.Data.FrontUrl = frontUrl;
-                    IDVTask.Result.Data.BackUrl = backUrl; var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
+                    IDVTask.Result.Data.BackUrl = backUrl;
+                    var faceUrl = _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                     var signatureUrl = _GetOCRImage(IDVTask.Result.Data.ImageSignatureId, IDVTask.Result.Data.TransactionId);
-                    await Task.WhenAll(faceUrl, signatureUrl);
+                    var frontImage = _GetOCRImage(IDVTask.Result.Data.ImageFrontId, IDVTask.Result.Data.TransactionId);
+                    var backImage = IDVTask.Result.Data.ImageBackId.HasValue() ? _GetOCRImage(IDVTask.Result.Data.ImageBackId, IDVTask.Result.Data.TransactionId) : Task.FromResult<string>("");
+                    await Task.WhenAll(faceUrl, signatureUrl, frontImage, backImage);
                     IDVTask.Result.Data.FaceUrl = faceUrl.Result;
                     IDVTask.Result.Data.SignatureUrl = signatureUrl.Result;
-                    IDVTask.Result.Data.FrontUrl = frontUrl;
-                    IDVTask.Result.Data.BackUrl = backUrl;
+                    IDVTask.Result.Data.FrontUrl = frontImage.Result.HasValue() ? frontImage.Result : frontUrl;
+                    IDVTask.Result.Data.BackUrl = backImage.Result.HasValue() ? backImage.Result :
+                        backUrl;
+                   
+                    await Task.WhenAll(UploadImage(null, IDVTask.Result.Data.FrontUrl, applicationId, true, false), UploadImage(null, IDVTask.Result.Data.BackUrl, applicationId, false, false));
+
                     return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
                 }
-
+                else
+                {
+                    await Task.WhenAll(UploadImage(null, backUrl, applicationId, false, false), UploadImage(null, frontUrl, applicationId, true, false));
+                }
 
                 //if (IDVTask.Result.Data.ImageFaseId!=null)
                 //{
@@ -286,7 +356,7 @@ namespace AnalyzeId.Service.Utility
                 request.AddParameter("Image_Scale", "False");
                 request.AddParameter("Cropping_Mode", "True");
                 request.AddFile("ID_Front_Image", fileFrontPath);
-                if (fileBackPath == "||skip||" || fileBackPath ==null?false:true)
+                if (fileBackPath == "||skip||" || fileBackPath == null ? false : true)
                 {
                     request.AddFile("ID_Back_Image", fileBackPath);
                 }
@@ -302,9 +372,9 @@ namespace AnalyzeId.Service.Utility
                         Data = new FinalResultOCRDTO
                         {
                             FullName = result?.Result?.Data?.Full_Name,
-                            MiddleName = result?.Result?.Data?.Middle_Name,
+                            //MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
-                            Surname = result?.Result?.Data?.Surname,
+                            LastName = result?.Result?.Data?.Surname,
                             DocumentNumber = result?.Result?.Data?.Document_Number,
                             BirthDate = result?.Result?.Data?.Birth_Date,
                             ExpiryDate = result?.Result?.Data?.Expiry_Date,
@@ -395,7 +465,7 @@ namespace AnalyzeId.Service.Utility
 
             string ConvertDate(string date)
             {
-                return date.HasValue() ? (date.Contains('/') || date.Contains('-') ? date.Substring(0, 10).Replace("-", "/") : Convert.ToDateTime(date.Replace("-","/")).ToString("dd/MM/yyyy")) : "";
+                return date.HasValue() ? (date.Contains('/') || date.Contains('-') ? date.Substring(0, 10).Replace("-", "/") : Convert.ToDateTime(date.Replace("-", "/")).ToString("yyyy/MM/dd")) : "";
             }
 
             //finalResultIdv.BackUrl = finalResultIdv?.BackUrl;

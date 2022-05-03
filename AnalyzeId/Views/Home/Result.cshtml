@@ -2,10 +2,43 @@
 @{
     //var data = Model?.Data?.Result?.Data?.MRZ?.Classification;
     var shouldRequestData = Model.Succeed && !Model.IsShowResult;
+
 }
+<div class='container'>
+
+<div class="container card emailpn-div">
+
+    <div class=" card-body">
+
+
+        <div class="row">
+            <div class="col-sm-6 mt-1">
+                <label class="font-weight-bold text-black"> Email</label>
+                <input type="text" id="emailInput" required class="form-control text-black" />
+            </div>
+
+            <div class="col-sm-6 mt-1">
+                <label class="font-weight-bold text-black">Phone Number</label>
+                <input type="text" id="phonenumberInput" required class="form-control text-black" />
+            </div>
+
+            <div class="col-12 text-center mt-2">
+                <button type="button" @*onclick="CreateNewElements()"*@ class="btn-sm-block   mb-1 n-btn n-btn-red    " onclick="SetEmailPn()" style="min-width:150px">
+                    Confirm
+                </button>
+                @*  <a asp-action="Index" asp-controller="Home" class="btn-sm-block   n-btn n-btn-gray" style="min-width:150px">
+                    Return to home
+                    </a>
+                *@
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <div class="row">
 
-    <div class="card mb-3 mt-3 col-sm-4 p-0 m-auto">
+    <div class=" d-none waiting mb-3 mt-3 col-sm-4 p-0 m-auto">
 
         @*       <div class="col-12 row">
 
@@ -45,9 +78,10 @@
             <div class="card-data">
                 @if (shouldRequestData)
                 {
-                    <div class="text-center mb-2">
-                        <div class="spinner-border text-danger text-center"></div>
-                        <p>Proccessing...</p>
+                    <div class="text-center mb-2 ">
+
+                        <img src="/Image/Spinner.svg" style="max-width:100px" />
+                        <h3>Please wait</h3>
                     </div>
                 }
             </div>
@@ -58,6 +92,8 @@
         </div>
 
     </div>
+    <div class="ocr-result d-none container"></div>
+
     <form enctype="multipart/form-data" asp-controller="home" asp-action="GetOCRResult" method="post" class="d-none" id="sendData">
         <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
         <input type="hidden" class="d-none" id="UrlBack" name="UrlBack" value="@(Model.UrlBack!=null?Model.UrlBack:"")">
@@ -68,7 +104,35 @@
 </div>
 @section scripts{
 <script>
-    $("#sendData").submit()
+    //$("#sendData").submit()
+     function SetEmailPn(){
+         var email=$('#emailInput').val();
+         var pn=$('#phonenumberInput').val();
+         if(email!=''&&pn!=''){
+              $('.emailpn-div').addClass("d-none");
+              $('.waiting').removeClass("d-none");
+             var time= setInterval(function(){
+                 if($('.ocr-result').html()!=''){
+              $('.waiting').addClass("d-none");
+
+                     $('.ocr-result').removeClass('d-none');
+                     $('.ocr-result #Email').val(email);
+                     $('.ocr-result #PhoneNumber').val(pn);
+                     clearInterval(time)
+                 }
+             },1500);
+         }
+
+
+     }
+
+    $.post('@Url.Action("GetOCRResult","home")',{UrlFront:"@((Model.UrlFront!=null?Model.UrlFront:"")?.Replace(@"\",@"/"))",UrlBack:"@((Model.UrlBack!=null?Model.UrlBack:"")?.Replace(@"\",@"/"))",ApplicationId:"@(Model?.ApplicationId)"},function(result){
+         $('.ocr-result').html(result);
+         $('.waiting').addClass("d-none")
+         
+         HaDateTimePicker.init();
+    });
+
 </script>
     @*@if (shouldRequestData)
     {

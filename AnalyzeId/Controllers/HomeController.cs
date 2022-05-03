@@ -42,7 +42,7 @@ namespace AnalyzeId.Controllers
         public async Task<IActionResult> OcrRequest()
         {
             var appId = await oCRService.CreateApplication();
-            return View(new OCRFileDTO { ApplicationId = appId.Data});
+            return View(new OCRFileDTO { ApplicationId = appId.Data });
         }
 
         public async Task<IActionResult> CanvasResult(string file)
@@ -62,18 +62,18 @@ namespace AnalyzeId.Controllers
             if (fileDTO.UrlBack != "||skip||")
             {
                 var isfront = fileDTO.UrlFront != null ? false : true;
-                var res = await oCRService.UploadImage(fileDTO.File,null, fileDTO.ApplicationId,isfront);
+                var res = await oCRService.UploadImage(fileDTO.File, null, fileDTO.ApplicationId, isfront,dontUploadToIdv:true);
                 if (res.Succeed && isfront)
                 {
-                    fileDTO.UrlFront =res.Data;
+                    fileDTO.UrlFront = res.Data;
                 }
                 else
                 {
-                        fileDTO.UrlBack = res.Data;
+                    fileDTO.UrlBack = res.Data;
                 }
             }
-         
-            
+
+
             //var idPass = fileDTO?.IdPass != null ? fileDTO.IdPass.Value : passportUrlRepository.Add(new ImagePassportViewModel { }).GetAwaiter().GetResult().Data;
             //if (fileDTO.UrlBack == "||skip||" && fileDTO.IsUploadFront)
             //{
@@ -81,9 +81,9 @@ namespace AnalyzeId.Controllers
             //}
             //UploadImage(fileDTO.File, idPass, fileDTO?.IdPass != null ? false : true);
 
-            if (fileDTO.UrlFront!=null &&(fileDTO.UrlBack=="||skip||"||fileDTO.UrlBack!=null))
+            if (fileDTO.UrlFront != null && (fileDTO.UrlBack == "||skip||" || fileDTO.UrlBack != null))
             {
-                fileDTO.UrlBack = fileDTO.UrlBack == "||skip||"?null: fileDTO.UrlBack ;
+                fileDTO.UrlBack = fileDTO.UrlBack == "||skip||" ? null : fileDTO.UrlBack;
                 fileDTO.Succeed = true;
                 fileDTO.IsContinue = true;
                 return View(fileDTO);
@@ -98,21 +98,24 @@ namespace AnalyzeId.Controllers
             {
                 return NotFound();
             }
-            var result = await oCRService.GetOCRResult(fileDTO.UrlFront,fileDTO.UrlBack);
-            result.Data.ApplicationId= fileDTO.ApplicationId;   
+            var result = await oCRService.GetOCRResult(fileDTO.UrlFront, fileDTO.UrlBack, fileDTO?.ApplicationId);
+            result.Data.ApplicationId = fileDTO.ApplicationId;
             return View(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> ConfirmResult(FinalResultOCRDTO model)
         {
-          var res= await oCRService.CreateElement(model);
-            if (res.Succeed)
+            var res = oCRService.CreateElement(model);
+            var updateApp = oCRService.UpdateApplication(model.ApplicationId, model.FirstName, model.LastName, model.Email, model.PhoneNumber);
+            await Task.WhenAll(res, updateApp);
+
+            if (res.Result.Succeed)
             {
                 return RedirectToAction(nameof(Signature), new { appId = model.ApplicationId });
             }
-            return View(new OperationResult<FinalResultOCRDTO> {Message="Error",Succeed=false });
-            
+            return View(new OperationResult<FinalResultOCRDTO> { Message = "Error", Succeed = false });
+
         }
 
         [HttpGet]
@@ -127,13 +130,13 @@ namespace AnalyzeId.Controllers
             try
             {
                 var url = oCRService.SaveImageBase64(file, type);
-              var res=  await oCRService.UploadImage(null, url ,applicationId, null);
+                var res = await oCRService.UploadImage(null, url, applicationId, null, dontUploadToIdv: false);
                 if (res.Succeed)
                 {
                     return Json("true");
                 }
                 return Json(res.Message);
-     
+
             }
             catch (Exception ex)
             {
@@ -144,7 +147,7 @@ namespace AnalyzeId.Controllers
 
         public async Task<IActionResult> ThankYou(string appId)
         {
-           await oCRService.ExecuteOcr(appId);
+            await oCRService.ExecuteOcr(appId);
             return View(nameof(ThankYou));
         }
 

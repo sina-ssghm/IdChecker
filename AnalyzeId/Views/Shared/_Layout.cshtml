@@ -11,9 +11,9 @@
     <link rel="apple-touch-icon" href="/template/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="/template/app-assets/images/ico/favicon.ico">
 
- @*   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">*@
+    @*   <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">*@
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="/template/app-assets/vendors/css/vendors.min.css">
@@ -40,7 +40,9 @@
     <link href="/lib/fontawesome/css/all.css" rel="stylesheet" />
     @*<link href="/js/email-autocomplete-master/demo/css/style.css" rel="stylesheet" />*@
     @*<link href="/js/email-autocomplete-master/demo/css/normalize.css" rel="stylesheet" />*@
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="/template/app-assets/css/components.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="/css/site.css" rel="stylesheet" asp-append-version="true" />
 </head>
@@ -49,9 +51,9 @@
 
 <body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="">
 
- 
+
      <div class="col-12 col-md-6 mt-1 m-auto text-center p-0">
-        <a asp-action="Index" asp-controller="Home"><img class="card-img-top" src="/image/header.jpeg" alt="Card image cap" style="max-width:400px"></a>
+        <a asp-action="Index" asp-controller="Home"><img class="card-img-top mt-1 mb-1" src="/image/Nissan_logo.svg" alt="Card image cap" style="max-width:120px"></a>
         </div>
     <div class="mt-1" style="">
         <div class="content-wrapper container-xxl p-0">
@@ -63,9 +65,18 @@
             </div>
         </div>
     </div>
-      <div class="col-12 col-md-6 m-auto text-center p-0">
-        <img class="card-img-top mt-3" src="/image/footer.jpeg" alt="Card image cap">
-    </div>
+      <div class="footer-backcolor text-center mt-4">
+
+                                        <p
+                                            style="margin-top:10px;padding-top:10px;border-top:1px solid #bdc2c7;color:rgb(157 157 157)">
+                                            © @DateTime.Now.ToString("yyyy") - IDV Pacific Pty Ltd - All Rights Reserved
+                                        </p>
+                                        <div style="width:100%">
+                                            <img src="/Image/SSLENC.png"
+                                                style="height:50px;background-color:#ffffff;padding:10px;border-radius:5px" />
+                                        </div>
+                                        <div style="height:20px !important"></div>
+                                    </div>
     <!-- BEGIN: Footer-->
     @*<button class="btn btn-primary btn-icon scroll-top pdfhide" type="button"><i data-feather="arrow-up"></i></button>*@
     <!-- END: Footer-->
@@ -102,7 +113,7 @@
     @*<script src="/js/email-autocomplete-master/dist/jquery.email-autocomplete.js"></script>*@
     @*<script src="/js/email-autocomplete/emailAutocomplete.js"></script>*@
     @*<script src="~/lib/lightgallery/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>*@
-      @*<script src="~/js/mvc-grid/mvc-grid.js"></script>*@
+    @*<script src="~/js/mvc-grid/mvc-grid.js"></script>*@
     <script>
         $(window).on('load', function () {
             if (feather) {
@@ -129,9 +140,9 @@
                     //licenseKey: 'your_license_key'
                 });
             }
-            
+
         });
-       
+
     </script>
     <script src="~/lib/HaDatepicker/ha-datetimepicker.js"></script>
     <script src="/template/app-assets/js/scripts/components/components-dropdowns.js"></script>

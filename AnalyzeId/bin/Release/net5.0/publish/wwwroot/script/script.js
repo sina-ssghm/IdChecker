@@ -297,14 +297,18 @@ document.querySelector('.camera').addEventListener('click', function () {
     spin();
     document.querySelector('.cameraDiv').classList.remove('d-none');
     //document.querySelector('.canvascontainer').classList.add('d-none');
+     
     if (isMobile) {
         document.querySelector('.storage-btn').classList.remove('d-none');
+        document.querySelector('.storage-div').classList.remove('d-none');
         document.querySelector('.open-camera-btn').classList.remove('d-none');
+        document.querySelector('.open-camera-div').classList.remove('d-none');
 
     }
     else {
-        $('#File').click();
+        //$('#File').click();
         document.querySelector('.storage-btn').classList.remove('d-none');
+        document.querySelector('.storage-div').classList.remove('d-none');
 
     }
     document.querySelector('#scanMenu').classList.add('d-none');
@@ -338,6 +342,7 @@ $('#File').change(function (e) {
 
         $('#camraPreview').removeClass('d-none');
         $('.camera-preview-img').removeClass('d-none');
+        $('.select-method-div').addClass('d-none');
     };
 
     unspin();
