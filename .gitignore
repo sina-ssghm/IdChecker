@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+
+/AnalyzeId/bin
+/AnalyzeId/obj
+/AnalyzeId/wwwroot/Files
+/Domain/obj
+/Domain/bin
+/AnalyzeId.Shared/obj
+/AnalyzeId.Shared/bin
+/AnalyzeId.Service/obj
+/AnalyzeId.Service/bin
