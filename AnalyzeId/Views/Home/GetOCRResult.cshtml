@@ -1,7 +1,7 @@
 ﻿@model OperationResult<FinalResultOCRDTO>
 @{
     ViewData["Title"] = "Result";
-     Layout = null;
+    Layout = null;
     var data = Model?.Data;
     var jsonRtesult = Model?.Data?.JsonResultIDv;
 }
@@ -35,13 +35,13 @@ else if (data != null)
                     <div class="collapse-default p-1">
                         <div class="card">
                             <div id="headingCollapse1" class="card-header" data-toggle="collapse" role="button" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                <span class="lead collapse-title text-nissan">  Result (Json)  </span>
+                                <span class="lead collapse-title text-blue">  Result (Json)  </span>
                             </div>
                             <div id="collapse1" role="tabpanel" aria-labelledby="headingCollapse1" class="collapse">
                                 <div class="card-body">
                                     <pre id="json-renderer">
                                         @(Html.Raw(jsonRtesult))
-                                                                    </pre>
+                                                                                    </pre>
                                 </div>
                             </div>
                         </div>
@@ -144,13 +144,13 @@ else
     }
 }
 
-@section Scripts{
-<script src="~/lib/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
-<script src="~/lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
 
-@if(jsonRtesult!=null){
-<script>
-    $('#json-renderer').jsonViewer(JSON.parse(`@(Html.Raw(jsonRtesult.Replace("'"," ").Replace("\"{","{").Replace("}\"", "}").Replace("\\\"","\"").Replace("\\n", "").Replace("\r", "")))`), { collapsed: true, rootCollapsable :false });
-</script>
-}
+<script src="/lib/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
+<script src="/lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
+
+@if (jsonRtesult != null)
+{
+    <script>
+        $('#json-renderer').jsonViewer(JSON.parse(`@(Html.Raw(jsonRtesult.Replace("'"," ").Replace("\"{","{").Replace("}\"", "}").Replace("\\\"","\"").Replace("\\n", "").Replace("\r", "")))`), { collapsed: true, rootCollapsable :false });
+    </script>
 }
