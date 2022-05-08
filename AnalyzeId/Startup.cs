@@ -28,7 +28,7 @@ namespace AnalyzeId
         {
             services.AddScoped<IOCRService, OCRService>();
             services.AddScoped<IFileUploader, FileUploader>();
-            services.AddScoped<IOCRRepository,OCRRepository>();
+            services.AddScoped<IOCRRepository, OCRRepository>();
             services.AddScoped<IOCRFilesRepository, OCRFilesRepository>();
             services.AddScoped<AccountService, AccountService>();
             services.AddScoped<IImagePassportUrlRepository, ImagePassportUrlRepository>();
