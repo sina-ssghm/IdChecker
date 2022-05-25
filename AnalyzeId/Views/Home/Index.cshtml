@@ -2,28 +2,93 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+
 <div class="col text-center p-0 detail">
-    <div class="col-12 col-md-6 m-auto text-center p-0">
-        @*<h2 class="mb-2 text-bold-custom ">UPLOAD DRIVER LICENCE</h2>*@
-        <img class="card-img-top" src="/image/DL_F_Red.svg" style="max-width:400px" alt="Card image cap">
+    <div class="col-sm-6 col-8   m-auto p-0">
+        <h4 class="font-italic text-nissan text-left mt-2">Hello</h4>
+        <div class="pt-1">
+            <ul class="p-0 confirm-list" style="list-style-position: inside;">
+                <li style="text-align:justify;text-justify:trim;">
+                    Please follow all the steps in order of priority to capture the required documents.
+                </li>
+
+
+            </ul>
+
+            <div id="IDV_DocumentList" style="width:100%">
+                <div class="card mb-0" style="border-radius: 0px; box-shadow: none;border:1px solid rgba(34, 41, 47, 0.125)">
+                    <div id="Document_1">
+                        <h5 class="mb-0 text-left">
+                            <button class="btn btn-link" style="color:steelblue;margin-top:3px">
+                                <i class="fa fa-camera text-warning" style="margin-right:10px"></i>
+                                Driving Licence Front
+                            </button>
+                        </h5>
+                    </div>
+                    
+                </div>
+                <div class="card mb-0" style="border-radius: 0px;box-shadow:none;border:1px solid rgba(34, 41, 47, 0.125)">
+                    <div id="Document_2">
+                        <h5 class="mb-0  text-left">
+                            <button class="btn btn-link" style="color:steelblue;margin-top:3px">
+                                <i class="fa fa-camera text-warning" style="margin-right:10px"></i>
+                                Driving Licence Back
+                            </button>
+                        </h5>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
     </div>
-    <h4 class="text-bold-custom mt-2">Ready to capture your Driver Licence?</h4>
-    <h4 class="text-bold-custom mb-2">Get started by clicking below.</h4>
-    <div class="col-sm-4 col-8 text-center m-auto p-0">
-        <a asp-action="OcrRequest" class="n-btn n-btn-red mt-2 mb-2 camera w-100">LET`S START  </a>
-        @*<a href="##" class="btn mt-3 p-2 bg-danger-site font-size-1 waves-effect text-light camera text-bold ">CANCEL </a>*@
+    
+    <div   class="col-sm-6 col-8 text-center m-auto p-0">
+        <a asp-action="OcrRequest" class="n-btn n-btn-red text-white mt-2 mb-2 camera w-100">Start </a>
+        
     </div>
 
 </div>
+
 <div class="spin d-none text-center">
     <div class="spinner-border text-danger"></div>
 </div>
 
+
+
+
+
+
+
+
+
+<!--<div class="col text-center p-0 detail">
+    <div class="col-12 col-md-6 m-auto text-center p-0">-->
+@*<h2 class="mb-2 text-bold-custom ">UPLOAD DRIVER LICENCE</h2>*@
+<!--<img class="card-img-top" src="/image/DL_F_Red.svg" style="max-width:400px" alt="Card image cap">
+</div>
+<h4 class="text-bold-custom mt-2">Ready to capture your Driver Licence?</h4>
+<h4 class="text-bold-custom mb-2">Get started by clicking below.</h4>
+<div class="col-sm-4 col-8 text-center m-auto p-0">
+    <a asp-action="OcrRequest" class="n-btn n-btn-red mt-2 mb-2 camera w-100">LET`S START  </a>-->
+@*<a href="##" class="btn mt-3 p-2 bg-danger-site font-size-1 waves-effect text-light camera text-bold ">CANCEL </a>*@
+<!--</div>
+
+</div>
+
+<div class="spin d-none text-center">
+    <div class="spinner-border text-danger"></div>
+</div>-->
+
+
+
+
 @section Scripts{
-@*<script>
-    startApp();
-</script>*@
-    }
+    @*<script>
+            startApp();
+        </script>*@
+}
 
 
 
