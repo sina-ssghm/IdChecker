@@ -18,19 +18,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AnalyzeId.Service.Utility
 {
     public class OCRService : IOCRService
     {
+        private const string BranchId = "38cdb480-95c2-11ec-bad5-c7ce47b261b8";
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
         private readonly IImagePassportUrlRepository passportUrlRepository;
         private ILogger logger = LogManager.GetCurrentClassLogger();
+       
         public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment, IConfiguration configuration, IImagePassportUrlRepository passportUrlRepository)
         {
             this.fileUploader = fileUploader;
@@ -204,7 +204,7 @@ namespace AnalyzeId.Service.Utility
                 request.AddHeader("API-Password", password);
                 request.AddParameter("Application_Title", "Nissan API Form");
                 request.AddParameter("Date_Format", "yyyy-mm-dd");
-                request.AddParameter("Branch_ID", "1b2cd180-7a57-11ec-ad77-7be29f4b9c78");
+                request.AddParameter("Branch_ID", BranchId);
 
 
                 IRestResponse response = client.Execute(request);
@@ -246,7 +246,7 @@ namespace AnalyzeId.Service.Utility
                 request.AddHeader("API-Password", password);
 
 
-                request.AddParameter("Branch_ID", "1b2cd180-7a57-11ec-ad77-7be29f4b9c78");
+                request.AddParameter("Branch_ID", BranchId);
 
                 request.AlwaysMultipartFormData = true;
                 request.AddParameter("Application_ID", applicationId);
@@ -305,7 +305,7 @@ namespace AnalyzeId.Service.Utility
                     IDVTask.Result.Data.FrontUrl = frontImage.Result.HasValue() ? frontImage.Result : frontUrl;
                     IDVTask.Result.Data.BackUrl = backImage.Result.HasValue() ? backImage.Result :
                         backUrl;
-                   
+
                     await Task.WhenAll(UploadImage(null, IDVTask.Result.Data.FrontUrl, applicationId, true, false), UploadImage(null, IDVTask.Result.Data.BackUrl, applicationId, false, false));
 
                     return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
