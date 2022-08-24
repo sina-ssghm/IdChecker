@@ -24,19 +24,20 @@ namespace AnalyzeId.Service.Utility
 {
     public class OCRService : IOCRService
     {
-        private const string BranchId = "38cdb480-95c2-11ec-bad5-c7ce47b261b8";
+        private string BranchId = null;
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
         private readonly IImagePassportUrlRepository passportUrlRepository;
         private ILogger logger = LogManager.GetCurrentClassLogger();
-       
+
         public OCRService(IFileUploader fileUploader, IHostingEnvironment hostingEnvironment, IConfiguration configuration, IImagePassportUrlRepository passportUrlRepository)
         {
             this.fileUploader = fileUploader;
             this.hostingEnvironment = hostingEnvironment;
             this.configuration = configuration;
             this.passportUrlRepository = passportUrlRepository;
+            BranchId = configuration.GetSection("BranchId").Value;
         }
         public async Task<OperationResult<FileUploadPathDTO>> UploadImage(string file)
         {
