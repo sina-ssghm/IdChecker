@@ -89,9 +89,5 @@ namespace AnalyzeId.ApiControllers
             operation.Data = result;
             return JsonConvert.SerializeObject(operation);
         }
-
-    
-
-
     }
 }

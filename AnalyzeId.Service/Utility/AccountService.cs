@@ -53,7 +53,8 @@ namespace AnalyzeId.Service
             {
                 return cnn;
             }
-            string connetionString = @"Data Source=icoreprod.cpleldjvbku8.ap-southeast-2.rds.amazonaws.com;Initial Catalog=idv_administrator;User ID=J64Q6N9HTCA;Password=NRNQUFX6S56";
+           
+            string connetionString = @"Data Source=icore-prod.cpleldjvbku8.ap-southeast-2.rds.amazonaws.com;Initial Catalog=idv_administrator;User ID=SSQ7MFY7wye4s8moDF;Password=GYKbb7rNENLvv2x4RA";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             return cnn;
