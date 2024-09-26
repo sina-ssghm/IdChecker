@@ -407,7 +407,7 @@ namespace AnalyzeId.Service.Utility
                 //request.AddParameter("Engine_Code", "2");
                 request.AddParameter("Document_Validation", "True");
                 request.AddParameter("Overlay_Required", "True");
-                request.AddParameter("Detect_Orientation", "True");
+                //request.AddParameter("Detect_Orientation", "True");
                 request.AddParameter("Image_Scale", "False");
                 request.AddParameter("Cropping_Mode", "True");
                 request.AddFile("ID_Front_Image", fileFrontPath);
