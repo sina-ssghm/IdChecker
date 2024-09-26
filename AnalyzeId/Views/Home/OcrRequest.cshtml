@@ -6,7 +6,7 @@
 <div class="col text-center detail" id="scanMenu">
     <div class="col-sm-8 col-md-6 m-auto text-center">
         @*<h2 class="mb-2 text-bold-custom ">UPLOAD DRIVER LICENCE</h2>*@
-        <img class="card-img-top" src="/image/idv/@(Model?.UrlFront==null?"DL.png":"DL_B_Blue.svg")" alt="Card image cap" width="100%" style="max-width:400px;">
+        <img class="card-img-top" src="/image/idv/@(Model?.UrlFront==null?"DL.png":Model?.IsSelfie==true?"face.jpg":"DL_B_Blue.svg")" alt="Card image cap" width="100%" style="max-width:400px;">
         <div style="" class=" m-auto pr-2 pl-2">
             <div class="text-center mt-2 mb-2"
                  style="text-align:justify;text-justify:trim;padding-left:10px;padding-right:10px;font-weight:bold;margin-top:0px;color:black">
@@ -44,7 +44,7 @@
             </div>*@
     </div>
     <div class="col-sm-8 col-md-6 text-center m-auto">
-        <a href="##" class="btn btn-blue mb-2 w-100 camera camera-file  ">CAPTURE @(Model?.UrlFront==null?"FRONT":"BACK") </a>
+        <a href="##" class="btn btn-blue mb-2 w-100 camera camera-file  ">CAPTURE @(Model?.UrlFront==null?"FRONT":Model?.IsSelfie==true?"SELFIE":"BACK") </a>
         @*<a href="##" style="display:none" class="btn mt-1 font-size-1 bg-site p-2 waves-effect CanvasCamera camera-can text-bold text-light w-100">CAPTURE @(Model.UrlFront==null?"FRONT":"BACK") </a>*@
         <button type="button" onclick="skip()" class="btn btn-blue w-50 @(Model.UrlFront==null?"d-none":"") camera-file  ">
             SKIP
@@ -168,6 +168,8 @@
                     </p>*@
                 <form enctype="multipart/form-data" asp-controller="home" asp-action="Result" method="post" class="d-none" id="resultForm">
                     <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
+                    <input type="hidden" class="d-none" id="UrlBack" name="UrlBack" value="@(Model.UrlBack!=null?Model.UrlBack: Model.IsSelfie?"||skip||":"")">
+                    <input type="hidden" class="d-none" id="IsSelfie" name="IsSelfie" value="@(Model.IsSelfie==true?"true":"false")">
                     <input type="hidden" value="||skip||" name="X" id="skip" />
                     <input type="hidden" value="@Model?.ApplicationId" name="ApplicationId" id="ApplicationId" />
                     @*<input type="hidden" class="d-none" id="IdPass" name="IdPass" value="@(Model?.IdPass)">*@
@@ -233,13 +235,19 @@
 
 @section scripts{
 
-<script src="/script/script.js" asp-append-version="true"></script>
-<script>
+    <script src="/script/script.js" asp-append-version="true"></script>
+    <script>
         //$("#ApplicationId").val(applicationId)
-        function skip(){
-        $('#skip').attr("name","UrlBack")
-        $('#resultForm').submit()
+        function skip() {
+            if ('@((Model.IsSelfie==true).ToString().ToLower())' == 'true') {
+                $('#skip').attr("name", "UrlSelfie");
+            }
+            else {
+                $('#UrlBack').val("||skip||");
+                //$('#skip').attr("name", "UrlBack");
+            }
+            $('#resultForm').submit()
     }
-</script>
+    </script>
 }
 

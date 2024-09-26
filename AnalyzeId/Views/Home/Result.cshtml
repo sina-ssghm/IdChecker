@@ -97,13 +97,14 @@
     <form enctype="multipart/form-data" asp-controller="home" asp-action="GetOCRResult" method="post" class="d-none" id="sendData">
         <input type="hidden" class="d-none" id="UrlFront" name="UrlFront" value="@(Model.UrlFront!=null?Model.UrlFront:"")">
         <input type="hidden" class="d-none" id="UrlBack" name="UrlBack" value="@(Model.UrlBack!=null?Model.UrlBack:"")">
+        <input type="hidden" class="d-none" id="UrlSelfie" name="UrlSelfie" value="@(Model.UrlSelfie!=null?Model.UrlSelfie:"")">
         @*<input type="hidden" class="d-none" id="IdPass" name="IdPass" value="@(Model?.IdPass)">*@
         <input type="hidden" class="d-none" value="@Model?.ApplicationId" name="ApplicationId" id="ApplicationId">
 
     </form>
 </div>
 @section scripts{
-<script>
+    <script>
     //$("#sendData").submit()
      function SetEmailPn(){
          var email=$('#emailInput').val();
@@ -126,14 +127,14 @@
 
      }
 
-    $.post('@Url.Action("GetOCRResult","home")',{UrlFront:"@((Model.UrlFront!=null?Model.UrlFront:"")?.Replace(@"\",@"/"))",UrlBack:"@((Model.UrlBack!=null?Model.UrlBack:"")?.Replace(@"\",@"/"))",ApplicationId:"@(Model?.ApplicationId)"},function(result){
+    $.post('@Url.Action("GetOCRResult","home")',{UrlFront:"@((Model.UrlFront!=null?Model.UrlFront:"")?.Replace(@"\",@"/"))",UrlBack:"@((Model.UrlBack!=null?Model.UrlBack:"")?.Replace(@"\",@"/"))",UrlSelfie:"@((Model.UrlSelfie!=null?Model.UrlSelfie : "")?.Replace(@"\",@"/"))",ApplicationId:"@(Model?.ApplicationId)"},function(result){
          $('.ocr-result').html(result);
          $('.waiting').addClass("d-none")
-         
+
          HaDateTimePicker.init();
     });
 
-</script>
+    </script>
     @*@if (shouldRequestData)
     {
     <script>

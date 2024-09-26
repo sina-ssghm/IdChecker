@@ -75,12 +75,40 @@ else if (data != null)
                                     <img class="card-img-top" src="@Model.Data.FaceUrl.Remove(0,Model.Data.FaceUrl.IndexOf("Files")-1)" width="50%" alt="">
                                 </div>
                             }
+                            @if (Model?.Data?.Faces?.Any() != null)
+                            {
+                                foreach (var item in Model?.Data?.Faces)
+                                {
+                                    <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                        <img class="card-img-top" src="data:image/png;base64,@item" width="50%" alt="">
+                                    </div>
+                                }
+
+                            }
+                              @if (Model?.Data?.Signatures?.Any() != null)
+                            {
+                                foreach (var item in Model?.Data?.Signatures)
+                                {
+                                    <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                        <img class="card-img-top" src="data:image/png;base64,@item" width="50%" alt="">
+                                    </div>
+                                }
+
+                            }
+
                             @if (Model?.Data?.SignatureUrl != null)
                             {
                                 <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
                                     <img class="card-img-top" src="@Model.Data.SignatureUrl.Remove(0,Model.Data.SignatureUrl.IndexOf("Files")-1)" width="50%" alt="">
                                 </div>
                             }
+                             @if (Model?.Data?.UrlSelfie != null)
+                            {
+                                <div class="m-auto col-sm-12 col-md-3 p-1" asp-remove="">
+                                    <img class="card-img-top" src="@Model.Data.UrlSelfie.Remove(0,Model.Data.UrlSelfie.IndexOf("Files")-1)" width="50%" alt="">
+                                </div>
+                            }
+
                         </div>
                     </div>
                 </div>

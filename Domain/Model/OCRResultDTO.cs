@@ -30,8 +30,13 @@ namespace AnalyzeId.Domain.Model
         public string ImageSignatureId { get; set; }
         public string Classification { get; set; }
         public string ApplicationId { get; set; }
+        public string UrlSelfie { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public bool?  IsLive{ get; set; }
+        public bool?  IsMatched{ get; set; }
+        public List<string> Faces { get; set; }
+        public List<string> Signatures { get; set; }
 
     }
     public class OCRDTO
@@ -67,17 +72,20 @@ namespace AnalyzeId.Domain.Model
         public string First_Name { get; set; }
         public string Middle_Name { get; set; }
         public string Given_Name { get; set; }
-        public string Surname { get; set; }
-        public string Full_Name { get; set; }
+        public string Last_Name { get; set; }
+        //public string Full_Name { get; set; }
         public string Document_Number { get; set; }
-        public string Birth_Date { get; set; }
+        public string Document_Type { get; set; }
+        public string Date_Of_Birth { get; set; }
         public string Expiry_Date { get; set; }
-        public string Address { get; set; }
-        public string Address_Line_1 { get; set; }
-        public string Address_Line_2 { get; set; }
-        public string Address_State { get; set; }
-        public string Address_City { get; set; }
-        public string Address_Postal_Code { get; set; }
+        public string Licence_Expiry { get; set; }
+        public string Front_Address { get; set; }
+        //public string Address { get; set; }
+        //public string Address_Line_1 { get; set; }
+        //public string Address_Line_2 { get; set; }
+        //public string Address_State { get; set; }
+        //public string Address_City { get; set; }
+        //public string Address_Postal_Code { get; set; }
         public string Condition_Code { get; set; }
         public string Condition_Description { get; set; }
         public string Class_Code { get; set; }
@@ -85,6 +93,7 @@ namespace AnalyzeId.Domain.Model
         public string Address_Street { get; set; }
         public string Auto_Address { get; set; }
         public string Card_Number { get; set; }
+        public string Licence_Number { get; set; }
         public string Unit_Number { get; set; }
     }
 
@@ -113,6 +122,27 @@ namespace AnalyzeId.Domain.Model
         public Transaction Transaction { get; set; }
         public Data Data { get; set; }
         public Files Files { get; set; }
+        public Face Face_Images { get; set; }
+        public Signature Signature_Images { get; set; }
+    }
+    public class Face
+    {
+        public int Count { get; set; }
+        public List<FaceItem> Faces { get; set; }
+    }
+      public class Signature
+    {
+        public int Count { get; set; }
+        public List<SignatureItem> Signatures { get; set; }
+    }
+
+    public class FaceItem
+    {
+        public string Base64 { get; set; }
+    }
+     public class SignatureItem
+    {
+        public string Base64 { get; set; }
     }
 
     public class Message

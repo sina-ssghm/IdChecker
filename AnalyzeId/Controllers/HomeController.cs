@@ -59,10 +59,10 @@ namespace AnalyzeId.Controllers
         public async Task<IActionResult> Result(OCRFileDTO fileDTO)
         {
             var isbackImage = fileDTO.IdPass.HasValue;
-            if (fileDTO.UrlBack != "||skip||")
+            if (fileDTO.UrlBack != "||skip||" && (!fileDTO.UrlBack.HasValue()))
             {
                 var isfront = fileDTO.UrlFront != null ? false : true;
-                var res = await oCRService.UploadImage(fileDTO.File, null, fileDTO.ApplicationId, isfront,dontUploadToIdv:true);
+                var res = await oCRService.UploadImage(fileDTO.File, null, fileDTO.ApplicationId, isfront, false, dontUploadToIdv: true);
                 if (res.Succeed && isfront)
                 {
                     fileDTO.UrlFront = res.Data;
@@ -74,6 +74,7 @@ namespace AnalyzeId.Controllers
             }
 
 
+
             //var idPass = fileDTO?.IdPass != null ? fileDTO.IdPass.Value : passportUrlRepository.Add(new ImagePassportViewModel { }).GetAwaiter().GetResult().Data;
             //if (fileDTO.UrlBack == "||skip||" && fileDTO.IsUploadFront)
             //{
@@ -81,13 +82,45 @@ namespace AnalyzeId.Controllers
             //}
             //UploadImage(fileDTO.File, idPass, fileDTO?.IdPass != null ? false : true);
 
-            if (fileDTO.UrlFront != null && (fileDTO.UrlBack == "||skip||" || fileDTO.UrlBack != null))
+            //if (fileDTO.UrlFront != null && (fileDTO.UrlBack == "||skip||" || fileDTO.UrlBack != null) )
+            if (fileDTO.UrlFront != null && (fileDTO.UrlSelfie == "||skip||" || fileDTO.UrlSelfie != null))
             {
                 fileDTO.UrlBack = fileDTO.UrlBack == "||skip||" ? null : fileDTO.UrlBack;
                 fileDTO.Succeed = true;
                 fileDTO.IsContinue = true;
                 return View(fileDTO);
             }
+            if (fileDTO.UrlBack == "||skip||" || fileDTO.UrlBack != null)
+            {
+                if (fileDTO.IsSelfie && fileDTO.UrlSelfie != "||skip||")
+                {
+                    if (fileDTO.UrlSelfie == "||skip||")
+                    {
+                        fileDTO.UrlSelfie = null;
+
+                    }
+                    else
+                    {
+                        var res = await oCRService.UploadImage(fileDTO.File, null, fileDTO.ApplicationId, false, true, dontUploadToIdv: true);
+                        if (res.Succeed)
+                        {
+                            fileDTO.UrlSelfie = res.Data;
+                            fileDTO.Succeed = true;
+
+                        }
+                    }
+                    return View(fileDTO);
+
+                }
+                if (fileDTO.UrlSelfie == null || fileDTO.UrlSelfie != "||skip||")
+                {
+                    fileDTO.IsSelfie = true;
+                    return View(nameof(OcrRequest), fileDTO);
+                }
+               
+
+            }
+
             //fileDTO.IdPass = idPass;
             return View(nameof(OcrRequest), fileDTO);
         }
@@ -98,8 +131,13 @@ namespace AnalyzeId.Controllers
             {
                 return NotFound();
             }
-            var result = await oCRService.GetOCRResult(fileDTO.UrlFront, fileDTO.UrlBack, fileDTO?.ApplicationId);
+            if (fileDTO?.UrlSelfie == "||skip||")
+            {
+                fileDTO.UrlSelfie= null;
+            }
+            var result = await oCRService.GetOCRResult(fileDTO.UrlFront, fileDTO.UrlBack, fileDTO.UrlSelfie, fileDTO?.ApplicationId);
             result.Data.ApplicationId = fileDTO.ApplicationId;
+            result.Data.UrlSelfie = fileDTO.UrlSelfie;
             return View(result);
         }
 
@@ -130,7 +168,7 @@ namespace AnalyzeId.Controllers
             try
             {
                 var url = oCRService.SaveImageBase64(file, type);
-                var res = await oCRService.UploadImage(null, url, applicationId, null, dontUploadToIdv: false);
+                var res = await oCRService.UploadImage(null, url, applicationId, null, false, dontUploadToIdv: false);
                 if (res.Succeed)
                 {
                     return Json("true");

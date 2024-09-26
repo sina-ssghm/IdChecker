@@ -9,7 +9,10 @@ namespace AnalyzeId.Domain.Model
 
         public string UrlFront { get; set; }
         public string UrlBack { get; set; }
-        public string Message { get; set; }
+        public string UrlSelfie{ get; set; }
+        public string Message{ get; set; }
+        
+        public bool IsSelfie { get; set; }
         public bool IsContinue { get; set; }
         public bool Succeed { get; set; }
         public bool IsShowResult { get; set; }

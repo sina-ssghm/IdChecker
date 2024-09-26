@@ -1,4 +1,7 @@
-﻿using Amazon.S3;
+﻿using Amazon;
+using Amazon.Rekognition;
+using Amazon.Rekognition.Model;
+using Amazon.S3;
 using Amazon.S3.Transfer;
 using Amazon.Textract;
 using Amazon.Textract.Model;
@@ -13,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using NLog;
+using PassportTextExtract.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -26,6 +30,7 @@ namespace AnalyzeId.Service.Utility
 {
     public class OCRService : IOCRService
     {
+        string accessKey = "AKIASMEH2HYLHKKBFNHR", secretAccessKey = "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";
         private readonly IFileUploader fileUploader;
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
@@ -112,7 +117,7 @@ namespace AnalyzeId.Service.Utility
                 return null;
             }
         }
-        public async Task<OperationResult<string>> UploadImage(IFormFile file, string urlImage, string applicationId, bool? isFront, bool dontUploadToIdv)
+        public async Task<OperationResult<string>> UploadImage(IFormFile file, string urlImage, string applicationId, bool? isFront, bool isSelfie, bool dontUploadToIdv)
         {
             try
             {
@@ -139,19 +144,29 @@ namespace AnalyzeId.Service.Utility
                     var key = "SIGN";
                     var title = "Signature";
                     var type = "0";
+                    if (isSelfie)
+                    {
+                        key = "Selfie";
+                        title = "Selfie";
+                        type = "0";
+                    }
+                    else
+                    {
+                        if (isFront == true)
+                        {
+                            key = "DLF";
+                            title = "Driving Licence - Front";
+                            type = "2";
+                        }
+                        else if (isFront == false)
+                        {
+                            key = "DLB";
+                            title = "Driving Licence - Back";
+                            type = "3";
+                        }
+                    }
 
-                    if (isFront == true)
-                    {
-                        key = "DLF";
-                        title = "Driving Licence - Front";
-                        type = "2";
-                    }
-                    else if (isFront == false)
-                    {
-                        key = "DLB";
-                        title = "Driving Licence - Back";
-                        type = "3";
-                    }
+
 
                     var request = new RestRequest(Method.POST);
                     request.AddHeader("API-Username", userName);
@@ -282,7 +297,7 @@ namespace AnalyzeId.Service.Utility
         }
 
 
-        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string frontUrl, string backUrl, string applicationId)
+        public async Task<OperationResult<FinalResultOCRDTO>> GetOCRResult(string frontUrl, string backUrl, string selfieUrl, string applicationId)
         {
             try
             {
@@ -291,6 +306,10 @@ namespace AnalyzeId.Service.Utility
                 await Task.WhenAll(IDVTask, awsTask);
                 awsTask.Result.FrontUrl = frontUrl;
                 awsTask.Result.BackUrl = backUrl;
+                if (selfieUrl == "||skip||")
+                {
+                    selfieUrl = null;
+                }
                 if (IDVTask.Result.Data != null)
                 {
                     IDVTask.Result.Data.FrontUrl = frontUrl;
@@ -305,14 +324,36 @@ namespace AnalyzeId.Service.Utility
                     IDVTask.Result.Data.FrontUrl = frontImage.Result.HasValue() ? frontImage.Result : frontUrl;
                     IDVTask.Result.Data.BackUrl = backImage.Result.HasValue() ? backImage.Result :
                         backUrl;
-                   
-                    await Task.WhenAll(UploadImage(null, IDVTask.Result.Data.FrontUrl, applicationId, true, false), UploadImage(null, IDVTask.Result.Data.BackUrl, applicationId, false, false));
 
-                    return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
+                    await Task.WhenAll(UploadImage(null, IDVTask.Result.Data.FrontUrl, applicationId, true, false, false), UploadImage(null, IDVTask.Result.Data.BackUrl, applicationId, false, false, false));
+                    var result = ComoareResult(IDVTask.Result.Data, awsTask.Result);
+                    if (selfieUrl.HasValue())
+                    {
+                        var livenessResult = await Liveness(selfieUrl);
+                        if (livenessResult?.score > 1)
+                        {
+                            result.IsLive = true;
+                        }
+                        else
+                        {
+                            result.IsLive=false;
+                        }
+                        var faceCompareResult = await FaceCompare(frontUrl, selfieUrl);
+                        if (faceCompareResult?.FaceMatches?.Any()==true)
+                        {
+                            result.IsMatched = true;
+                        }
+                        else
+                        {
+                            result.IsMatched = false;
+                        }
+                    }
+
+                    return new OperationResult<FinalResultOCRDTO> { Data = result, Message = IDVTask.Result.Message, Succeed = IDVTask.Result.Succeed };
                 }
                 else
                 {
-                    await Task.WhenAll(UploadImage(null, backUrl, applicationId, false, false), UploadImage(null, frontUrl, applicationId, true, false));
+                    await Task.WhenAll(UploadImage(null, backUrl, applicationId, false, false, false), UploadImage(null, frontUrl, applicationId, true, false, dontUploadToIdv: false));
                 }
 
                 //if (IDVTask.Result.Data.ImageFaseId!=null)
@@ -320,10 +361,22 @@ namespace AnalyzeId.Service.Utility
                 //    IDVTask.Result.Data.ImageFaseId= await _GetOCRImage(IDVTask.Result.Data.ImageFaseId, IDVTask.Result.Data.TransactionId);
                 //}
 
+                var result2 = ComoareResult(IDVTask.Result.Data, awsTask.Result);
+                if (selfieUrl.HasValue())
+                {
+                    var livenessResult = await Liveness(selfieUrl);
+                    if (livenessResult?.score > 1)
+                    {
+                        result2.IsLive = true;
+                    }
+                    var faceCompareResult = await FaceCompare(frontUrl, selfieUrl);
+                    if (faceCompareResult?.FaceMatches?.Any() == true)
+                    {
+                        result2.IsMatched = true;
+                    }
+                }
 
-
-
-                return new OperationResult<FinalResultOCRDTO> { Data = ComoareResult(IDVTask.Result.Data, awsTask.Result), Message = "", Succeed = awsTask.Result != null };
+                return new OperationResult<FinalResultOCRDTO> { Data = result2, Message = "", Succeed = awsTask.Result != null };
 
                 //if (IDVTask.Result.Succeed == true || (IDVTask.Result.Data.FullName.HasValue() && IDVTask.Result.Data.BirthDate.HasValue()))
                 //{
@@ -338,10 +391,11 @@ namespace AnalyzeId.Service.Utility
             }
         }
         private async Task<OperationResult<FinalResultOCRDTO>> _GetOCRResult(string fileFrontPath, string fileBackPath)
-        {
+        { 
             try
             {
-                var client = new RestClient("https://services.idvpacific.com.au/api/Request/OCR-ID-PREMIUM");
+                //var client = new RestClient("https://services.idvpacific.com.au/api/Request/OCR-ID-PREMIUM");
+                var client = new RestClient("https://services.idvpacific.com.au/api/Request/FOXID");
                 client.Timeout = -1;
                 var userName = configuration.GetSection("User_Name").Value;
                 var password = configuration.GetSection("Password").Value;
@@ -350,6 +404,7 @@ namespace AnalyzeId.Service.Utility
                 request.AddHeader("API-Password", password);
                 request.AddParameter("Date_Format", "yyyy-mm-dd");
                 request.AddParameter("Processing_Type", "6");
+                //request.AddParameter("Engine_Code", "2");
                 request.AddParameter("Document_Validation", "True");
                 request.AddParameter("Overlay_Required", "True");
                 request.AddParameter("Detect_Orientation", "True");
@@ -371,20 +426,22 @@ namespace AnalyzeId.Service.Utility
                         Succeed = true,
                         Data = new FinalResultOCRDTO
                         {
-                            FullName = result?.Result?.Data?.Full_Name,
+                            //FullName = result?.Result?.Data?.Full_Name,
                             //MiddleName = result?.Result?.Data?.Middle_Name,
                             FirstName = result?.Result?.Data?.First_Name,
-                            LastName = result?.Result?.Data?.Surname,
-                            DocumentNumber = result?.Result?.Data?.Document_Number,
-                            BirthDate = result?.Result?.Data?.Birth_Date,
-                            ExpiryDate = result?.Result?.Data?.Expiry_Date,
-                            Address = result?.Result?.Data?.Address,
+                            LastName = result?.Result?.Data?.Last_Name,
+                            DocumentNumber = result?.Result?.Data?.Card_Number,
+                            BirthDate = result?.Result?.Data?.Date_Of_Birth,
+                            ExpiryDate = result?.Result?.Data?.Licence_Expiry,
+                            Address = result?.Result?.Data?.Front_Address,
                             ImageBackId = result?.Result?.Files?.Processed?.Back_image,
                             ImageFrontId = result?.Result?.Files?.Processed?.Front_image,
                             ImageSignatureId = result?.Result?.Files?.Processed?.Signature,
                             ImageFaseId = result?.Result?.Files?.Processed?.Face,
                             TransactionId = result?.Result?.Transaction?.ID,
                             JsonResultIDv = response.Content,
+                            Faces = result?.Result?.Face_Images?.Faces?.Select(s => s.Base64).ToList(),
+                            Signatures = result?.Result?.Signature_Images?.Signatures?.Select(s => s.Base64).ToList(),
 
                         },
 
@@ -701,6 +758,67 @@ namespace AnalyzeId.Service.Utility
             {
                 logger.Debug(ex);
                 return OperationResult<object>.Error(ex);
+            }
+        }
+        public async Task<LivenessResult?> Liveness(string path)
+        {
+            try
+            {
+                //var file = File.OpenRead(path);
+
+
+                var client = new RestClient("http://idface.idvpacific.com.au:8080");
+                var request = new RestRequest("/check_liveness", Method.POST);
+                request.AlwaysMultipartFormData = true;
+                request.AddFile("data", path);
+                var response = await client.ExecuteAsync(request);
+
+                if (response.IsSuccessful)
+                {
+                    return JsonConvert.DeserializeObject<LivenessResult>(response.Content);
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+            return new LivenessResult
+            {
+                error = "error"
+            };
+        }
+        public async Task<CompareFacesResponse?> FaceCompare(string doc, string selfie)
+        {
+            var docFile = File.OpenRead(doc);
+            var selfieFile = File.OpenRead(selfie);
+
+            using (AmazonRekognitionClient rekognitionClient = new AmazonRekognitionClient(accessKey, secretAccessKey, RegionEndpoint.APSoutheast2))
+            {
+                //var transfer = new TransferUtility(client);
+                using (var ms = new MemoryStream())
+                {
+                    docFile.CopyTo(ms);
+                    Image docimg = new Image();
+                    docimg.Bytes = (ms);
+                    using var selfiems = new MemoryStream();
+                    selfieFile.CopyTo(selfiems);
+                    Image selfieimg = new Image();
+                    selfieimg.Bytes = (selfiems);
+
+                    CompareFacesResponse result = await rekognitionClient.CompareFacesAsync(new CompareFacesRequest
+                    {
+                        SourceImage = docimg,
+                        TargetImage = selfieimg,
+                        SimilarityThreshold = 70F,
+                    });
+
+                    return result;
+
+                }
+
+
             }
         }
 

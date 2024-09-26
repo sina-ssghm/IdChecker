@@ -23,21 +23,21 @@
 
     <div class="row">
         <div class="col-sm-6 mt-1">
-            <label class="font-weight-bold text-black"> First Name</label>
+            <label class="font-weight-bold text-black">First Name</label>
             <input type="text" asp-for="FirstName" class="form-control text-black" />
         </div>
         @*<div class="col-6 mt-1">
-            <label class="font-weight-bold text-black">Middle Name:</label>
-            <input type="text" asp-for="MiddleName" class="form-control text-black" />
-            </div>*@
+        <label class="font-weight-bold text-black">Middle Name:</label>
+        <input type="text" asp-for="MiddleName" class="form-control text-black" />
+        </div>*@
         <div class="col-sm-6 mt-1">
             <label class="font-weight-bold text-black">Last Name</label>
             <input type="text" asp-for="LastName" class="form-control text-black" />
         </div>
-        <div class="col-sm-6 mt-1">
+        @*<div class="col-sm-6 mt-1">
             <label class="font-weight-bold text-black">Full Name</label>
             <input type="text" asp-for="FullName" class="form-control text-black" />
-        </div>
+        </div>*@
         <div class="col-sm-6 mt-1">
             <label class="font-weight-bold text-black">Document Number</label>
             <input type="text" asp-for="DocumentNumber" class="form-control text-black" />
@@ -63,9 +63,24 @@
             <label class="font-weight-bold text-black">Address</label>
             <input type="text" asp-for="Address" class="form-control text-black" />
         </div>
+        @if (Model.IsLive.HasValue)
+        {
+            <div class="col-sm-6 mt-1">
+                <label class="font-weight-bold text-black">Liveness</label>
+                <p class="m-0">@(Model.IsLive==true?"Pass":"Fail")</p>
+            </div>
+        }
+        @if (Model.IsMatched.HasValue)
+        {
+            <div class="col-sm-6 mt-1">
+                <label class="font-weight-bold text-black">Face Match</label>
+                <p class="m-0">@(Model.IsMatched==true?"Pass":"Fail")</p>
+            </div>
+        }
+
         @*<div class="col-12">
-            <button type="submit" class="btn mt-2 text-light  bg-site btn-sm">Save</button>
-            </div>*@
+        <button type="submit" class="btn mt-2 text-light  bg-site btn-sm">Save</button>
+        </div>*@
         <div class="col-12 text-center mt-2">
             <button type="submit" @*onclick="CreateNewElements()"*@ class="btn-sm-block   mb-1 btn btn-blue submit-form-btn  " style="min-width:150px">
                 Confirm
